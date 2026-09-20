@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import WhoIHelp from "@/components/WhoIHelp";
@@ -20,8 +19,6 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 
 export default function Home() {
-  const [selectedProjectType, setSelectedProjectType] = useState<string>("");
-
   return (
     <main className="min-h-screen bg-[#090a0a] text-[#f4f5f2] relative selection:bg-[#c7ff4a] selection:text-black">
       <Navbar />
@@ -33,8 +30,8 @@ export default function Home() {
       <Projects />
       <CaseStudy />
       <TrustProof />
-      <LeadQualification onSelectProjectType={setSelectedProjectType} />
-      <ContactForm initialProjectType={selectedProjectType} />
+      <LeadQualification />
+      <ContactForm />
       <About />
       <TechStack />
       <FAQ />

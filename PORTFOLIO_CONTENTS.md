@@ -9,16 +9,24 @@
 
 ## 1. Page Layout & Structural Breakdown
 
-The main portfolio page ([`app/page.tsx`](file:///d:/Aravind-Works/Portfolio/app/page.tsx)) renders a single-page experience containing **7 core component sections** plus a persistent floating WhatsApp widget:
+The main portfolio page ([`app/page.tsx`](file:///d:/Aravind-Works/Portfolio/app/page.tsx)) renders a single-page experience containing **14 core component sections** plus a persistent floating WhatsApp widget and sticky mobile CTA:
 
 1. [**Navigation Bar (`Navbar`)**](#1-navigation-bar-navbar)
 2. [**Hero Section (`Hero`)**](#2-hero-section-hero)
-3. [**Selected Work & Projects (`Projects` & `ProjectCard`)**](#3-selected-work--projects-projects)
-4. [**About Section (`About`)**](#4-about-section-about)
-5. [**Services / Capabilities (`Services`)**](#5-services--capabilities-services)
-6. [**Contact Section & Inquiry Form (`ContactForm`)**](#6-contact-section--inquiry-form-contactform)
-7. [**Footer (`Footer`)**](#7-footer-footer)
-8. [**Floating WhatsApp Widget (`WhatsAppButton`)**](#8-floating-whatsapp-widget-whatsappbutton)
+3. [**Target Audience / Built For Your Business (`WhoIHelp`)**](#3-built-for-your-business-whoihelp)
+4. [**Services / What I Can Build For You (`Services`)**](#4-services--capabilities-services)
+5. [**Development Lifecycle (`Process`)**](#5-development-lifecycle-process)
+6. [**One Partner Advantage (`OnePartner`)**](#6-one-partner-advantage-onepartner)
+7. [**Selected Work & Projects (`Projects` & `ProjectCard`)**](#7-selected-work--projects-projects)
+8. [**Featured Project Case Study (`CaseStudy`)**](#8-featured-project-case-study-casestudy)
+9. [**Verified Proof (`TrustProof`)**](#9-verified-proof-trustproof)
+10. [**Interactive Project Selector (`LeadQualification`)**](#10-interactive-project-selector-leadqualification)
+11. [**Direct Contact Channel (`ContactForm`)**](#11-direct-contact-channel-contactform)
+12. [**About Section (`About`)**](#12-about-section-about)
+13. [**Technology Stack (`TechStack`)**](#13-technology-stack-techstack)
+14. [**FAQ Section (`FAQ`)**](#14-faq-section-faq)
+15. [**Footer (`Footer`)**](#15-footer-footer)
+16. [**Floating WhatsApp Widget (`WhatsAppButton`) & Mobile Sticky CTA (`StickyMobileCTA`)**](#16-floating-whatsapp-widget--mobile-sticky-cta)
 
 ---
 
@@ -26,137 +34,130 @@ The main portfolio page ([`app/page.tsx`](file:///d:/Aravind-Works/Portfolio/app
 
 ### 1. Navigation Bar ([`components/Navbar.tsx`](file:///d:/Aravind-Works/Portfolio/components/Navbar.tsx))
 * **Logo / Branding:** `ARAVIND A S` (Scrolls to top `#`)
-* **Navigation Links:**
-  * `Work` → Scrolls to `#work`
-  * `About` → Scrolls to `#about`
-  * `Services` → Scrolls to `#services`
-  * `Contact` → Scrolls to `#contact`
-* **Desktop CTA:** `Let's talk ↗` button linking to `#contact`
+* **Navigation Links:** `Work`, `Services`, `Process`, `About`, `Contact`
+* **Desktop CTA:** `Start a Project →` button linking to `#contact`
 * **Mobile Navigation:** Responsive hamburger menu drawer (`lucide-react` `Menu` / `X` toggles)
 
 ---
 
 ### 2. Hero Section ([`components/Hero.tsx`](file:///d:/Aravind-Works/Portfolio/components/Hero.tsx))
-* **Visual Effects:** Framer Motion animated radial glow in lime-green (`#c7ff4a`)
-* **Eyebrow Badge:** 
-  * `ShieldCheck` Icon + `Trustable Freelance Developer · Kerala (Kollam & Pathanamthitta)`
-  * `Live Production Work Below ↓` badge
-* **Main Headline:** `"Top-rated web development & mobile app developer in Kerala."`
-* **Sub-Headline:** `"Helping businesses in Kollam, Pathanamthitta, and across Kerala build high-converting custom websites, e-commerce platforms, and cross-platform mobile apps."`
+* **Eyebrow Badge:** `FREELANCE SOFTWARE ENGINEER · KERALA · WORLDWIDE`
+* **Main Headline:** `"I BUILD DIGITAL PRODUCTS FROM IDEA TO LAUNCH."`
+* **Sub-Headline:** `"Websites, e-commerce, mobile apps, CRM, business systems and custom software — with development and ongoing support."`
 * **Primary CTAs:**
-  * `Explore Live Work` (Smooth scroll to `#work`)
-  * `Start a project / Hire ↗` (Smooth scroll to `#contact`)
-* **Selected Work Spotlight Bar:** 4 quick live production site badges:
-  1. **Noorzah** — E-Commerce Store
-  2. **Wishlist by Praveena** — Fashion Store
-  3. **NC Brand Fashion** — Storefront
-  4. **Aoba** — Web App
+  * `Start a Project →` (Smooth scroll to `#contact`)
+  * `View My Work →` (Smooth scroll to `#work`)
+* **Capability Cards Grid:**
+  1. **Build From Scratch** (Idea → Planning → Design → Development → Launch)
+  2. **Web & Mobile** (Websites, web apps and mobile applications)
+  3. **CRM & Business Systems** (CRM, dashboards, admin panels and custom tools)
+  4. **Ongoing Support** (Improvements, new features, maintenance & dev)
+* **Verified Proof Strip:** `Production Projects · E-commerce · Web Apps · Mobile Development · Ongoing Support`
 
 ---
 
-### 3. Selected Work & Projects ([`components/Projects.tsx`](file:///d:/Aravind-Works/Portfolio/components/Projects.tsx) & [`data/projects.ts`](file:///d:/Aravind-Works/Portfolio/data/projects.ts))
-* **Header:**
-  * Eyebrow: `Selected work`
-  * Title: `"Real products. Real interfaces."`
-  * Subtitle: *"A selection of e-commerce and digital experiences. The work below is presented with a focus on product experience and responsive design."*
-
-#### Featured Project (Hero Layout Card)
-* **Noorzah** ([`noorzah.com`](https://noorzah.com/))
-  * **Category:** E-commerce Platform
-  * **Location Context:** `NOORZAH · KOLLAM`
-  * **Visual Title:** `"Curated fashion. Made to shop."`
-  * **Description:** *"A production e-commerce platform for a fashion business based in Sasthamcotta, Kollam, Kerala. Designed around a clean shopping experience and responsive customer journey."*
-  * **CTA:** `View live store ↗`
-
-#### 3-Column Grid Projects
-1. **Wishlist by Praveena** ([`wishlistbypraveena.vercel.app`](https://wishlistbypraveena.vercel.app/))
-   * **Category:** Fashion / Boutique E-commerce
-   * **Visual Title:** `"Fashion e-commerce"`
-   * **Description:** *"Fashion-focused online shopping experience."*
-2. **NC Brand Fashion** ([`ncbrandfashion.com`](https://www.ncbrandfashion.com))
-   * **Category:** Fashion E-commerce
-   * **Visual Title:** `"Brand storefront"`
-   * **Description:** *"Modern fashion e-commerce storefront."*
-3. **Aoba** ([`11aravind.github.io/Aoba`](https://11aravind.github.io/Aoba/))
-   * **Category:** Modern Web Experience
-   * **Visual Title:** `"Modern digital experience"`
-   * **Description:** *"A modern web experience built with a clean, responsive interface."*
-
-#### Selected References Sub-Section
-* **Header:** `Selected references` | `"More stores to explore."`
-* **Disclaimer:** *"These links are shown separately from my featured work so the portfolio does not imply ownership or authorship without confirmation."*
-* **4 Reference Cards:**
-  1. **Qimati** (E-commerce) — [`qimati.in`](https://www.qimati.in)
-  2. **Pawan Ratna** (Online store) — [`pawanratna.com`](https://pawanratna.com)
-  3. **Ugaoo** (E-commerce) — [`ugaoo.com`](https://www.ugaoo.com)
-  4. **Nambisans** (Online store) — [`nambisans.in`](https://www.nambisans.in)
+### 3. Built For Your Business ([`components/WhoIHelp.tsx`](file:///d:/Aravind-Works/Portfolio/components/WhoIHelp.tsx))
+* **Header:** `BUILT FOR YOUR BUSINESS`
+* **Target Audience Cards:**
+  1. **Businesses:** Websites, e-commerce stores, and high-converting digital presence.
+  2. **Startups:** MVPs, web apps, and mobile products built from scratch.
+  3. **Growing Businesses:** CRM, dashboards, automation, and custom internal business tools.
+  4. **Existing Products:** UI/UX redesigns, feature updates, performance fixes, and ongoing dev support.
 
 ---
 
-### 4. About Section ([`components/About.tsx`](file:///d:/Aravind-Works/Portfolio/components/About.tsx))
-* **Header:**
-  * Eyebrow: `About Aravind A S`
-  * Heading: `"Trustable freelance developer engineering with a product mindset."`
-* **Bio / Story:**
-  * Highlights position as a trusted freelance software engineer based in Sasthamcotta, Kollam, Kerala.
-  * Lists regional focus: Kollam, Pathanamthitta, Trivandrum, and worldwide remote clients.
-  * Details technical scope: Custom websites, e-commerce stores (Noorzah, Wishlist), web applications, REST APIs, and React Native mobile apps.
-* **Tech Stack Pills:**
-  * `React` · `Next.js` · `TypeScript` · `Node.js` · `Express` · `MongoDB` · `MySQL` · `React Native`
+### 4. Services & Capabilities ([`components/Services.tsx`](file:///d:/Aravind-Works/Portfolio/components/Services.tsx) & [`data/services.ts`](file:///d:/Aravind-Works/Portfolio/data/services.ts))
+* **Header:** `WHAT I CAN BUILD FOR YOU`
+* **8 Capability Offering Cards:**
+  1. **Websites:** Modern, high-converting, and responsive business websites.
+  2. **E-commerce:** Custom online stores, payment flows, and seamless shopping experiences.
+  3. **Web Applications:** Scalable web apps, portals, and cloud-based platforms.
+  4. **Mobile Applications:** Cross-platform iOS & Android mobile apps using React Native.
+  5. **CRM & Business Systems:** Custom CRM, admin dashboards, internal portals, and workflow tools.
+  6. **Backend & Integrations:** REST APIs, database design, authentication, and third-party integrations.
+  7. **Digital Marketing & Growth:** High-converting landing pages, SEO optimization, and digital growth support.
+  8. **Ongoing Development:** Feature development, continuous improvements, maintenance, and technical support.
 
 ---
 
-### 5. Services / Capabilities ([`components/Services.tsx`](file:///d:/Aravind-Works/Portfolio/components/Services.tsx) & [`data/services.ts`](file:///d:/Aravind-Works/Portfolio/data/services.ts))
-* **Header:**
-  * Eyebrow: `What I build`
-  * Heading: `"From first idea to launch."`
-* **6 Service Offering Cards:**
-  1. **Business Websites:** *"Modern, responsive websites designed around clarity and enquiries."*
-  2. **E-commerce:** *"Online stores, product experiences and customer-facing shopping flows."*
-  3. **Web Applications:** *"Custom dashboards, admin panels and business applications."*
-  4. **Mobile Applications:** *"Cross-platform mobile experiences using React Native."*
-  5. **API & Backend:** *"REST APIs, authentication, databases and integrations."*
-  6. **Website Improvements:** *"Responsive redesigns, UI modernization and feature development."*
+### 5. Development Lifecycle ([`components/Process.tsx`](file:///d:/Aravind-Works/Portfolio/components/Process.tsx))
+* **Header:** `FROM IDEA TO LAUNCH`
+* **6-Step Workflow:**
+  * `01 DISCUSS` → `02 PLAN` → `03 DESIGN` → `04 BUILD` → `05 LAUNCH` → `06 SUPPORT`
 
 ---
 
-### 6. Contact Section & Inquiry Form ([`components/ContactForm.tsx`](file:///d:/Aravind-Works/Portfolio/components/ContactForm.tsx))
-* **Header:**
-  * Eyebrow: `Let's build` (with pulsing indicator)
-  * Heading: `"Have an idea worth building?"`
-  * Description: *"Let's turn it into a fast, modern and reliable digital product. Reach out directly via WhatsApp, Call, or Email."*
-* **Direct Contact Info Cards:**
+### 6. One Partner Advantage ([`components/OnePartner.tsx`](file:///d:/Aravind-Works/Portfolio/components/OnePartner.tsx))
+* **Header:** `ONE PARTNER. FROM IDEA TO LAUNCH.`
+* **Core Principles:**
+  * *Business-first Approach*, *End-to-End Ownership*, *Direct Communication*, *Long-term Partner*.
+
+---
+
+### 7. Selected Work & Projects ([`components/Projects.tsx`](file:///d:/Aravind-Works/Portfolio/components/Projects.tsx) & [`data/projects.ts`](file:///d:/Aravind-Works/Portfolio/data/projects.ts))
+* **Header:** `REAL PRODUCTS. REAL WORK.`
+* **Featured Hero Project:** **Noorzah** ([`noorzah.com`](https://noorzah.com/)) — E-commerce Platform (*"Curated fashion. Made to shop."*)
+* **3-Column Grid Projects:**
+  1. **Wishlist by Praveena** ([`wishlistbypraveena.vercel.app`](https://wishlistbypraveena.vercel.app/)) — Fashion / Boutique E-commerce
+  2. **NC Brand Fashion** ([`ncbrandfashion.com`](https://www.ncbrandfashion.com)) — Modern fashion storefront
+  3. **Aoba** ([`11aravind.github.io/Aoba`](https://11aravind.github.io/Aoba/)) — Modern digital experience
+* **Selected References:** Qimati (`qimati.in`), Pawan Ratna (`pawanratna.com`), Ugaoo (`ugaoo.com`), Nambisans (`nambisans.in`)
+
+---
+
+### 8. Featured Project Case Study ([`components/CaseStudy.tsx`](file:///d:/Aravind-Works/Portfolio/components/CaseStudy.tsx))
+* **Project:** Noorzah (Sasthamcotta, Kollam, Kerala)
+* **Breakdown:** The Challenge, What I Built, My Direct Role, Live Store Link (`View Live Project ↗`)
+
+---
+
+### 9. Verified Proof ([`components/TrustProof.tsx`](file:///d:/Aravind-Works/Portfolio/components/TrustProof.tsx))
+* **Header:** `TRUST BUILT THROUGH REAL WORK`
+* **4 Proof Categories:** Production Websites, E-commerce Projects, Custom Web Applications, Ongoing Development.
+
+---
+
+### 10. Interactive Project Selector ([`components/LeadQualification.tsx`](file:///d:/Aravind-Works/Portfolio/components/LeadQualification.tsx))
+* **Header:** `WHAT ARE YOU LOOKING TO BUILD?`
+* **8 Option Cards:** Website, E-commerce, Mobile App, Web Application, CRM / Business System, Existing Product Improvement, Digital Marketing, Not Sure Yet.
+* **Action:** Clicking an option opens WhatsApp directly with a pre-filled message for fast inquiry.
+
+---
+
+### 11. Direct Contact Channel ([`components/ContactForm.tsx`](file:///d:/Aravind-Works/Portfolio/components/ContactForm.tsx))
+* **Header:** `HAVE SOMETHING TO BUILD?`
+* **Direct Contact Cards:**
   * **Email:** `aravindas247@gmail.com`
-  * **WhatsApp / Call:** `+91 8848310248`
-  * **Direct Phone:** `+91 8129365304`
-* **Action CTAs:**
-  * `Email me ↗` (`mailto:aravindas247@gmail.com`)
-  * `WhatsApp ↗` (`https://wa.me/918848310248...`)
-  * `Quick Message Form ↓` (Toggles expand/collapse inline message form)
-* **Interactive Quick Inquiry Form:**
-  * Inputs: `Your Name *`, `Email / Phone *`, `Project Brief / Goals *`
-  * Submitting triggers a pre-filled `mailto:` client prompt and displays a success message badge.
+  * **WhatsApp:** `+91 8848310248`
+  * **Direct Call:** `+91 8129365304`
+* **Action CTAs:** `WhatsApp →` & `Email →` buttons.
 
 ---
 
-### 7. Footer ([`components/Footer.tsx`](file:///d:/Aravind-Works/Portfolio/components/Footer.tsx))
-* **Title:** `ARAVIND A S · SOFTWARE ENGINEER`
-* **Contact Links:** `aravindas247@gmail.com` • `+91 8848310248` • `+91 8129365304`
-* **Copyright Notice:** `© 2026 Aravind A S`
+### 12. About Section ([`components/About.tsx`](file:///d:/Aravind-Works/Portfolio/components/About.tsx))
+* **Header:** `ABOUT ARAVIND`
+* **Bio:** Freelance software engineer based in Kerala, working with businesses and entrepreneurs to build modern digital products.
+* **Core Capabilities:** Websites, E-commerce, Web Applications, Mobile Applications, Billing Software Development, CRM / Business Systems, APIs & Backend, Ongoing Development.
 
 ---
 
-### 8. Floating WhatsApp Widget ([`components/WhatsAppButton.tsx`](file:///d:/Aravind-Works/Portfolio/components/WhatsAppButton.tsx))
-* **Position:** Fixed floating button on bottom-right (`z-50`)
-* **Features:** Official WhatsApp icon, live green theme (`#25D366`), pulsing online status indicator dot, label on desktop (`Chat on WhatsApp`), pre-filled conversation link to `+91 8848310248`.
+### 13. Technology Stack ([`components/TechStack.tsx`](file:///d:/Aravind-Works/Portfolio/components/TechStack.tsx))
+* **Header:** `TECHNOLOGY STACK`
+* **Pills:** `React`, `Next.js`, `TypeScript`, `Node.js`, `Express`, `MongoDB`, `MySQL`, `React Native`
 
 ---
 
-## 3. Data & Asset Organization
+### 14. FAQ Section ([`components/FAQ.tsx`](file:///d:/Aravind-Works/Portfolio/components/FAQ.tsx))
+* **Header:** `FREQUENTLY ASKED QUESTIONS`
+* **Accordion:** Addresses project types, building from scratch, updating existing sites, ongoing support, and how to get started.
 
-| Directory / File | Purpose | Key Content |
-| :--- | :--- | :--- |
-| [`data/projects.ts`](file:///d:/Aravind-Works/Portfolio/data/projects.ts) | Projects data source | Stores `FEATURED_PROJECT`, `GRID_PROJECTS`, and `SELECTED_REFERENCES` arrays |
-| [`data/services.ts`](file:///d:/Aravind-Works/Portfolio/data/services.ts) | Services & Skills data | Stores `SERVICES` array (6 items) and `TECH_PILLS` array (8 technologies) |
-| [`app/layout.tsx`](file:///d:/Aravind-Works/Portfolio/app/layout.tsx) | App metadata & SEO | Configures OpenGraph tags, local keywords (Kollam, Pathanamthitta, Kerala), and Schema.org `ProfessionalService` JSON-LD |
-| [`app/globals.css`](file:///d:/Aravind-Works/Portfolio/app/globals.css) | Global styling system | Custom CSS variables, background styling `#090a0a`, accent styling `#c7ff4a`, typography rules |
+---
+
+### 15. Footer ([`components/Footer.tsx`](file:///d:/Aravind-Works/Portfolio/components/Footer.tsx))
+* Brand title `ARAVIND A S · FREELANCE SOFTWARE ENGINEER`, direct contact links, and copyright text `© 2026 Aravind A S`.
+
+---
+
+### 16. Floating WhatsApp & Mobile Sticky CTA ([`WhatsAppButton.tsx`](file:///d:/Aravind-Works/Portfolio/components/WhatsAppButton.tsx) & [`StickyMobileCTA.tsx`](file:///d:/Aravind-Works/Portfolio/components/StickyMobileCTA.tsx))
+* Floating bottom-right WhatsApp button (`+91 8848310248`) with pulsing online status.
+* Fixed mobile bottom bar offering quick access to `Start a Project` and `WhatsApp`.

@@ -9,8 +9,9 @@ export default function About() {
     "E-commerce",
     "Web Applications",
     "Mobile Applications",
-    "APIs & Backend",
+    "Billing Software Development",
     "CRM / Business Systems",
+    "APIs & Backend",
     "Ongoing Development"
   ];
 

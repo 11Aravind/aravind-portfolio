@@ -33,10 +33,8 @@ export default function LeadQualification({ onSelectProjectType }: LeadQualifica
     if (onSelectProjectType) {
       onSelectProjectType(label);
     }
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
+    const msg = encodeURIComponent(`Hi Aravind, I am interested in building a ${label} project with you.`);
+    window.open(`https://wa.me/918848310248?text=${msg}`, "_blank");
   };
 
   return (
