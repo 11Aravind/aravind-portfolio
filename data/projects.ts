@@ -25,7 +25,7 @@ export const FEATURED_PROJECT: Project = {
   tag: "Featured project · E-commerce",
   locationContext: "NOORZAH · KOLLAM",
   url: "https://noorzah.com/",
-  description: "A production e-commerce platform for a fashion business based in Ayathil, Kollam, Kerala. Designed around a clean shopping experience and responsive customer journey.",
+  description: "A production e-commerce platform for a fashion business based in Sasthamcotta, Kollam, Kerala. Designed around a clean shopping experience and responsive customer journey.",
   visualTitle: "Curated fashion.\nMade to shop.",
   visualSub: "E-COMMERCE PLATFORM"
 };

@@ -29,7 +29,7 @@ export default function About() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
           <p className="text-[#9da39d] text-[18px] leading-relaxed mb-4">
-            I'm <strong>Aravind A S</strong>, a trusted freelance software engineer and web development partner based in Ayathil, Kollam, Kerala. Serving clients across Kollam, Pathanamthitta, Trivandrum, and worldwide.
+            I'm <strong>Aravind A S</strong>, a trusted freelance software engineer and web development partner based in Sasthamcotta, Kollam, Kerala. Serving clients across Kollam, Pathanamthitta, Trivandrum, and worldwide.
           </p>
           <p className="text-[#9da39d] text-[18px] leading-relaxed mb-8">
             My engineering expertise covers high-performance custom websites, e-commerce platforms (Noorzah, Wishlist), full-stack web applications, REST API backend integrations, and cross-platform React Native mobile applications.
