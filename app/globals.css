@@ -28,7 +28,6 @@ body {
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
-  height: 6px;
 }
 ::-webkit-scrollbar-track {
   background: var(--bg);
@@ -41,15 +40,6 @@ body {
   background: #3c4339;
 }
 
-/* Utility to hide horizontal scrollbar for touch carousels */
-.scrollbar-none::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-none {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
 .wrap {
   max-width: 1180px;
   margin: auto;
@@ -58,7 +48,7 @@ body {
 
 @media (max-width: 800px) {
   .wrap {
-    padding: 0 16px;
+    padding: 0 18px;
   }
 }
 
