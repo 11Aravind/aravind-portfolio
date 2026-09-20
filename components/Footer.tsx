@@ -15,10 +15,6 @@ export default function Footer() {
           <a href="https://wa.me/918848310248" target="_blank" rel="noopener noreferrer" className="hover:text-[#c7ff4a] transition-colors">
             +91 8848310248
           </a>
-          <span>•</span>
-          <a href="tel:918129365304" className="hover:text-[#c7ff4a] transition-colors">
-            +91 8129365304
-          </a>
         </div>
       </div>
 

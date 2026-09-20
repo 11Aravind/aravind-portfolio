@@ -64,7 +64,7 @@ export default function ContactForm() {
             </a>
 
             <a
-              href="tel:918129365304"
+              href="tel:918848310248"
               className="p-4 rounded-2xl bg-[#090a0a] border border-[#252925] hover:border-[#3c4339] transition-all flex items-center gap-3.5 group"
             >
               <div className="w-10 h-10 rounded-xl bg-[#101211] border border-[#252925] flex items-center justify-center text-[#c7ff4a] shrink-0 group-hover:scale-105 transition-transform">
@@ -73,7 +73,7 @@ export default function ContactForm() {
               <div className="min-w-0 flex-1">
                 <span className="text-[10px] font-mono text-[#9da39d] block uppercase">Direct Call</span>
                 <span className="text-xs font-bold text-[#f4f5f2] group-hover:text-[#c7ff4a] transition-colors block">
-                  +91 8129365304
+                  +91 8848310248
                 </span>
               </div>
             </a>

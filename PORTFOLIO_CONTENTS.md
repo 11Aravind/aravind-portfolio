@@ -128,8 +128,7 @@ The main portfolio page ([`app/page.tsx`](file:///d:/Aravind-Works/Portfolio/app
 * **Header:** `HAVE SOMETHING TO BUILD?`
 * **Direct Contact Cards:**
   * **Email:** `aravindas247@gmail.com`
-  * **WhatsApp:** `+91 8848310248`
-  * **Direct Call:** `+91 8129365304`
+  * **WhatsApp / Phone:** `+91 8848310248`
 * **Action CTAs:** `WhatsApp →` & `Email →` buttons.
 
 ---
