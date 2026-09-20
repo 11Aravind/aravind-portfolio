@@ -21,7 +21,7 @@ export default function WhatsAppButton() {
       transition={{ delay: 1, type: "spring", stiffness: 260, damping: 20 }}
       whileHover={{ scale: 1.08 }}
       whileTap={{ scale: 0.92 }}
-      className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white p-3.5 sm:px-4 sm:py-3 rounded-full shadow-[0_8px_30px_rgb(37,211,102,0.4)] border border-[#25D366]/50 backdrop-blur-sm transition-all group cursor-pointer"
+      className="hidden md:flex fixed bottom-6 right-6 z-50 items-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white px-4 py-3 rounded-full shadow-[0_8px_30px_rgb(37,211,102,0.4)] border border-[#25D366]/50 backdrop-blur-sm transition-all group cursor-pointer"
     >
       {/* Official WhatsApp Vector Icon */}
       <svg
