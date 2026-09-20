@@ -7,7 +7,7 @@ export default function ContactForm() {
   return (
     <section id="contact" className="py-16 sm:py-24 border-t border-[#252925]">
       <div className="wrap">
-        
+
         {/* Large Final CTA Banner */}
         <motion.div
           initial={{ opacity: 0, y: 35 }}
@@ -20,7 +20,7 @@ export default function ContactForm() {
             <span className="w-2 h-2 rounded-full bg-[#c7ff4a] animate-pulse shrink-0" />
             <span>Direct Lead Channel</span>
           </div>
-          
+
           <h2 className="text-3xl sm:text-5xl md:text-6xl tracking-[-0.05em] leading-tight font-extrabold text-[#f4f5f2] uppercase mb-4">
             HAVE SOMETHING TO BUILD?
           </h2>
@@ -46,7 +46,7 @@ export default function ContactForm() {
               </div>
             </a>
 
-            <a
+            {/* <a
               href="https://wa.me/918848310248?text=Hi%20Aravind,%20I'd%20like%20to%20discuss%20a%20project."
               target="_blank"
               rel="noopener noreferrer"
@@ -61,7 +61,7 @@ export default function ContactForm() {
                   +91 8848310248
                 </span>
               </div>
-            </a>
+            </a> */}
 
             <a
               href="tel:918848310248"

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Code2, ShieldCheck, Sparkles, Layers, Building2, LifeBuoy } from "lucide-react";
+import { ArrowRight, ShieldCheck, Sparkles, Layers, Building2, LifeBuoy } from "lucide-react";
 
 export default function Hero() {
   const containerVariants = {
@@ -16,12 +16,12 @@ export default function Hero() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 25 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.7,
+        duration: 0.6,
         ease: [0.16, 1, 0.3, 1],
       },
     },
@@ -30,63 +30,63 @@ export default function Hero() {
   const capabilityCards = [
     {
       title: "Build From Scratch",
-      subtitle: "Idea → Planning → Design → Development → Launch",
-      icon: <Sparkles className="w-5 h-5 text-[#c7ff4a]" />
+      subtitle: "Idea → Launch",
+      icon: <Sparkles className="w-4 h-4 text-[#c7ff4a]" />
     },
     {
       title: "Web & Mobile",
-      subtitle: "Websites, web apps and mobile applications",
-      icon: <Layers className="w-5 h-5 text-[#c7ff4a]" />
+      subtitle: "Websites & React Native",
+      icon: <Layers className="w-4 h-4 text-[#c7ff4a]" />
     },
     {
-      title: "CRM & Business Systems",
-      subtitle: "CRM, dashboards, admin panels and custom tools",
-      icon: <Building2 className="w-5 h-5 text-[#c7ff4a]" />
+      title: "CRM & Systems",
+      subtitle: "Dashboards & Tools",
+      icon: <Building2 className="w-4 h-4 text-[#c7ff4a]" />
     },
     {
       title: "Ongoing Support",
-      subtitle: "Improvements, new features, maintenance & dev",
-      icon: <LifeBuoy className="w-5 h-5 text-[#c7ff4a]" />
+      subtitle: "Updates & Features",
+      icon: <LifeBuoy className="w-4 h-4 text-[#c7ff4a]" />
     }
   ];
 
   return (
-    <section className="hero wrap min-h-[85vh] sm:min-h-[90vh] flex flex-col justify-center relative overflow-hidden pt-16 pb-12 sm:pt-28 sm:pb-16">
+    <section className="hero wrap min-h-[80vh] sm:min-h-[85vh] flex flex-col justify-center relative overflow-hidden pt-10 pb-10 sm:pt-20 sm:pb-14">
       
       {/* Cinematic Ambient Glow Background */}
       <motion.div
         animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.15, 0.25, 0.15],
-          rotate: [0, 90, 0],
+          scale: [1, 1.15, 1],
+          opacity: [0.15, 0.22, 0.15],
+          rotate: [0, 60, 0],
         }}
         transition={{
           duration: 12,
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute w-[300px] sm:w-[580px] h-[300px] sm:h-[580px] -right-[80px] sm:-right-[160px] top-[20px] bg-[radial-gradient(circle,rgba(199,255,74,0.18),transparent_68%)] blur-[20px] sm:blur-[25px] pointer-events-none"
+        className="absolute w-[280px] sm:w-[520px] h-[280px] sm:h-[520px] -right-[60px] sm:-right-[120px] top-[10px] bg-[radial-gradient(circle,rgba(199,255,74,0.16),transparent_65%)] blur-[20px] sm:blur-[25px] pointer-events-none"
       />
 
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 max-w-[1040px]"
+        className="relative z-10 max-w-[960px]"
       >
         
-        {/* Eyebrow */}
-        <motion.div variants={itemVariants} className="inline-block mb-4 sm:mb-5">
-          <div className="text-[#c7ff4a] text-xs sm:text-[13px] font-mono font-bold tracking-[0.14em] uppercase flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-[#c7ff4a] shrink-0" />
-            <span>FREELANCE SOFTWARE ENGINEER · KERALA · WORLDWIDE</span>
+        {/* Eyebrow Badge */}
+        <motion.div variants={itemVariants} className="inline-block mb-3 sm:mb-4">
+          <div className="inline-flex items-center gap-2 bg-[#141714] border border-[#252925] px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-mono font-bold text-[#c7ff4a] tracking-wider uppercase shadow-sm">
+            <ShieldCheck className="w-3.5 h-3.5 text-[#c7ff4a] shrink-0" />
+            <span className="truncate">FREELANCE SOFTWARE ENGINEER · KERALA · WORLDWIDE</span>
           </div>
         </motion.div>
 
         {/* Core Positioning Headline */}
         <motion.h1
           variants={itemVariants}
-          className="text-3xl xs:text-4xl sm:text-[clamp(44px,6.8vw,88px)] leading-[1.1] sm:leading-[0.98] tracking-[-0.04em] sm:tracking-[-0.05em] font-extrabold text-[#f4f5f2] uppercase mb-6 sm:mb-8"
+          className="text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-[72px] leading-[1.08] sm:leading-[1.0] tracking-[-0.04em] sm:tracking-[-0.05em] font-extrabold text-[#f4f5f2] uppercase mb-4 sm:mb-6"
         >
           I BUILD DIGITAL PRODUCTS FROM IDEA TO LAUNCH.
         </motion.h1>
@@ -94,49 +94,49 @@ export default function Hero() {
         {/* Supporting Message */}
         <motion.p
           variants={itemVariants}
-          className="max-w-[720px] text-[#9da39d] text-base sm:text-xl leading-relaxed mb-8 sm:mb-10 font-medium"
+          className="max-w-[640px] text-[#9da39d] text-sm sm:text-lg leading-relaxed mb-6 sm:mb-8 font-medium"
         >
           Websites, e-commerce, mobile apps, CRM, business systems and custom software — with development and ongoing support.
         </motion.p>
 
-        {/* Primary Action Buttons */}
-        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12 sm:mb-14">
+        {/* Refined Action Buttons */}
+        <motion.div variants={itemVariants} className="flex flex-row flex-wrap items-center gap-3 sm:gap-4 mb-10 sm:mb-12">
           <motion.a
-            whileHover={{ scale: 1.03, y: -2 }}
-            whileTap={{ scale: 0.98 }}
+            whileHover={{ scale: 1.02, y: -1 }}
+            whileTap={{ scale: 0.97 }}
             href="#contact"
-            className="w-full sm:w-auto text-center px-8 py-4 rounded-full bg-[#c7ff4a] text-[#111111] font-extrabold text-sm uppercase tracking-wider shadow-lg shadow-[#c7ff4a]/15 hover:shadow-[#c7ff4a]/25 transition-all inline-flex items-center justify-center gap-2 group"
+            className="px-5 py-2.5 sm:px-6 sm:py-3.5 rounded-full bg-[#c7ff4a] text-[#111111] font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-md shadow-[#c7ff4a]/15 hover:shadow-[#c7ff4a]/25 transition-all inline-flex items-center justify-center gap-2 group"
           >
             <span>Start a Project</span>
-            <ArrowRight className="w-4 h-4 text-black group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-black group-hover:translate-x-1 transition-transform" />
           </motion.a>
 
           <motion.a
-            whileHover={{ scale: 1.03, y: -2 }}
-            whileTap={{ scale: 0.98 }}
+            whileHover={{ scale: 1.02, y: -1 }}
+            whileTap={{ scale: 0.97 }}
             href="#work"
-            className="w-full sm:w-auto text-center px-8 py-4 rounded-full border border-[#343933] text-[#f4f5f2] font-extrabold text-sm uppercase tracking-wider hover:border-[#555c54] hover:bg-white/[0.04] transition-all inline-flex items-center justify-center gap-2 group"
+            className="px-5 py-2.5 sm:px-6 sm:py-3.5 rounded-full border border-[#343933] text-[#f4f5f2] bg-white/[0.02] font-extrabold text-xs sm:text-sm uppercase tracking-wider hover:border-[#555c54] hover:bg-white/[0.06] transition-all inline-flex items-center justify-center gap-2 group"
           >
             <span>View My Work</span>
             <span className="group-hover:translate-x-0.5 transition-transform">↗</span>
           </motion.a>
         </motion.div>
 
-        {/* Compact Visual Capability Cards */}
-        <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8">
+        {/* Compact 2x2 or 4x1 Visual Capability Cards */}
+        <motion.div variants={itemVariants} className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 mb-6">
           {capabilityCards.map((card) => (
             <div
               key={card.title}
-              className="p-4 sm:p-5 rounded-2xl bg-[#101211]/90 border border-[#252925] hover:border-[#3c4339] backdrop-blur-md transition-all flex flex-col justify-between"
+              className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-[#101211]/90 border border-[#252925] hover:border-[#3c4339] backdrop-blur-md transition-all flex flex-col justify-between"
             >
-              <div className="w-9 h-9 rounded-xl bg-[#171a17] border border-[#252925] flex items-center justify-center mb-3">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-[#171a17] border border-[#252925] flex items-center justify-center mb-2 sm:mb-2.5">
                 {card.icon}
               </div>
               <div>
-                <h3 className="text-sm font-bold text-[#f4f5f2] mb-1">
+                <h3 className="text-xs sm:text-sm font-bold text-[#f4f5f2] mb-0.5 truncate">
                   {card.title}
                 </h3>
-                <p className="text-xs text-[#9da39d] leading-relaxed">
+                <p className="text-[11px] sm:text-xs text-[#9da39d] leading-tight truncate">
                   {card.subtitle}
                 </p>
               </div>
@@ -147,22 +147,20 @@ export default function Hero() {
         {/* Compact Trust / Proof Strip */}
         <motion.div
           variants={itemVariants}
-          className="border-t border-[#252925] pt-5 flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-[#9da39d]"
+          className="border-t border-[#252925] pt-4 flex flex-wrap items-center justify-between gap-2.5 text-[11px] sm:text-xs font-mono text-[#9da39d]"
         >
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#c7ff4a] animate-pulse" />
             <span className="text-[#f4f5f2] font-semibold uppercase">Verified Work:</span>
           </div>
-          <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-[#9da39d]">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-[#9da39d]">
             <span>Production Projects</span>
             <span>•</span>
             <span>E-commerce</span>
             <span>•</span>
             <span>Web Apps</span>
             <span>•</span>
-            <span>Mobile Development</span>
-            <span>•</span>
-            <span>Ongoing Support</span>
+            <span>Mobile Apps</span>
           </div>
         </motion.div>
 
