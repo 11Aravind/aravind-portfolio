@@ -1,56 +1,58 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TECH_PILLS } from "@/data/services";
+import { CheckCircle2, User } from "lucide-react";
 
 export default function About() {
+  const capabilities = [
+    "Websites",
+    "E-commerce",
+    "Web Applications",
+    "Mobile Applications",
+    "APIs & Backend",
+    "CRM / Business Systems",
+    "Ongoing Development"
+  ];
+
   return (
-    <section id="about" className="py-[105px]">
-      <div className="wrap grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-[70px]">
-
-        {/* Left Headline */}
+    <section id="about" className="py-16 sm:py-24 border-t border-[#252925]">
+      <div className="wrap max-w-4xl mx-auto">
+        
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7 }}
+          className="border border-[#252925] rounded-3xl p-6 sm:p-10 md:p-12 bg-[#101211] shadow-2xl"
         >
-          <div className="eyebrow-accent mb-2">About Aravind A S</div>
-          <h2 className="text-4xl sm:text-[46px] tracking-[-0.05em] font-extrabold text-[#f4f5f2] leading-tight">
-            Trustable freelance developer engineering with a product mindset.
-          </h2>
-        </motion.div>
-
-        {/* Right Content */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <p className="text-[#9da39d] text-[18px] leading-relaxed mb-4">
-            I'm <strong>Aravind A S</strong>, a trusted freelance software engineer and web development partner based in Sasthamcotta, Kollam, Kerala. Serving clients across Kollam, Pathanamthitta, Trivandrum, and worldwide.
-          </p>
-          <p className="text-[#9da39d] text-[18px] leading-relaxed mb-8">
-            My engineering expertise covers high-performance custom websites, e-commerce platforms (Noorzah, Wishlist), full-stack web applications, REST API backend integrations, and cross-platform React Native mobile applications.
-          </p>
-
-          {/* Tech Pills */}
-          <div className="flex flex-wrap gap-[10px]">
-            {TECH_PILLS.map((pill, idx) => (
-              <motion.span
-                key={pill}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.05 }}
-                whileHover={{ scale: 1.06, borderColor: "#3c4339", color: "#c7ff4a" }}
-                className="border border-[#252925] bg-[#101211] px-[14px] py-[10px] rounded-full text-[#c7ccc5] text-sm font-medium transition-colors cursor-default"
-              >
-                {pill}
-              </motion.span>
-            ))}
+          <div className="eyebrow-accent mb-3 flex items-center gap-2">
+            <User className="w-4 h-4 text-[#c7ff4a]" />
+            <span>Behind The Code</span>
           </div>
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#f4f5f2] uppercase tracking-tight mb-6">
+            ABOUT ARAVIND
+          </h2>
+
+          <p className="text-[#9da39d] text-lg sm:text-xl leading-relaxed mb-8 font-medium">
+            Freelance software engineer based in Kerala, working with businesses and entrepreneurs to build modern digital products.
+          </p>
+
+          <div className="border-t border-[#252925] pt-6">
+            <h3 className="text-xs font-mono font-bold text-[#c7ff4a] uppercase tracking-wider mb-4">
+              Core Technical Capabilities
+            </h3>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {capabilities.map((cap) => (
+                <div key={cap} className="flex items-center gap-2.5 text-sm font-semibold text-[#f4f5f2]">
+                  <CheckCircle2 className="w-4 h-4 text-[#c7ff4a] shrink-0" />
+                  <span>{cap}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </motion.div>
 
       </div>

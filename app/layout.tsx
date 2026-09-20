@@ -2,24 +2,21 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Aravind A S — Trustable Freelance Web & Mobile App Developer in Kerala, Kollam, Pathanamthitta",
-  description: "Aravind A S is a top-rated freelance software engineer & web development partner in Kerala (Kollam, Pathanamthitta). Specializing in custom websites, e-commerce platforms, React Native mobile apps, and website revamps.",
+  title: "Aravind A S — Freelance Software Engineer & Digital Product Developer | Kerala & Worldwide",
+  description: "Aravind A S is a top-rated freelance software engineer & web developer in Kerala (Kollam, Pathanamthitta). I build custom websites, e-commerce stores, React Native mobile apps, CRM & business systems from idea to launch.",
   keywords: [
+    "Freelance software developer Kerala",
+    "Web developer Kerala",
+    "Software developer Kollam",
+    "Web developer Kollam",
+    "Mobile app developer Kerala",
+    "E-commerce developer Kerala",
+    "Freelance developer India",
+    "Custom software development",
+    "Web application development",
+    "CRM development",
     "Freelancer in Kerala",
-    "Freelance Web Developer Kollam",
-    "Web Developer Pathanamthitta",
-    "Trustable Freelancer Kerala",
-    "Best Website Developer Kerala",
-    "Web Development Company Kollam",
-    "Mobile App Developer Kerala",
-    "Custom Website Design Kollam",
-    "E-commerce Developer Kerala",
-    "React Native App Developer Kerala",
-    "Website Revamp Services Kollam",
-    "Noorzah E-commerce Developer",
-    "Full-Stack Software Engineer Kerala",
-    "Website Design Pathanamthitta",
-    "Reliable Freelance Programmer Kerala"
+    "React Native App Developer Kerala"
   ],
   icons: {
     icon: [
@@ -42,8 +39,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Aravind A S — Trustable Freelance Developer in Kerala (Kollam & Pathanamthitta)",
-    description: "Building production-ready custom websites, e-commerce stores, and mobile apps. Trusted freelance engineering partner for Kerala businesses.",
+    title: "Aravind A S — Freelance Software Engineer & Digital Product Developer",
+    description: "I build digital products from idea to launch. Websites, e-commerce, mobile apps, CRM, business systems and ongoing development support.",
     url: "https://aravind.dev",
     siteName: "Aravind A S Portfolio",
     locale: "en_IN",
@@ -82,7 +79,7 @@ export default function RootLayout({
     "url": "https://aravind.dev",
     "logo": "https://aravind.dev/favicon.png",
     "image": "https://aravind.dev/favicon.png",
-    "description": "Top-rated freelance software engineer and web app developer in Kerala, Kollam, and Pathanamthitta specializing in e-commerce, web applications, and mobile apps.",
+    "description": "Top-rated freelance software engineer and digital product partner in Kerala specializing in websites, e-commerce, web applications, CRM, and mobile apps.",
     "telephone": "+918848310248",
     "email": "aravindas247@gmail.com",
     "address": {
@@ -109,7 +106,8 @@ export default function RootLayout({
       "Next.js",
       "TypeScript",
       "React Native",
-      "Node.js"
+      "Node.js",
+      "CRM Development"
     ],
     "sameAs": [
       "https://github.com",

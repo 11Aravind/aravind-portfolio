@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Sparkles, ArrowDown, ShieldCheck } from "lucide-react";
+import { ArrowRight, Code2, ShieldCheck, Sparkles, Layers, Building2, LifeBuoy } from "lucide-react";
 
 export default function Hero() {
   const containerVariants = {
@@ -27,15 +27,31 @@ export default function Hero() {
     },
   };
 
-  const featuredWorkTeasers = [
-    { name: "Noorzah", type: "E-Commerce Store", url: "https://noorzah.com/", badge: "Featured Hero" },
-    { name: "Wishlist by Praveena", type: "Fashion Store", url: "https://wishlistbypraveena.vercel.app/" },
-    { name: "NC Brand Fashion", type: "Storefront", url: "https://www.ncbrandfashion.com" },
-    { name: "Aoba", type: "Web App", url: "https://11aravind.github.io/Aoba/" },
+  const capabilityCards = [
+    {
+      title: "Build From Scratch",
+      subtitle: "Idea → Planning → Design → Development → Launch",
+      icon: <Sparkles className="w-5 h-5 text-[#c7ff4a]" />
+    },
+    {
+      title: "Web & Mobile",
+      subtitle: "Websites, web apps and mobile applications",
+      icon: <Layers className="w-5 h-5 text-[#c7ff4a]" />
+    },
+    {
+      title: "CRM & Business Systems",
+      subtitle: "CRM, dashboards, admin panels and custom tools",
+      icon: <Building2 className="w-5 h-5 text-[#c7ff4a]" />
+    },
+    {
+      title: "Ongoing Support",
+      subtitle: "Improvements, new features, maintenance & dev",
+      icon: <LifeBuoy className="w-5 h-5 text-[#c7ff4a]" />
+    }
   ];
 
   return (
-    <section className="hero wrap min-h-[85vh] sm:min-h-[90vh] flex flex-col justify-center relative overflow-hidden pt-24 pb-12 sm:pt-36 sm:pb-20">
+    <section className="hero wrap min-h-[85vh] sm:min-h-[90vh] flex flex-col justify-center relative overflow-hidden pt-16 pb-12 sm:pt-28 sm:pb-16">
       
       {/* Cinematic Ambient Glow Background */}
       <motion.div
@@ -56,101 +72,97 @@ export default function Hero() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 max-w-[1020px]"
+        className="relative z-10 max-w-[1040px]"
       >
         
-        {/* Eyebrow with SEO Keywords */}
+        {/* Eyebrow */}
         <motion.div variants={itemVariants} className="inline-block mb-4 sm:mb-5">
-          <div className="text-[#c7ff4a] text-[11px] sm:text-[13px] font-bold tracking-[0.08em] sm:tracking-[0.14em] uppercase flex flex-col sm:flex-row sm:items-center gap-2.5 sm:gap-3">
-            <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-[#c7ff4a] shrink-0" />
-              <span className="leading-snug">Trustable Freelance Developer · Kerala (Kollam & Pathanamthitta)</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="hidden sm:inline text-[#737970]">•</span>
-              <span className="text-[#f4f5f2] bg-[#101211] border border-[#252925] px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-mono w-fit">
-                Live Production Work Below ↓
-              </span>
-            </div>
+          <div className="text-[#c7ff4a] text-xs sm:text-[13px] font-mono font-bold tracking-[0.14em] uppercase flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-[#c7ff4a] shrink-0" />
+            <span>FREELANCE SOFTWARE ENGINEER · KERALA · WORLDWIDE</span>
           </div>
         </motion.div>
 
-        {/* Main Headline */}
+        {/* Core Positioning Headline */}
         <motion.h1
           variants={itemVariants}
-          className="text-[32px] xs:text-[38px] sm:text-[clamp(44px,7.5vw,96px)] leading-[1.18] sm:leading-[0.96] tracking-[-0.04em] sm:tracking-[-0.06em] font-extrabold text-[#f4f5f2] mb-6 sm:mb-8"
+          className="text-3xl xs:text-4xl sm:text-[clamp(44px,6.8vw,88px)] leading-[1.1] sm:leading-[0.98] tracking-[-0.04em] sm:tracking-[-0.05em] font-extrabold text-[#f4f5f2] uppercase mb-6 sm:mb-8"
         >
-          Top-rated web development & mobile app developer in Kerala.
+          I BUILD DIGITAL PRODUCTS FROM IDEA TO LAUNCH.
         </motion.h1>
 
-        {/* Sub-headline */}
+        {/* Supporting Message */}
         <motion.p
           variants={itemVariants}
-          className="max-w-[680px] text-[#9da39d] text-[15px] sm:text-[20px] leading-[1.65] sm:leading-relaxed mb-8 sm:mb-10"
+          className="max-w-[720px] text-[#9da39d] text-base sm:text-xl leading-relaxed mb-8 sm:mb-10 font-medium"
         >
-          Helping businesses in Kollam, Pathanamthitta, and across Kerala build high-converting custom websites, e-commerce platforms, and cross-platform mobile apps.
+          Websites, e-commerce, mobile apps, CRM, business systems and custom software — with development and ongoing support.
         </motion.p>
 
-        {/* Action Buttons */}
-        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-4 mb-12 sm:mb-16">
-          <motion.a
-            whileHover={{ scale: 1.03, y: -2 }}
-            whileTap={{ scale: 0.98 }}
-            href="#work"
-            className="w-full sm:w-auto text-center px-[24px] py-[15px] rounded-full bg-[#c7ff4a] text-[#111111] border border-[#c7ff4a] font-[650] text-sm shadow-lg shadow-[#c7ff4a]/10 hover:shadow-[#c7ff4a]/20 transition-all inline-flex items-center justify-center gap-2 group"
-          >
-            <Sparkles className="w-4 h-4 text-black" />
-            <span>Explore Live Work</span>
-            <ArrowDown className="w-4 h-4 text-black group-hover:translate-y-0.5 transition-transform" />
-          </motion.a>
-
+        {/* Primary Action Buttons */}
+        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12 sm:mb-14">
           <motion.a
             whileHover={{ scale: 1.03, y: -2 }}
             whileTap={{ scale: 0.98 }}
             href="#contact"
-            className="w-full sm:w-auto text-center px-[24px] py-[15px] rounded-full border border-[#343933] text-[#f4f5f2] font-[650] text-sm hover:border-[#555c54] hover:bg-white/[0.04] transition-all inline-flex items-center justify-center gap-2 group"
+            className="w-full sm:w-auto text-center px-8 py-4 rounded-full bg-[#c7ff4a] text-[#111111] font-extrabold text-sm uppercase tracking-wider shadow-lg shadow-[#c7ff4a]/15 hover:shadow-[#c7ff4a]/25 transition-all inline-flex items-center justify-center gap-2 group"
           >
-            <span>Start a project / Hire</span>
+            <span>Start a Project</span>
+            <ArrowRight className="w-4 h-4 text-black group-hover:translate-x-1 transition-transform" />
+          </motion.a>
+
+          <motion.a
+            whileHover={{ scale: 1.03, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            href="#work"
+            className="w-full sm:w-auto text-center px-8 py-4 rounded-full border border-[#343933] text-[#f4f5f2] font-extrabold text-sm uppercase tracking-wider hover:border-[#555c54] hover:bg-white/[0.04] transition-all inline-flex items-center justify-center gap-2 group"
+          >
+            <span>View My Work</span>
             <span className="group-hover:translate-x-0.5 transition-transform">↗</span>
           </motion.a>
         </motion.div>
 
-        {/* WORK FIRST SPOTLIGHT BAR - Fully Mobile Responsive Grid */}
+        {/* Compact Visual Capability Cards */}
+        <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8">
+          {capabilityCards.map((card) => (
+            <div
+              key={card.title}
+              className="p-4 sm:p-5 rounded-2xl bg-[#101211]/90 border border-[#252925] hover:border-[#3c4339] backdrop-blur-md transition-all flex flex-col justify-between"
+            >
+              <div className="w-9 h-9 rounded-xl bg-[#171a17] border border-[#252925] flex items-center justify-center mb-3">
+                {card.icon}
+              </div>
+              <div>
+                <h3 className="text-sm font-bold text-[#f4f5f2] mb-1">
+                  {card.title}
+                </h3>
+                <p className="text-xs text-[#9da39d] leading-relaxed">
+                  {card.subtitle}
+                </p>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Compact Trust / Proof Strip */}
         <motion.div
           variants={itemVariants}
-          className="border border-[#252925] bg-[#101211]/90 rounded-[20px] p-4 sm:p-6 backdrop-blur-md shadow-2xl"
+          className="border-t border-[#252925] pt-5 flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-[#9da39d]"
         >
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-3 mb-4 pb-3.5 border-b border-[#252925]">
-            <div className="flex items-center gap-2 text-[11px] sm:text-xs font-mono text-[#c7ff4a] font-bold uppercase tracking-wider">
-              <span className="w-2 h-2 rounded-full bg-[#c7ff4a] animate-ping shrink-0" />
-              <span>Selected Work Spotlight (Kerala Client Projects)</span>
-            </div>
-            <span className="text-[11px] sm:text-[12px] text-[#9da39d] font-mono">
-              Live Production Sites
-            </span>
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[#c7ff4a] animate-pulse" />
+            <span className="text-[#f4f5f2] font-semibold uppercase">Verified Work:</span>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-3">
-            {featuredWorkTeasers.map((item) => (
-              <a
-                key={item.name}
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={`${item.name} - ${item.type} project by Aravind A S`}
-                className="group p-3 sm:p-3.5 rounded-xl bg-[#090a0a] border border-[#252925] hover:border-[#3c4339] hover:bg-[#151715] transition-all flex items-center sm:flex-col justify-between"
-              >
-                <div className="flex items-center justify-between w-full gap-1 mb-0 sm:mb-1.5">
-                  <span className="text-[10px] font-mono text-[#c7ff4a] uppercase truncate">
-                    {item.type}
-                  </span>
-                  <ExternalLink className="w-3.5 h-3.5 text-[#737970] group-hover:text-[#c7ff4a] transition-colors shrink-0" />
-                </div>
-                <div className="text-xs sm:text-sm font-bold text-[#f4f5f2] group-hover:text-[#c7ff4a] transition-colors truncate w-full">
-                  {item.name}
-                </div>
-              </a>
-            ))}
+          <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-[#9da39d]">
+            <span>Production Projects</span>
+            <span>•</span>
+            <span>E-commerce</span>
+            <span>•</span>
+            <span>Web Apps</span>
+            <span>•</span>
+            <span>Mobile Development</span>
+            <span>•</span>
+            <span>Ongoing Support</span>
           </div>
         </motion.div>
 

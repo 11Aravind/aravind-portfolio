@@ -18,6 +18,17 @@ export interface SelectedReference {
   url: string;
 }
 
+export interface CaseStudyData {
+  id: string;
+  projectName: string;
+  category: string;
+  locationContext: string;
+  liveUrl: string;
+  challenge: string;
+  whatIBuilt: string;
+  myRole: string;
+}
+
 export const FEATURED_PROJECT: Project = {
   id: "noorzah",
   name: "Noorzah",
@@ -30,13 +41,24 @@ export const FEATURED_PROJECT: Project = {
   visualSub: "E-COMMERCE PLATFORM"
 };
 
+export const NOORZAH_CASE_STUDY: CaseStudyData = {
+  id: "noorzah",
+  projectName: "Noorzah",
+  category: "E-commerce Platform",
+  locationContext: "Sasthamcotta, Kollam, Kerala",
+  liveUrl: "https://noorzah.com/",
+  challenge: "The brand required a modern, highly responsive online storefront to showcase curated fashion products and streamline digital customer inquiries and sales.",
+  whatIBuilt: "Custom full-stack e-commerce storefront with optimized mobile layout, product galleries, fast page loads, and direct customer conversion pathways.",
+  myRole: "End-to-End Freelance Software Engineer & Web Developer — UI Design, Frontend Development, Responsiveness Optimization, and Storefront Deployment."
+};
+
 export const GRID_PROJECTS: Project[] = [
   {
     id: "wishlist-by-praveena",
     name: "Wishlist by Praveena",
     category: "Fashion / Boutique E-commerce",
     url: "https://wishlistbypraveena.vercel.app/",
-    description: "Fashion-focused online shopping experience.",
+    description: "Fashion-focused online shopping experience built for seamless product browsing and modern mobile shopping.",
     locationContext: "WISHLIST BY PRAVEENA",
     visualTitle: "Fashion\ne-commerce"
   },
@@ -45,7 +67,7 @@ export const GRID_PROJECTS: Project[] = [
     name: "NC Brand Fashion",
     category: "Fashion E-commerce",
     url: "https://www.ncbrandfashion.com",
-    description: "Modern fashion e-commerce storefront.",
+    description: "Modern fashion e-commerce storefront engineered for brand identity and clean customer navigation.",
     locationContext: "NC BRAND FASHION",
     visualTitle: "Brand\nstorefront"
   },
@@ -54,7 +76,7 @@ export const GRID_PROJECTS: Project[] = [
     name: "Aoba",
     category: "Modern Web Experience",
     url: "https://11aravind.github.io/Aoba/",
-    description: "A modern web experience built with a clean, responsive interface.",
+    description: "A modern web application experience built with a clean, highly responsive interface and custom interaction flow.",
     locationContext: "AOBA",
     visualTitle: "Modern\ndigital experience"
   }

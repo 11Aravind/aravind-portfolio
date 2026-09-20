@@ -2,12 +2,12 @@
 
 export default function Footer() {
   return (
-    <footer className="wrap py-10 text-[#737970] border-t border-[#252925] text-[13px] flex flex-col md:flex-row items-center justify-between gap-4">
+    <footer className="wrap py-10 text-[#737970] border-t border-[#252925] text-xs flex flex-col md:flex-row items-center justify-between gap-4 pb-20 md:pb-10">
       <div>
         <div className="font-mono uppercase tracking-wider font-semibold text-[#f4f5f2] mb-1">
-          ARAVIND A S · SOFTWARE ENGINEER
+          ARAVIND A S · FREELANCE SOFTWARE ENGINEER
         </div>
-        <div className="flex flex-wrap items-center gap-3 text-xs text-[#9da39d]">
+        <div className="flex flex-wrap items-center gap-3 text-[#9da39d]">
           <a href="mailto:aravindas247@gmail.com" className="hover:text-[#c7ff4a] transition-colors">
             aravindas247@gmail.com
           </a>
@@ -22,8 +22,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="font-mono text-xs text-[#737970]">
-        © {new Date().getFullYear()} Aravind A S
+      <div className="font-mono text-[#737970]">
+        © {new Date().getFullYear()} Aravind A S. All rights reserved.
       </div>
     </footer>
   );
