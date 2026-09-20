@@ -7,7 +7,7 @@ export default function About() {
   return (
     <section id="about" className="py-[105px]">
       <div className="wrap grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-[70px]">
-        
+
         {/* Left Headline */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}

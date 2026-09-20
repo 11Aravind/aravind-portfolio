@@ -87,7 +87,7 @@ export default function RootLayout({
     "email": "aravindas247@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Ayathil, Kollam",
+      "addressLocality": "Sasthamcotta, Kollam",
       "addressRegion": "Kerala",
       "addressCountry": "India"
     },
