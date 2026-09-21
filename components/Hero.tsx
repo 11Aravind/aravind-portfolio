@@ -1,7 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, ShieldCheck, Sparkles, Layers, Building2, LifeBuoy } from "lucide-react";
+import { 
+  Github, 
+  Linkedin, 
+  Mail, 
+  MapPin, 
+  Download, 
+  ExternalLink, 
+  Code2, 
+  Smartphone, 
+  Server, 
+  Database, 
+  Cpu, 
+  Globe 
+} from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
   const containerVariants = {
@@ -16,7 +30,7 @@ export default function Hero() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 25 },
     visible: {
       opacity: 1,
       y: 0,
@@ -27,144 +41,230 @@ export default function Hero() {
     },
   };
 
-  const capabilityCards = [
-    {
-      title: "Build From Scratch",
-      subtitle: "Idea → Launch",
-      icon: <Sparkles className="w-4 h-4 text-emerald-600 dark:text-[#c7ff4a]" />
-    },
-    {
-      title: "Web & Mobile",
-      subtitle: "Websites & React Native",
-      icon: <Layers className="w-4 h-4 text-emerald-600 dark:text-[#c7ff4a]" />
-    },
-    {
-      title: "CRM & Systems",
-      subtitle: "Dashboards & Tools",
-      icon: <Building2 className="w-4 h-4 text-emerald-600 dark:text-[#c7ff4a]" />
-    },
-    {
-      title: "Ongoing Support",
-      subtitle: "Updates & Features",
-      icon: <LifeBuoy className="w-4 h-4 text-emerald-600 dark:text-[#c7ff4a]" />
-    }
-  ];
-
   return (
-    <section className="hero wrap min-h-[80vh] sm:min-h-[85vh] flex flex-col justify-center relative overflow-hidden pt-10 pb-10 sm:pt-20 sm:pb-14">
+    <section className="hero wrap min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center relative overflow-hidden pt-8 pb-12 sm:pt-16 sm:pb-20">
       
-      {/* Ambient Glow Background */}
+      {/* Background Organic Green Ambient Glows */}
       <motion.div
         animate={{
           scale: [1, 1.15, 1],
-          opacity: [0.25, 0.4, 0.25],
-          rotate: [0, 60, 0],
+          opacity: [0.2, 0.35, 0.2],
+          rotate: [0, 45, 0],
         }}
         transition={{
-          duration: 12,
+          duration: 14,
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute w-[280px] sm:w-[520px] h-[280px] sm:h-[520px] -right-[60px] sm:-right-[120px] top-[10px] bg-[radial-gradient(circle,rgba(16,185,129,0.15),transparent_65%)] dark:bg-[radial-gradient(circle,rgba(199,255,74,0.16),transparent_65%)] blur-[25px] pointer-events-none"
+        className="absolute w-[320px] sm:w-[600px] h-[320px] sm:h-[600px] -right-[60px] sm:-right-[100px] top-[40px] bg-[radial-gradient(circle,rgba(16,185,129,0.18),transparent_65%)] dark:bg-[radial-gradient(circle,rgba(199,255,74,0.18),transparent_65%)] blur-[35px] pointer-events-none"
       />
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="relative z-10 max-w-[960px]"
-      >
+      <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center relative z-10">
         
-        {/* Eyebrow Badge */}
-        <motion.div variants={itemVariants} className="inline-block mb-3 sm:mb-4">
-          <div className="inline-flex items-center gap-2 bg-emerald-50 dark:bg-[#141714] border border-emerald-200 dark:border-[#252925] px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-mono font-bold text-emerald-700 dark:text-[#c7ff4a] tracking-wider uppercase shadow-sm">
-            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 dark:text-[#c7ff4a] shrink-0" />
-            <span className="truncate">FREELANCE SOFTWARE ENGINEER · KERALA · WORLDWIDE</span>
-          </div>
-        </motion.div>
-
-        {/* Core Positioning Headline */}
-        <motion.h1
-          variants={itemVariants}
-          className="text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-[72px] leading-[1.08] sm:leading-[1.0] tracking-[-0.04em] sm:tracking-[-0.05em] font-extrabold text-slate-900 dark:text-[#f4f5f2] uppercase mb-4 sm:mb-6"
-        >
-          I BUILD DIGITAL PRODUCTS FROM IDEA TO LAUNCH.
-        </motion.h1>
-
-        {/* Supporting Message */}
-        <motion.p
-          variants={itemVariants}
-          className="max-w-[640px] text-slate-600 dark:text-[#9da39d] text-sm sm:text-lg leading-relaxed mb-6 sm:mb-8 font-medium"
-        >
-          Websites, e-commerce, mobile apps, CRM, business systems and custom software — with development and ongoing support.
-        </motion.p>
-
-        {/* Action Buttons */}
-        <motion.div variants={itemVariants} className="flex flex-row flex-wrap items-center gap-3 sm:gap-4 mb-10 sm:mb-12">
-          <motion.a
-            whileHover={{ scale: 1.02, y: -1 }}
-            whileTap={{ scale: 0.97 }}
-            href="#contact"
-            className="px-5 py-2.5 sm:px-6 sm:py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white dark:bg-[#c7ff4a] dark:text-[#111111] font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-md shadow-emerald-600/20 dark:shadow-[#c7ff4a]/15 hover:shadow-lg transition-all inline-flex items-center justify-center gap-2 group"
-          >
-            <span>Start a Project</span>
-            <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white dark:text-black group-hover:translate-x-1 transition-transform" />
-          </motion.a>
-
-          <motion.a
-            whileHover={{ scale: 1.02, y: -1 }}
-            whileTap={{ scale: 0.97 }}
-            href="#work"
-            className="px-5 py-2.5 sm:px-6 sm:py-3.5 rounded-full border border-slate-300 dark:border-[#343933] text-slate-800 dark:text-[#f4f5f2] bg-white dark:bg-white/[0.02] font-extrabold text-xs sm:text-sm uppercase tracking-wider hover:border-slate-400 dark:hover:border-[#555c54] hover:bg-slate-50 dark:hover:bg-white/[0.06] shadow-sm transition-all inline-flex items-center justify-center gap-2 group"
-          >
-            <span>View My Work</span>
-            <span className="group-hover:translate-x-0.5 transition-transform">↗</span>
-          </motion.a>
-        </motion.div>
-
-        {/* Visual Capability Cards */}
-        <motion.div variants={itemVariants} className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 mb-6">
-          {capabilityCards.map((card) => (
-            <div
-              key={card.title}
-              className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white dark:bg-[#101211]/90 border border-slate-200 dark:border-[#252925] hover:border-slate-300 dark:hover:border-[#3c4339] shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
-            >
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-emerald-50 dark:bg-[#171a17] border border-emerald-100 dark:border-[#252925] flex items-center justify-center mb-2 sm:mb-2.5">
-                {card.icon}
-              </div>
-              <div>
-                <h3 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-[#f4f5f2] mb-0.5 truncate">
-                  {card.title}
-                </h3>
-                <p className="text-[11px] sm:text-xs text-slate-500 dark:text-[#9da39d] leading-tight truncate">
-                  {card.subtitle}
-                </p>
-              </div>
-            </div>
-          ))}
-        </motion.div>
-
-        {/* Trust / Proof Strip */}
+        {/* Left Column: Typography, Copy & Actions */}
         <motion.div
-          variants={itemVariants}
-          className="border-t border-slate-200 dark:border-[#252925] pt-4 flex flex-wrap items-center justify-between gap-2.5 text-[11px] sm:text-xs font-mono text-slate-500 dark:text-[#9da39d]"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="lg:col-span-7 flex flex-col justify-center text-left"
         >
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 dark:bg-[#c7ff4a] animate-pulse" />
-            <span className="text-slate-800 dark:text-[#f4f5f2] font-semibold uppercase">Verified Work:</span>
-          </div>
-          <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-slate-500 dark:text-[#9da39d]">
-            <span>Production Projects</span>
-            <span>•</span>
-            <span>E-commerce</span>
-            <span>•</span>
-            <span>Web Apps</span>
-            <span>•</span>
-            <span>Mobile Apps</span>
-          </div>
+          {/* Eyebrow */}
+          <motion.div variants={itemVariants} className="mb-3">
+            <span className="text-xs sm:text-sm font-mono font-bold tracking-[0.2em] text-slate-500 dark:text-[#9da39d] uppercase block">
+              HELLO, I'M
+            </span>
+          </motion.div>
+
+          {/* Main Name & Title */}
+          <motion.h1
+            variants={itemVariants}
+            className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-extrabold tracking-[-0.04em] leading-[1.05] text-slate-900 dark:text-[#f4f5f2] mb-3"
+          >
+            Aravind A S
+          </motion.h1>
+
+          <motion.div variants={itemVariants} className="mb-5 sm:mb-6">
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-[-0.03em] leading-tight">
+              <span className="text-emerald-600 dark:text-[#c7ff4a]">React & Full-Stack</span>{" "}
+              <span className="text-slate-800 dark:text-slate-200">Developer</span>
+            </h2>
+          </motion.div>
+
+          {/* Paragraph Description */}
+          <motion.p
+            variants={itemVariants}
+            className="max-w-[580px] text-slate-600 dark:text-[#9da39d] text-base sm:text-lg leading-relaxed mb-8 font-normal"
+          >
+            I build modern and responsive web & mobile applications using <strong className="text-slate-900 dark:text-white font-semibold">React, React Native and Node.js</strong>, turning ideas into production-ready products.
+          </motion.p>
+
+          {/* Action Buttons */}
+          <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-3.5 sm:gap-4 mb-8">
+            <motion.a
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              href="#work"
+              className="px-6 py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white dark:bg-[#c7ff4a] dark:hover:bg-[#b5f532] dark:text-[#111111] font-bold text-sm tracking-wide shadow-lg shadow-slate-900/10 dark:shadow-[#c7ff4a]/20 transition-all inline-flex items-center gap-2 group"
+            >
+              <ExternalLink className="w-4 h-4 text-white dark:text-black" />
+              <span>View Portfolio</span>
+            </motion.a>
+
+            <motion.a
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              href="#contact"
+              className="px-6 py-3.5 rounded-full border border-slate-300 dark:border-[#343933] text-slate-800 dark:text-[#f4f5f2] bg-white/80 dark:bg-white/[0.03] hover:border-emerald-600 dark:hover:border-[#c7ff4a] hover:text-emerald-600 dark:hover:text-[#c7ff4a] font-bold text-sm tracking-wide shadow-sm transition-all inline-flex items-center gap-2"
+            >
+              <Download className="w-4 h-4" />
+              <span>Start a Project / Hire</span>
+            </motion.a>
+          </motion.div>
+
+          {/* Social Icons Row */}
+          <motion.div variants={itemVariants} className="flex items-center gap-4 mb-8">
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub Profile"
+              className="w-10 h-10 rounded-full border border-slate-200 dark:border-[#252925] bg-white dark:bg-[#101211] flex items-center justify-center text-slate-600 dark:text-[#b9beb8] hover:text-emerald-600 dark:hover:text-[#c7ff4a] hover:border-emerald-600 dark:hover:border-[#c7ff4a] transition-all shadow-sm"
+            >
+              <Github className="w-4 h-4" />
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
+              className="w-10 h-10 rounded-full border border-slate-200 dark:border-[#252925] bg-white dark:bg-[#101211] flex items-center justify-center text-slate-600 dark:text-[#b9beb8] hover:text-emerald-600 dark:hover:text-[#c7ff4a] hover:border-emerald-600 dark:hover:border-[#c7ff4a] transition-all shadow-sm"
+            >
+              <Linkedin className="w-4 h-4" />
+            </a>
+            <a
+              href="mailto:aravindas247@gmail.com"
+              aria-label="Send Email"
+              className="w-10 h-10 rounded-full border border-slate-200 dark:border-[#252925] bg-white dark:bg-[#101211] flex items-center justify-center text-slate-600 dark:text-[#b9beb8] hover:text-emerald-600 dark:hover:text-[#c7ff4a] hover:border-emerald-600 dark:hover:border-[#c7ff4a] transition-all shadow-sm"
+            >
+              <Mail className="w-4 h-4" />
+            </a>
+          </motion.div>
+
+          {/* Footer Meta / Location */}
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-xs font-mono text-slate-500 dark:text-[#737970] pt-4 border-t border-slate-200 dark:border-[#252925]">
+            <div className="flex items-center gap-2">
+              <MapPin className="w-3.5 h-3.5 text-emerald-600 dark:text-[#c7ff4a]" />
+              <span className="font-semibold text-slate-700 dark:text-slate-300">Sasthamcotta, Kollam, Kerala</span>
+            </div>
+            <span className="hidden sm:inline">•</span>
+            <span className="tracking-widest uppercase text-[11px]">CODE / BUILD / IMPROVE</span>
+          </motion.div>
         </motion.div>
 
-      </motion.div>
+        {/* Right Column: Person Image & Floating Tech Skill Badges */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="lg:col-span-5 relative flex items-center justify-center min-h-[420px] sm:min-h-[500px]"
+        >
+          {/* Organic Background Blob Behind Image */}
+          <div className="absolute w-[280px] xs:w-[340px] sm:w-[420px] h-[280px] xs:h-[340px] sm:h-[420px] rounded-full bg-gradient-to-tr from-emerald-500/20 via-emerald-400/10 to-transparent dark:from-[#c7ff4a]/20 dark:via-[#c7ff4a]/5 blur-2xl pointer-events-none" />
+
+          {/* Person Image Container */}
+          <div className="relative z-20 w-[260px] xs:w-[320px] sm:w-[380px] h-[360px] xs:h-[420px] sm:h-[480px] rounded-3xl overflow-hidden border-2 border-emerald-500/30 dark:border-[#c7ff4a]/30 shadow-2xl shadow-emerald-500/10 dark:shadow-[#c7ff4a]/10 bg-slate-100 dark:bg-[#101211]">
+            <Image
+              src="/aravind.jpg"
+              alt="Aravind A S - Freelance Web & Mobile Developer"
+              fill
+              priority
+              className="object-cover object-top filter contrast-[1.05]"
+            />
+            {/* Soft Overlay Gradient at bottom */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent pointer-events-none" />
+          </div>
+
+          {/* FLOATING TECH BADGES (Matching current.png layout with Green accents!) */}
+          
+          {/* 1. React Badge (Top Left) */}
+          <motion.div
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-2 left-0 sm:-left-6 z-30 p-2.5 sm:p-3 rounded-2xl bg-white/90 dark:bg-[#101211]/90 border border-slate-200 dark:border-[#252925] shadow-xl backdrop-blur-md flex items-center gap-2.5"
+          >
+            <div className="w-8 h-8 rounded-xl bg-emerald-50 dark:bg-[#171a17] border border-emerald-100 dark:border-[#252925] flex items-center justify-center text-emerald-600 dark:text-[#c7ff4a]">
+              <Globe className="w-4 h-4" />
+            </div>
+            <div>
+              <span className="text-xs font-bold text-slate-900 dark:text-white block">React</span>
+              <span className="text-[10px] font-mono text-slate-500 dark:text-[#9da39d]">Frontend</span>
+            </div>
+          </motion.div>
+
+          {/* 2. React Native Badge (Middle Left) */}
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            className="absolute top-36 -left-2 sm:-left-8 z-30 p-2.5 sm:p-3 rounded-2xl bg-white/90 dark:bg-[#101211]/90 border border-slate-200 dark:border-[#252925] shadow-xl backdrop-blur-md flex items-center gap-2.5"
+          >
+            <div className="w-8 h-8 rounded-xl bg-emerald-50 dark:bg-[#171a17] border border-emerald-100 dark:border-[#252925] flex items-center justify-center text-emerald-600 dark:text-[#c7ff4a]">
+              <Smartphone className="w-4 h-4" />
+            </div>
+            <div>
+              <span className="text-xs font-bold text-slate-900 dark:text-white block">React Native</span>
+              <span className="text-[10px] font-mono text-slate-500 dark:text-[#9da39d]">Mobile Apps</span>
+            </div>
+          </motion.div>
+
+          {/* 3. Node.js Badge (Top Right) */}
+          <motion.div
+            animate={{ y: [0, -6, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+            className="absolute top-4 -right-2 sm:-right-8 z-30 p-2.5 sm:p-3 rounded-2xl bg-white/90 dark:bg-[#101211]/90 border border-slate-200 dark:border-[#252925] shadow-xl backdrop-blur-md flex items-center gap-2.5"
+          >
+            <div className="w-8 h-8 rounded-xl bg-emerald-50 dark:bg-[#171a17] border border-emerald-100 dark:border-[#252925] flex items-center justify-center text-emerald-600 dark:text-[#c7ff4a]">
+              <Server className="w-4 h-4" />
+            </div>
+            <div>
+              <span className="text-xs font-bold text-slate-900 dark:text-white block">Node.js</span>
+              <span className="text-[10px] font-mono text-slate-500 dark:text-[#9da39d]">Backend API</span>
+            </div>
+          </motion.div>
+
+          {/* 4. MongoDB Badge (Middle Right) */}
+          <motion.div
+            animate={{ y: [0, 7, 0] }}
+            transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+            className="absolute top-40 -right-4 sm:-right-10 z-30 p-2.5 sm:p-3 rounded-2xl bg-white/90 dark:bg-[#101211]/90 border border-slate-200 dark:border-[#252925] shadow-xl backdrop-blur-md flex items-center gap-2.5"
+          >
+            <div className="w-8 h-8 rounded-xl bg-emerald-50 dark:bg-[#171a17] border border-emerald-100 dark:border-[#252925] flex items-center justify-center text-emerald-600 dark:text-[#c7ff4a]">
+              <Database className="w-4 h-4" />
+            </div>
+            <div>
+              <span className="text-xs font-bold text-slate-900 dark:text-white block">MongoDB</span>
+              <span className="text-[10px] font-mono text-slate-500 dark:text-[#9da39d]">Database</span>
+            </div>
+          </motion.div>
+
+          {/* 5. Express Badge (Bottom Right) */}
+          <motion.div
+            animate={{ y: [0, -5, 0] }}
+            transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute bottom-6 right-0 sm:-right-6 z-30 p-2.5 sm:p-3 rounded-2xl bg-white/90 dark:bg-[#101211]/90 border border-slate-200 dark:border-[#252925] shadow-xl backdrop-blur-md flex items-center gap-2.5"
+          >
+            <div className="w-8 h-8 rounded-xl bg-emerald-50 dark:bg-[#171a17] border border-emerald-100 dark:border-[#252925] flex items-center justify-center text-emerald-600 dark:text-[#c7ff4a]">
+              <Cpu className="w-4 h-4" />
+            </div>
+            <div>
+              <span className="text-xs font-bold text-slate-900 dark:text-white block">Express.js</span>
+              <span className="text-[10px] font-mono text-slate-500 dark:text-[#9da39d]">REST Server</span>
+            </div>
+          </motion.div>
+
+        </motion.div>
+
+      </div>
     </section>
   );
 }
+
