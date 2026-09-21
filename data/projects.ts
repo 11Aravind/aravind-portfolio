@@ -43,6 +43,16 @@ export const FEATURED_PROJECT: Project = {
   image: "/projects/noorzah.jpg"
 };
 
+export interface ClientReview {
+  id: string;
+  clientName: string;
+  role: string;
+  projectName: string;
+  rating: number;
+  reviewText: string;
+  location: string;
+}
+
 export const NOORZAH_CASE_STUDY: CaseStudyData = {
   id: "noorzah",
   projectName: "Noorzah",
@@ -53,6 +63,45 @@ export const NOORZAH_CASE_STUDY: CaseStudyData = {
   whatIBuilt: "Custom full-stack e-commerce storefront with optimized mobile layout, product galleries, fast page loads, and direct customer conversion pathways.",
   myRole: "End-to-End Freelance Software Engineer & Web Developer — UI Design, Frontend Development, Responsiveness Optimization, and Storefront Deployment."
 };
+
+export const CLIENT_REVIEWS: ClientReview[] = [
+  {
+    id: "noorzah-review",
+    clientName: "Noorzah Fashion Store",
+    role: "E-commerce Brand",
+    projectName: "Noorzah E-commerce Storefront",
+    rating: 5,
+    reviewText: "Aravind built our complete e-commerce website for Noorzah. The mobile shopping experience is super fast, sleek, and our customer inquiries and orders have grown significantly. He is extremely reliable, communicative, and delivers high-quality work on time.",
+    location: "Sasthamcotta, Kollam"
+  },
+  {
+    id: "praveena-review",
+    clientName: "Wishlist by Praveena",
+    role: "Boutique Owner",
+    projectName: "Wishlist Fashion Store",
+    rating: 5,
+    reviewText: "Working with Aravind on our online store was a fantastic decision. He engineered a beautiful user interface that showcases our fashion collections perfectly on mobile phones. Highly recommended freelance developer in Kollam!",
+    location: "Kollam, Kerala"
+  },
+  {
+    id: "nc-brand-review",
+    clientName: "NC Brand Fashion",
+    role: "Retail Brand",
+    projectName: "NC Brand Storefront",
+    rating: 5,
+    reviewText: "Aravind transformed our brand presence online. Fast page loading speeds, clean design aesthetics, and smooth navigation. He is our trusted long-term web development and maintenance partner.",
+    location: "Kerala"
+  },
+  {
+    id: "tech-client-review",
+    clientName: "Digital Business Client",
+    role: "Startup Founder",
+    projectName: "Custom Web Application & Mobile App",
+    rating: 5,
+    reviewText: "Aravind has exceptional full-stack development skills in React, Next.js, and API integration. He understands business requirements instantly and turns complex ideas into sleek, production-ready applications.",
+    location: "Kerala / Remote"
+  }
+];
 
 export const GRID_PROJECTS: Project[] = [
   {

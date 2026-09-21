@@ -43,6 +43,9 @@ export default function Navbar() {
           <a href="#services" className="hover:text-emerald-600 dark:hover:text-[#c7ff4a] transition-colors">
             Services
           </a>
+          <a href="#reviews" className="hover:text-emerald-600 dark:hover:text-[#c7ff4a] transition-colors">
+            Reviews
+          </a>
           <a href="#process" className="hover:text-emerald-600 dark:hover:text-[#c7ff4a] transition-colors">
             Process
           </a>

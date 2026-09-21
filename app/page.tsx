@@ -8,6 +8,7 @@ import Process from "@/components/Process";
 import OnePartner from "@/components/OnePartner";
 import Projects from "@/components/Projects";
 import CaseStudy from "@/components/CaseStudy";
+import ClientReviews from "@/components/ClientReviews";
 import TrustProof from "@/components/TrustProof";
 import LeadQualification from "@/components/LeadQualification";
 import ContactForm from "@/components/ContactForm";
@@ -29,6 +30,7 @@ export default function Home() {
       <OnePartner />
       <Projects />
       <CaseStudy />
+      <ClientReviews />
       <TrustProof />
       <LeadQualification />
       <ContactForm />
