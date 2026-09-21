@@ -20,11 +20,11 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#090a0a] text-[#f4f5f2] relative selection:bg-[#c7ff4a] selection:text-black">
+    <main className="min-h-screen bg-slate-50 text-slate-900 dark:bg-[#090a0a] dark:text-[#f4f5f2] relative selection:bg-emerald-500 selection:text-white dark:selection:bg-[#c7ff4a] dark:selection:text-black transition-colors duration-300">
       <Navbar />
       <Hero />
-      <WhoIHelp />
       <Services />
+      <WhoIHelp />
       <Process />
       <OnePartner />
       <Projects />

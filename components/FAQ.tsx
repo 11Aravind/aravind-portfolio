@@ -13,7 +13,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-16 sm:py-24 border-t border-[#252925]">
+    <section className="py-16 sm:py-24 border-t border-slate-200 dark:border-[#252925]">
       <div className="wrap max-w-4xl mx-auto">
         
         {/* Header */}
@@ -25,10 +25,10 @@ export default function FAQ() {
           className="mb-12 text-center"
         >
           <div className="eyebrow-accent mb-2 flex items-center justify-center gap-2">
-            <HelpCircle className="w-4 h-4 text-[#c7ff4a]" />
+            <HelpCircle className="w-4 h-4 text-emerald-600 dark:text-[#c7ff4a]" />
             <span>Got Questions?</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl tracking-[-0.05em] font-extrabold text-[#f4f5f2] uppercase">
+          <h2 className="text-3xl sm:text-4xl tracking-[-0.05em] font-extrabold text-slate-900 dark:text-[#f4f5f2] uppercase">
             FREQUENTLY ASKED QUESTIONS
           </h2>
         </motion.div>
@@ -45,15 +45,15 @@ export default function FAQ() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
-                className="border border-[#252925] rounded-2xl bg-[#101211] overflow-hidden transition-colors hover:border-[#3c4339]"
+                className="border border-slate-200 dark:border-[#252925] rounded-2xl bg-white dark:bg-[#101211] overflow-hidden transition-colors hover:border-slate-300 dark:hover:border-[#3c4339] shadow-sm"
               >
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-base sm:text-lg text-[#f4f5f2] hover:text-[#c7ff4a] transition-colors"
+                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-bold text-base sm:text-lg text-slate-900 dark:text-[#f4f5f2] hover:text-emerald-600 dark:hover:text-[#c7ff4a] transition-colors"
                 >
                   <span>{item.question}</span>
                   <ChevronDown
-                    className={`w-5 h-5 text-[#c7ff4a] shrink-0 transition-transform duration-300 ${
+                    className={`w-5 h-5 text-emerald-600 dark:text-[#c7ff4a] shrink-0 transition-transform duration-300 ${
                       isOpen ? "rotate-180" : ""
                     }`}
                   />
@@ -67,7 +67,7 @@ export default function FAQ() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <div className="px-6 pb-6 pt-0 text-[#9da39d] text-sm sm:text-base leading-relaxed border-t border-[#252925]/50 mt-1">
+                      <div className="px-6 pb-6 pt-0 text-slate-600 dark:text-[#9da39d] text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-[#252925]/50 mt-1">
                         {item.answer}
                       </div>
                     </motion.div>

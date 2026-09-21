@@ -9,6 +9,7 @@ export interface Project {
   visualTitle?: string;
   visualSub?: string;
   badge?: string;
+  image?: string;
 }
 
 export interface SelectedReference {
@@ -38,7 +39,8 @@ export const FEATURED_PROJECT: Project = {
   url: "https://noorzah.com/",
   description: "A production e-commerce platform for a fashion business based in Sasthamcotta, Kollam, Kerala. Designed around a clean shopping experience and responsive customer journey.",
   visualTitle: "Curated fashion.\nMade to shop.",
-  visualSub: "E-COMMERCE PLATFORM"
+  visualSub: "E-COMMERCE PLATFORM",
+  image: "/projects/noorzah.jpg"
 };
 
 export const NOORZAH_CASE_STUDY: CaseStudyData = {
@@ -60,7 +62,8 @@ export const GRID_PROJECTS: Project[] = [
     url: "https://wishlistbypraveena.vercel.app/",
     description: "Fashion-focused online shopping experience built for seamless product browsing and modern mobile shopping.",
     locationContext: "WISHLIST BY PRAVEENA",
-    visualTitle: "Fashion\ne-commerce"
+    visualTitle: "Fashion\ne-commerce",
+    image: "/projects/wishlist.jpg"
   },
   {
     id: "nc-brand-fashion",
@@ -69,7 +72,8 @@ export const GRID_PROJECTS: Project[] = [
     url: "https://www.ncbrandfashion.com",
     description: "Modern fashion e-commerce storefront engineered for brand identity and clean customer navigation.",
     locationContext: "NC BRAND FASHION",
-    visualTitle: "Brand\nstorefront"
+    visualTitle: "Brand\nstorefront",
+    image: "/projects/ncbrand.jpg"
   },
   {
     id: "aoba",
@@ -78,7 +82,8 @@ export const GRID_PROJECTS: Project[] = [
     url: "https://11aravind.github.io/Aoba/",
     description: "A modern web application experience built with a clean, highly responsive interface and custom interaction flow.",
     locationContext: "AOBA",
-    visualTitle: "Modern\ndigital experience"
+    visualTitle: "Modern\ndigital experience",
+    image: "/projects/aoba.jpg"
   }
 ];
 

@@ -116,7 +116,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="light scroll-smooth">
       <head>
         <link rel="icon" href="/favicon.png" sizes="any" />
         <script
@@ -124,7 +124,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen bg-[#090a0a] text-[#f4f5f2] antialiased selection:bg-[#c7ff4a] selection:text-black">
+      <body className="min-h-screen bg-slate-50 text-slate-900 dark:bg-[#090a0a] dark:text-[#f4f5f2] antialiased selection:bg-emerald-500 selection:text-white dark:selection:bg-[#c7ff4a] dark:selection:text-black transition-colors duration-300">
         {children}
       </body>
     </html>

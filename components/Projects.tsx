@@ -19,11 +19,11 @@ export default function Projects() {
         >
           <div>
             <div className="eyebrow-accent mb-2">Portfolio Proof</div>
-            <h2 className="text-3xl sm:text-4xl md:text-[46px] tracking-[-0.05em] font-extrabold text-[#f4f5f2] uppercase">
+            <h2 className="text-3xl sm:text-4xl md:text-[46px] tracking-[-0.05em] font-extrabold text-slate-900 dark:text-[#f4f5f2] uppercase">
               REAL PRODUCTS. REAL WORK.
             </h2>
           </div>
-          <p className="text-[#9da39d] max-w-[450px] text-base leading-relaxed">
+          <p className="text-slate-600 dark:text-[#9da39d] max-w-[450px] text-base leading-relaxed">
             Featured production projects, e-commerce storefronts, and digital applications built for real clients.
           </p>
         </motion.div>
@@ -51,7 +51,7 @@ export default function Projects() {
           >
             <div>
               <div className="eyebrow-accent mb-2">More Work</div>
-              <h3 className="text-2xl sm:text-3xl tracking-[-0.05em] font-extrabold text-[#f4f5f2]">
+              <h3 className="text-2xl sm:text-3xl tracking-[-0.05em] font-extrabold text-slate-900 dark:text-[#f4f5f2]">
                 Explore Additional Stores & Sites
               </h3>
             </div>

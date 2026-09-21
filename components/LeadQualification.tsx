@@ -19,14 +19,14 @@ interface LeadQualificationProps {
 
 export default function LeadQualification({ onSelectProjectType }: LeadQualificationProps) {
   const options = [
-    { label: "Website", icon: <Globe className="w-5 h-5 text-[#c7ff4a]" />, description: "Modern, responsive business website" },
-    { label: "E-commerce", icon: <ShoppingCart className="w-5 h-5 text-[#c7ff4a]" />, description: "Online store & shopping experience" },
-    { label: "Mobile App", icon: <Smartphone className="w-5 h-5 text-[#c7ff4a]" />, description: "Cross-platform iOS & Android app" },
-    { label: "Web Application", icon: <Code2 className="w-5 h-5 text-[#c7ff4a]" />, description: "Custom web app, portal, or platform" },
-    { label: "CRM / Business System", icon: <Building2 className="w-5 h-5 text-[#c7ff4a]" />, description: "CRM, admin panel, or internal tools" },
-    { label: "Existing Product Improvement", icon: <Wrench className="w-5 h-5 text-[#c7ff4a]" />, description: "Redesign, performance, or new features" },
-    { label: "Digital Marketing", icon: <TrendingUp className="w-5 h-5 text-[#c7ff4a]" />, description: "High-converting landing pages & growth" },
-    { label: "Not Sure Yet", icon: <HelpCircle className="w-5 h-5 text-[#c7ff4a]" />, description: "Discuss ideas & explore possibilities" },
+    { label: "Website", icon: <Globe className="w-5 h-5 text-emerald-600 dark:text-[#c7ff4a]" />, description: "Modern, responsive business website" },
+    { label: "E-commerce", icon: <ShoppingCart className="w-5 h-5 text-emerald-600 dark:text-[#c7ff4a]" />, description: "Online store & shopping experience" },
+    { label: "Mobile App", icon: <Smartphone className="w-5 h-5 text-emerald-600 dark:text-[#c7ff4a]" />, description: "Cross-platform iOS & Android app" },
+    { label: "Web Application", icon: <Code2 className="w-5 h-5 text-emerald-600 dark:text-[#c7ff4a]" />, description: "Custom web app, portal, or platform" },
+    { label: "CRM / Business System", icon: <Building2 className="w-5 h-5 text-emerald-600 dark:text-[#c7ff4a]" />, description: "CRM, admin panel, or internal tools" },
+    { label: "Existing Product Improvement", icon: <Wrench className="w-5 h-5 text-emerald-600 dark:text-[#c7ff4a]" />, description: "Redesign, performance, or new features" },
+    { label: "Digital Marketing", icon: <TrendingUp className="w-5 h-5 text-emerald-600 dark:text-[#c7ff4a]" />, description: "High-converting landing pages & growth" },
+    { label: "Not Sure Yet", icon: <HelpCircle className="w-5 h-5 text-emerald-600 dark:text-[#c7ff4a]" />, description: "Discuss ideas & explore possibilities" },
   ];
 
   const handleSelect = (label: string) => {
@@ -38,7 +38,7 @@ export default function LeadQualification({ onSelectProjectType }: LeadQualifica
   };
 
   return (
-    <section className="py-16 sm:py-24 border-t border-[#252925] bg-[radial-gradient(ellipse_at_bottom,rgba(199,255,74,0.06),transparent_60%)]">
+    <section className="py-16 sm:py-24 border-t border-slate-200 dark:border-[#252925] bg-[radial-gradient(ellipse_at_bottom,rgba(16,185,129,0.08),transparent_60%)] dark:bg-[radial-gradient(ellipse_at_bottom,rgba(199,255,74,0.06),transparent_60%)]">
       <div className="wrap">
         
         {/* Header */}
@@ -50,10 +50,10 @@ export default function LeadQualification({ onSelectProjectType }: LeadQualifica
           className="mb-12 text-center"
         >
           <div className="eyebrow-accent mb-2">Interactive Project Selector</div>
-          <h2 className="text-3xl sm:text-4xl md:text-[46px] tracking-[-0.05em] font-extrabold text-[#f4f5f2] uppercase">
+          <h2 className="text-3xl sm:text-4xl md:text-[46px] tracking-[-0.05em] font-extrabold text-slate-900 dark:text-[#f4f5f2] uppercase">
             WHAT ARE YOU LOOKING TO BUILD?
           </h2>
-          <p className="text-[#9da39d] max-w-xl mx-auto text-base sm:text-lg mt-3">
+          <p className="text-slate-600 dark:text-[#9da39d] max-w-xl mx-auto text-base sm:text-lg mt-3">
             Select your project type below to pre-fill your project inquiry and get a fast response.
           </p>
         </motion.div>
@@ -67,20 +67,20 @@ export default function LeadQualification({ onSelectProjectType }: LeadQualifica
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
-              whileHover={{ y: -4, borderColor: "#c7ff4a", backgroundColor: "#151715" }}
+              whileHover={{ y: -4 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => handleSelect(option.label)}
-              className="p-5 border border-[#252925] rounded-2xl bg-[#101211] text-left transition-all group flex flex-col justify-between"
+              className="p-5 border border-slate-200 dark:border-[#252925] hover:border-emerald-500 dark:hover:border-[#c7ff4a] rounded-2xl bg-white dark:bg-[#101211] text-left transition-all group flex flex-col justify-between shadow-sm hover:shadow-md"
             >
               <div>
-                <div className="w-10 h-10 rounded-xl bg-[#171a17] border border-[#252925] flex items-center justify-center mb-4 group-hover:border-[#c7ff4a]/40 transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-[#171a17] border border-emerald-100 dark:border-[#252925] flex items-center justify-center mb-4 group-hover:border-emerald-300 dark:group-hover:border-[#c7ff4a]/40 transition-colors">
                   {option.icon}
                 </div>
-                <h3 className="text-base font-bold text-[#f4f5f2] mb-1 group-hover:text-[#c7ff4a] transition-colors flex items-center justify-between">
+                <h3 className="text-base font-bold text-slate-900 dark:text-[#f4f5f2] mb-1 group-hover:text-emerald-600 dark:group-hover:text-[#c7ff4a] transition-colors flex items-center justify-between">
                   <span>{option.label}</span>
-                  <ArrowRight className="w-4 h-4 text-[#737970] group-hover:text-[#c7ff4a] group-hover:translate-x-1 transition-all" />
+                  <ArrowRight className="w-4 h-4 text-slate-400 dark:text-[#737970] group-hover:text-emerald-600 dark:group-hover:text-[#c7ff4a] group-hover:translate-x-1 transition-all" />
                 </h3>
-                <p className="text-[#9da39d] text-xs leading-relaxed">
+                <p className="text-slate-500 dark:text-[#9da39d] text-xs leading-relaxed">
                   {option.description}
                 </p>
               </div>
