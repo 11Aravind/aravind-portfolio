@@ -28,7 +28,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 dark:bg-[#090a0a]/90 backdrop-blur-md border-b border-slate-200/80 dark:border-white/[0.06] transition-colors duration-300">
+    <nav className="sticky top-0 z-50 bg-white/90 dark:bg-[#090a0a]/90 backdrop-blur-md border-b border-slate-200/80 dark:border-white/[0.06] transition-colors duration-300 mb-[18px]">
       <div className="wrap flex items-center justify-between h-[74px]">
         {/* Logo */}
         <a href="#" className="font-extrabold tracking-tight text-slate-900 dark:text-white text-lg hover:text-emerald-600 dark:hover:text-[#c7ff4a] transition-colors">

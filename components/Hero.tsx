@@ -42,7 +42,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="hero wrap min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center relative overflow-hidden pt-8 pb-12 sm:pt-16 sm:pb-20">
+    <section className="hero wrap min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center relative overflow-hidden pt-16 sm:pt-24 pb-12 sm:pb-20">
 
       {/* Soft Decorative Background Circles (Matching hero-fixed.html) */}
       <div className="absolute w-[540px] h-[540px] sm:w-[780px] sm:h-[780px] rounded-full bg-emerald-100/60 dark:bg-[#0f1d15] -right-[145px] top-[45px] pointer-events-none z-0" />
@@ -113,7 +113,7 @@ export default function Hero() {
           {/* Social Icons Row */}
           <motion.div variants={itemVariants} className="flex items-center gap-4 mb-8">
             <a
-              href="https://github.com"
+              href="https://github.com/11Aravind"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub Profile"
@@ -122,7 +122,7 @@ export default function Hero() {
               <Github className="w-4 h-4" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="linkedin.com/in/aravind-as"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"
@@ -169,7 +169,7 @@ export default function Hero() {
           </div>
 
           {/* FLOATING TECH BADGES */}
-          
+
           {/* 1. React Badge (Top Left) */}
           <motion.div
             animate={{ y: [0, -8, 0] }}
