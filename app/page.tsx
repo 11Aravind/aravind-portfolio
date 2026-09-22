@@ -18,6 +18,7 @@ import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import BotanicalLeaves from "@/components/BotanicalLeaves";
 
 export default function Home() {
   return (
@@ -40,6 +41,7 @@ export default function Home() {
       <Footer />
       <WhatsAppButton />
       <StickyMobileCTA />
+      <BotanicalLeaves />
     </main>
   );
 }

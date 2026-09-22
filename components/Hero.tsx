@@ -1,19 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  MapPin, 
-  Download, 
-  ExternalLink, 
-  Code2, 
-  Smartphone, 
-  Server, 
-  Database, 
-  Cpu, 
-  Globe 
+import {
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  Download,
+  ExternalLink,
+  Code2,
+  Smartphone,
+  Server,
+  Database,
+  Cpu,
+  Globe
 } from "lucide-react";
 import Image from "next/image";
 
@@ -43,24 +43,13 @@ export default function Hero() {
 
   return (
     <section className="hero wrap min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center relative overflow-hidden pt-8 pb-12 sm:pt-16 sm:pb-20">
-      
-      {/* Background Organic Green Ambient Glows */}
-      <motion.div
-        animate={{
-          scale: [1, 1.15, 1],
-          opacity: [0.2, 0.35, 0.2],
-          rotate: [0, 45, 0],
-        }}
-        transition={{
-          duration: 14,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute w-[320px] sm:w-[600px] h-[320px] sm:h-[600px] -right-[60px] sm:-right-[100px] top-[40px] bg-[radial-gradient(circle,rgba(16,185,129,0.18),transparent_65%)] dark:bg-[radial-gradient(circle,rgba(199,255,74,0.18),transparent_65%)] blur-[35px] pointer-events-none"
-      />
+
+      {/* Soft Decorative Background Circles (Matching hero-fixed.html) */}
+      <div className="absolute w-[540px] h-[540px] sm:w-[780px] sm:h-[780px] rounded-full bg-emerald-100/60 dark:bg-[#0f1d15] -right-[145px] top-[45px] pointer-events-none z-0" />
+      <div className="absolute w-[450px] h-[450px] sm:w-[700px] sm:h-[700px] rounded-full bg-emerald-50/80 dark:bg-[#122219] left-[390px] -bottom-[475px] pointer-events-none z-0" />
 
       <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center relative z-10">
-        
+
         {/* Left Column: Typography, Copy & Actions */}
         <motion.div
           variants={containerVariants}
@@ -161,36 +150,31 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right Column: Person Image & Floating Tech Skill Badges */}
+        {/* Right Column: Person Image without border box + Soft Background Circles */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="lg:col-span-5 relative flex items-center justify-center min-h-[420px] sm:min-h-[500px]"
+          className="lg:col-span-5 relative flex items-center justify-center min-h-[460px] sm:min-h-[560px]"
         >
-          {/* Organic Background Blob Behind Image */}
-          <div className="absolute w-[280px] xs:w-[340px] sm:w-[420px] h-[280px] xs:h-[340px] sm:h-[420px] rounded-full bg-gradient-to-tr from-emerald-500/20 via-emerald-400/10 to-transparent dark:from-[#c7ff4a]/20 dark:via-[#c7ff4a]/5 blur-2xl pointer-events-none" />
-
-          {/* Person Image Container */}
-          <div className="relative z-20 w-[260px] xs:w-[320px] sm:w-[380px] h-[360px] xs:h-[420px] sm:h-[480px] rounded-3xl overflow-hidden border-2 border-emerald-500/30 dark:border-[#c7ff4a]/30 shadow-2xl shadow-emerald-500/10 dark:shadow-[#c7ff4a]/10 bg-slate-100 dark:bg-[#101211]">
+          {/* Transparent Person Image (NO BORDER BOX!) */}
+          <div className="relative z-20 w-[280px] xs:w-[340px] sm:w-[420px] h-[400px] xs:h-[460px] sm:h-[540px]">
             <Image
-              src="/aravind.jpg"
+              src="/aravidh-without-bg.png"
               alt="Aravind A S - Freelance Web & Mobile Developer"
               fill
               priority
-              className="object-cover object-top filter contrast-[1.05]"
+              className="object-contain object-bottom filter contrast-[1.05] drop-shadow-2xl"
             />
-            {/* Soft Overlay Gradient at bottom */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent pointer-events-none" />
           </div>
 
-          {/* FLOATING TECH BADGES (Matching current.png layout with Green accents!) */}
+          {/* FLOATING TECH BADGES */}
           
           {/* 1. React Badge (Top Left) */}
           <motion.div
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-2 left-0 sm:-left-6 z-30 p-2.5 sm:p-3 rounded-2xl bg-white/90 dark:bg-[#101211]/90 border border-slate-200 dark:border-[#252925] shadow-xl backdrop-blur-md flex items-center gap-2.5"
+            className="absolute top-4 left-0 sm:-left-6 z-30 p-2.5 sm:p-3 rounded-2xl bg-white/95 dark:bg-[#101211]/95 border border-slate-200/80 dark:border-[#252925] shadow-xl backdrop-blur-md flex items-center gap-2.5"
           >
             <div className="w-8 h-8 rounded-xl bg-emerald-50 dark:bg-[#171a17] border border-emerald-100 dark:border-[#252925] flex items-center justify-center text-emerald-600 dark:text-[#c7ff4a]">
               <Globe className="w-4 h-4" />
@@ -205,7 +189,7 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="absolute top-36 -left-2 sm:-left-8 z-30 p-2.5 sm:p-3 rounded-2xl bg-white/90 dark:bg-[#101211]/90 border border-slate-200 dark:border-[#252925] shadow-xl backdrop-blur-md flex items-center gap-2.5"
+            className="absolute top-40 -left-2 sm:-left-10 z-30 p-2.5 sm:p-3 rounded-2xl bg-white/95 dark:bg-[#101211]/95 border border-slate-200/80 dark:border-[#252925] shadow-xl backdrop-blur-md flex items-center gap-2.5"
           >
             <div className="w-8 h-8 rounded-xl bg-emerald-50 dark:bg-[#171a17] border border-emerald-100 dark:border-[#252925] flex items-center justify-center text-emerald-600 dark:text-[#c7ff4a]">
               <Smartphone className="w-4 h-4" />
@@ -216,11 +200,11 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* 3. Node.js Badge (Top Right) */}
+          {/* 3. Node.js Badge (Top Right - Positioned clearly beside spark rays) */}
           <motion.div
             animate={{ y: [0, -6, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-            className="absolute top-4 -right-2 sm:-right-8 z-30 p-2.5 sm:p-3 rounded-2xl bg-white/90 dark:bg-[#101211]/90 border border-slate-200 dark:border-[#252925] shadow-xl backdrop-blur-md flex items-center gap-2.5"
+            className="absolute top-0 -right-4 sm:-right-12 z-30 p-2.5 sm:p-3 rounded-2xl bg-white/95 dark:bg-[#101211]/95 border border-slate-200/80 dark:border-[#252925] shadow-xl backdrop-blur-md flex items-center gap-2.5"
           >
             <div className="w-8 h-8 rounded-xl bg-emerald-50 dark:bg-[#171a17] border border-emerald-100 dark:border-[#252925] flex items-center justify-center text-emerald-600 dark:text-[#c7ff4a]">
               <Server className="w-4 h-4" />
@@ -235,7 +219,7 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, 7, 0] }}
             transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-            className="absolute top-40 -right-4 sm:-right-10 z-30 p-2.5 sm:p-3 rounded-2xl bg-white/90 dark:bg-[#101211]/90 border border-slate-200 dark:border-[#252925] shadow-xl backdrop-blur-md flex items-center gap-2.5"
+            className="absolute top-44 -right-4 sm:-right-10 z-30 p-2.5 sm:p-3 rounded-2xl bg-white/95 dark:bg-[#101211]/95 border border-slate-200/80 dark:border-[#252925] shadow-xl backdrop-blur-md flex items-center gap-2.5"
           >
             <div className="w-8 h-8 rounded-xl bg-emerald-50 dark:bg-[#171a17] border border-emerald-100 dark:border-[#252925] flex items-center justify-center text-emerald-600 dark:text-[#c7ff4a]">
               <Database className="w-4 h-4" />
@@ -250,7 +234,7 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, -5, 0] }}
             transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute bottom-6 right-0 sm:-right-6 z-30 p-2.5 sm:p-3 rounded-2xl bg-white/90 dark:bg-[#101211]/90 border border-slate-200 dark:border-[#252925] shadow-xl backdrop-blur-md flex items-center gap-2.5"
+            className="absolute bottom-6 right-0 sm:-right-6 z-30 p-2.5 sm:p-3 rounded-2xl bg-white/95 dark:bg-[#101211]/95 border border-slate-200/80 dark:border-[#252925] shadow-xl backdrop-blur-md flex items-center gap-2.5"
           >
             <div className="w-8 h-8 rounded-xl bg-emerald-50 dark:bg-[#171a17] border border-emerald-100 dark:border-[#252925] flex items-center justify-center text-emerald-600 dark:text-[#c7ff4a]">
               <Cpu className="w-4 h-4" />
@@ -267,4 +251,3 @@ export default function Hero() {
     </section>
   );
 }
-
