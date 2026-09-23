@@ -117,3 +117,137 @@ body {
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
+
+/* ═══════════════════════════════════════════════════════
+   CINEMATIC ANIMATIONS
+   ═══════════════════════════════════════════════════════ */
+
+/* Subtle film grain noise overlay for cinematic texture */
+.cinematic-grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+.dark .cinematic-grain::after {
+  opacity: 0.04;
+}
+
+/* Shimmer sweep animation for accent elements */
+@keyframes shimmer-sweep {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.cinematic-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(199, 255, 74, 0.08) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer-sweep 4s ease-in-out infinite;
+}
+
+/* Ambient glow pulse */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+.cinematic-glow-pulse {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+/* Gradient rotation for backgrounds */
+@keyframes gradient-rotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.cinematic-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-rotate 8s ease infinite;
+}
+
+/* Smooth section divider line animation */
+@keyframes line-grow {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+.cinematic-line-reveal {
+  transform-origin: left;
+  animation: line-grow 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Floating animation for decorative elements */
+@keyframes cinematic-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-12px) rotate(1deg); }
+  66% { transform: translateY(6px) rotate(-0.5deg); }
+}
+
+.cinematic-float {
+  animation: cinematic-float 6s ease-in-out infinite;
+}
+
+/* Parallax scroll indicator pulse */
+@keyframes scroll-indicator {
+  0% { opacity: 0.3; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(8px); }
+  100% { opacity: 0.3; transform: translateY(0); }
+}
+
+.cinematic-scroll-indicator {
+  animation: scroll-indicator 2s ease-in-out infinite;
+}
+
+/* Text highlight sweep */
+@keyframes text-highlight {
+  0% { background-size: 0% 100%; }
+  100% { background-size: 100% 100%; }
+}
+
+.cinematic-text-highlight {
+  background: linear-gradient(transparent 60%, rgba(199, 255, 74, 0.15) 60%);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 0% 100%;
+}
+
+.cinematic-text-highlight.active {
+  animation: text-highlight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Smooth scroll momentum enhancement */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Fast rendering optimization for low-network & low-spec mobile devices */
+  section:not(:first-of-type) {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 600px;
+  }
+}
+
+/* Disable all cinematic animations for reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-grain::after,
+  .cinematic-shimmer,
+  .cinematic-glow-pulse,
+  .cinematic-gradient-shift,
+  .cinematic-float,
+  .cinematic-scroll-indicator {
+    animation: none !important;
+  }
+}

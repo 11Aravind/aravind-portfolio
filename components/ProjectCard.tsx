@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Project, SelectedReference } from "@/data/projects";
 import { ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 interface HeroProjectCardProps {
   project: Project;
@@ -44,10 +45,12 @@ export function HeroProjectCard({ project }: HeroProjectCardProps) {
           {/* Store Visual Screenshot Content */}
           <div className="h-[250px] sm:h-[320px] relative overflow-hidden bg-slate-100 dark:bg-[#0d0e0d]">
             {project.image ? (
-              <img
+              <Image
                 src={project.image}
                 alt={project.name}
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                fill
+                sizes="(max-width: 1024px) 100vw, 58vw"
+                className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
               />
             ) : (
               <div className="h-full p-6 sm:p-8 bg-gradient-to-r from-emerald-900 to-slate-900 dark:from-[#1a1f19] dark:to-[#111311] text-white flex flex-col justify-between">
@@ -130,10 +133,12 @@ export function StandardProjectCard({ project, index = 0 }: { project: Project; 
             {/* Image or Visual Fallback */}
             <div className="h-[calc(100%-24px)] w-full relative overflow-hidden">
               {project.image ? (
-                <img
+                <Image
                   src={project.image}
                   alt={project.name}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
               ) : (
                 <div className="p-4 flex flex-col justify-between h-full">
