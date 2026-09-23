@@ -1,20 +1,56 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { NOORZAH_CASE_STUDY } from "@/data/projects";
 import { ExternalLink, ShoppingBag, CheckCircle2, Layers, UserCheck } from "lucide-react";
+import { CinematicLineSweep } from "./CinematicEffects";
 
 export default function CaseStudy() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const bgY = useTransform(scrollYProgress, [0, 1], [40, -40]);
+  const cardScale = useTransform(scrollYProgress, [0, 0.3, 0.7], [0.96, 1, 1]);
+
+  const specContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15, delayChildren: 0.3 },
+    },
+  };
+
+  const specCardVariants = {
+    hidden: { opacity: 0, y: 30, filter: "blur(6px)" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+    },
+  };
+
   return (
-    <section className="py-16 sm:py-24 border-t border-slate-200 dark:border-[#252925]">
-      <div className="wrap">
+    <section ref={sectionRef} className="py-16 sm:py-24 border-t border-slate-200 dark:border-[#252925] relative overflow-hidden">
+      {/* Parallax ambient glow */}
+      <motion.div
+        style={{ y: bgY }}
+        className="absolute -top-20 left-1/4 w-[600px] h-[600px] rounded-full bg-emerald-500/5 dark:bg-[#c7ff4a]/5 blur-[140px] pointer-events-none"
+      />
+
+      <div className="wrap relative z-10">
         
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="mb-12"
         >
           <div className="eyebrow-accent mb-2">Featured Project Case Study</div>
@@ -23,12 +59,15 @@ export default function CaseStudy() {
           </h2>
         </motion.div>
 
+        <CinematicLineSweep className="mb-10" />
+
         {/* Case Study Main Card */}
         <motion.div
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50, scale: 0.95, filter: "blur(10px)" }}
+          whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          style={{ scale: cardScale }}
           className="border border-slate-200 dark:border-[#252925] bg-white dark:bg-[#101211] rounded-3xl p-6 sm:p-10 md:p-12 relative overflow-hidden shadow-xl shadow-slate-200/50 dark:shadow-2xl"
         >
           {/* Top Bar */}
@@ -47,7 +86,9 @@ export default function CaseStudy() {
               </div>
             </div>
 
-            <a
+            <motion.a
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.97 }}
               href={NOORZAH_CASE_STUDY.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -55,14 +96,20 @@ export default function CaseStudy() {
             >
               <span>View Live Project</span>
               <ExternalLink className="w-4 h-4" />
-            </a>
+            </motion.a>
           </div>
 
           {/* Grid Layout for Case Study Specs */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8"
+            variants={specContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             
             {/* Challenge Card */}
-            <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#090a0a] border border-slate-200 dark:border-[#252925]">
+            <motion.div variants={specCardVariants} className="p-6 rounded-2xl bg-slate-50 dark:bg-[#090a0a] border border-slate-200 dark:border-[#252925] hover:shadow-md transition-shadow">
               <div className="flex items-center gap-2 text-xs font-mono text-emerald-600 dark:text-[#c7ff4a] uppercase font-bold mb-3">
                 <CheckCircle2 className="w-4 h-4" />
                 <span>The Challenge</span>
@@ -70,10 +117,10 @@ export default function CaseStudy() {
               <p className="text-slate-600 dark:text-[#9da39d] text-sm sm:text-base leading-relaxed">
                 {NOORZAH_CASE_STUDY.challenge}
               </p>
-            </div>
+            </motion.div>
 
             {/* What I Built Card */}
-            <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#090a0a] border border-slate-200 dark:border-[#252925]">
+            <motion.div variants={specCardVariants} className="p-6 rounded-2xl bg-slate-50 dark:bg-[#090a0a] border border-slate-200 dark:border-[#252925] hover:shadow-md transition-shadow">
               <div className="flex items-center gap-2 text-xs font-mono text-emerald-600 dark:text-[#c7ff4a] uppercase font-bold mb-3">
                 <Layers className="w-4 h-4" />
                 <span>What I Built</span>
@@ -81,10 +128,10 @@ export default function CaseStudy() {
               <p className="text-slate-600 dark:text-[#9da39d] text-sm sm:text-base leading-relaxed">
                 {NOORZAH_CASE_STUDY.whatIBuilt}
               </p>
-            </div>
+            </motion.div>
 
             {/* My Role Card */}
-            <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#090a0a] border border-slate-200 dark:border-[#252925]">
+            <motion.div variants={specCardVariants} className="p-6 rounded-2xl bg-slate-50 dark:bg-[#090a0a] border border-slate-200 dark:border-[#252925] hover:shadow-md transition-shadow">
               <div className="flex items-center gap-2 text-xs font-mono text-emerald-600 dark:text-[#c7ff4a] uppercase font-bold mb-3">
                 <UserCheck className="w-4 h-4" />
                 <span>My Direct Role</span>
@@ -92,9 +139,9 @@ export default function CaseStudy() {
               <p className="text-slate-600 dark:text-[#9da39d] text-sm sm:text-base leading-relaxed">
                 {NOORZAH_CASE_STUDY.myRole}
               </p>
-            </div>
+            </motion.div>
 
-          </div>
+          </motion.div>
 
           {/* Bottom Banner */}
           <div className="mt-8 pt-6 border-t border-slate-200 dark:border-[#252925] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500 dark:text-[#737970]">

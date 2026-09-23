@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ShieldCheck, Globe, ShoppingCart, Code2, RefreshCw } from "lucide-react";
+import { CinematicLineSweep } from "./CinematicEffects";
 
 export default function TrustProof() {
   const proofItems = [
@@ -27,15 +28,34 @@ export default function TrustProof() {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40, scale: 0.95, filter: "blur(8px)" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      filter: "blur(0px)",
+      transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+    },
+  };
+
   return (
     <section className="py-16 sm:py-24 border-t border-slate-200 dark:border-[#252925]">
       <div className="wrap">
         
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="mb-12 text-center md:text-left"
         >
           <div className="eyebrow-accent mb-2 flex items-center gap-2 justify-center md:justify-start">
@@ -47,20 +67,26 @@ export default function TrustProof() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {proofItems.map((item, idx) => (
+        <CinematicLineSweep className="mb-10" />
+
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+        >
+          {proofItems.map((item) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="p-6 sm:p-7 border border-slate-200 dark:border-[#252925] rounded-2xl bg-white dark:bg-[#101211] hover:border-slate-300 dark:hover:border-[#3c4339] shadow-sm hover:shadow-md transition-all"
+              variants={cardVariants}
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="p-6 sm:p-7 border border-slate-200 dark:border-[#252925] rounded-2xl bg-white dark:bg-[#101211] hover:border-slate-300 dark:hover:border-[#3c4339] shadow-sm hover:shadow-xl transition-all group"
             >
-              <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-[#171a17] border border-emerald-100 dark:border-[#252925] flex items-center justify-center mb-5">
+              <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-[#171a17] border border-emerald-100 dark:border-[#252925] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
                 {item.icon}
               </div>
-              <h3 className="text-lg font-bold text-slate-900 dark:text-[#f4f5f2] mb-2">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-[#f4f5f2] mb-2 group-hover:text-emerald-600 dark:group-hover:text-[#c7ff4a] transition-colors">
                 {item.title}
               </h3>
               <p className="text-slate-600 dark:text-[#9da39d] text-sm leading-relaxed">
@@ -68,7 +94,7 @@ export default function TrustProof() {
               </p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
       </div>
     </section>

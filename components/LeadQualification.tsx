@@ -12,6 +12,7 @@ import {
   HelpCircle,
   ArrowRight
 } from "lucide-react";
+import { CinematicLineSweep } from "./CinematicEffects";
 
 interface LeadQualificationProps {
   onSelectProjectType?: (projectType: string) => void;
@@ -37,16 +38,35 @@ export default function LeadQualification({ onSelectProjectType }: LeadQualifica
     window.open(`https://wa.me/918848310248?text=${msg}`, "_blank");
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.07, delayChildren: 0.15 },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 35, scale: 0.95, filter: "blur(6px)" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      filter: "blur(0px)",
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+    },
+  };
+
   return (
     <section className="py-16 sm:py-24 border-t border-slate-200 dark:border-[#252925] bg-[radial-gradient(ellipse_at_bottom,rgba(16,185,129,0.08),transparent_60%)] dark:bg-[radial-gradient(ellipse_at_bottom,rgba(199,255,74,0.06),transparent_60%)]">
       <div className="wrap">
         
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="mb-12 text-center"
         >
           <div className="eyebrow-accent mb-2">Interactive Project Selector</div>
@@ -58,22 +78,27 @@ export default function LeadQualification({ onSelectProjectType }: LeadQualifica
           </p>
         </motion.div>
 
+        <CinematicLineSweep className="mb-10" />
+
         {/* 8 Selectable Option Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {options.map((option, idx) => (
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+        >
+          {options.map((option) => (
             <motion.button
               key={option.label}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.05 }}
-              whileHover={{ y: -4 }}
+              variants={cardVariants}
+              whileHover={{ y: -6, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => handleSelect(option.label)}
-              className="p-5 border border-slate-200 dark:border-[#252925] hover:border-emerald-500 dark:hover:border-[#c7ff4a] rounded-2xl bg-white dark:bg-[#101211] text-left transition-all group flex flex-col justify-between shadow-sm hover:shadow-md"
+              className="p-5 border border-slate-200 dark:border-[#252925] hover:border-emerald-500 dark:hover:border-[#c7ff4a] rounded-2xl bg-white dark:bg-[#101211] text-left transition-all group flex flex-col justify-between shadow-sm hover:shadow-xl"
             >
               <div>
-                <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-[#171a17] border border-emerald-100 dark:border-[#252925] flex items-center justify-center mb-4 group-hover:border-emerald-300 dark:group-hover:border-[#c7ff4a]/40 transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-[#171a17] border border-emerald-100 dark:border-[#252925] flex items-center justify-center mb-4 group-hover:border-emerald-300 dark:group-hover:border-[#c7ff4a]/40 transition-colors group-hover:scale-110 duration-300">
                   {option.icon}
                 </div>
                 <h3 className="text-base font-bold text-slate-900 dark:text-[#f4f5f2] mb-1 group-hover:text-emerald-600 dark:group-hover:text-[#c7ff4a] transition-colors flex items-center justify-between">
@@ -86,7 +111,7 @@ export default function LeadQualification({ onSelectProjectType }: LeadQualifica
               </div>
             </motion.button>
           ))}
-        </div>
+        </motion.div>
 
       </div>
     </section>

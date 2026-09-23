@@ -1,8 +1,16 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function Footer() {
   return (
-    <footer className="wrap py-10 text-slate-500 dark:text-[#737970] border-t border-slate-200 dark:border-[#252925] text-xs flex flex-col md:flex-row items-center justify-between gap-4 pb-20 md:pb-10">
+    <motion.footer
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className="wrap py-10 text-slate-500 dark:text-[#737970] border-t border-slate-200 dark:border-[#252925] text-xs flex flex-col md:flex-row items-center justify-between gap-4 pb-20 md:pb-10"
+    >
       <div>
         <div className="font-mono uppercase tracking-wider font-semibold text-slate-900 dark:text-[#f4f5f2] mb-1">
           ARAVIND A S · FREELANCE SOFTWARE ENGINEER
@@ -21,6 +29,6 @@ export default function Footer() {
       <div className="font-mono text-slate-500 dark:text-[#737970]">
         © {new Date().getFullYear()} Aravind A S. All rights reserved.
       </div>
-    </footer>
+    </motion.footer>
   );
 }

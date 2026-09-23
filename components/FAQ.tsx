@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FAQ_ITEMS } from "@/data/services";
 import { ChevronDown, HelpCircle } from "lucide-react";
+import { CinematicLineSweep } from "./CinematicEffects";
 
 export default function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
@@ -12,16 +13,34 @@ export default function FAQ() {
     setOpenIdx(openIdx === idx ? null : idx);
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.08, delayChildren: 0.15 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 25, filter: "blur(6px)" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+    },
+  };
+
   return (
     <section className="py-16 sm:py-24 border-t border-slate-200 dark:border-[#252925]">
       <div className="wrap max-w-4xl mx-auto">
         
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="mb-12 text-center"
         >
           <div className="eyebrow-accent mb-2 flex items-center justify-center gap-2">
@@ -33,19 +52,24 @@ export default function FAQ() {
           </h2>
         </motion.div>
 
+        <CinematicLineSweep className="mb-10" />
+
         {/* FAQ Accordion List */}
-        <div className="space-y-4">
+        <motion.div
+          className="space-y-4"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
           {FAQ_ITEMS.map((item, idx) => {
             const isOpen = openIdx === idx;
 
             return (
               <motion.div
                 key={item.question}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.05 }}
-                className="border border-slate-200 dark:border-[#252925] rounded-2xl bg-white dark:bg-[#101211] overflow-hidden transition-colors hover:border-slate-300 dark:hover:border-[#3c4339] shadow-sm"
+                variants={itemVariants}
+                className="border border-slate-200 dark:border-[#252925] rounded-2xl bg-white dark:bg-[#101211] overflow-hidden transition-colors hover:border-slate-300 dark:hover:border-[#3c4339] shadow-sm hover:shadow-md"
               >
                 <button
                   onClick={() => toggle(idx)}
@@ -65,7 +89,7 @@ export default function FAQ() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                     >
                       <div className="px-6 pb-6 pt-0 text-slate-600 dark:text-[#9da39d] text-sm sm:text-base leading-relaxed border-t border-slate-100 dark:border-[#252925]/50 mt-1">
                         {item.answer}
@@ -76,7 +100,7 @@ export default function FAQ() {
               </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
       </div>
     </section>
