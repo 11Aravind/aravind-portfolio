@@ -7,7 +7,7 @@ import {
   Linkedin,
   Mail,
   MapPin,
-  Download,
+  MessageSquare,
   ExternalLink,
   Code2,
   Smartphone,
@@ -134,7 +134,7 @@ export default function Hero() {
               className="px-6 py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white dark:bg-[#c7ff4a] dark:hover:bg-[#b5f532] dark:text-[#111111] font-bold text-sm tracking-wide shadow-lg shadow-slate-900/10 dark:shadow-[#c7ff4a]/20 transition-all inline-flex items-center gap-2 group"
             >
               <ExternalLink className="w-4 h-4 text-white dark:text-black" />
-              <span>View Portfolio</span>
+              <span>View Works</span>
             </motion.a>
 
             <motion.a
@@ -143,8 +143,8 @@ export default function Hero() {
               href="#contact"
               className="px-6 py-3.5 rounded-full border border-slate-300 dark:border-[#343933] text-slate-800 dark:text-[#f4f5f2] bg-white/80 dark:bg-white/[0.03] hover:border-emerald-600 dark:hover:border-[#c7ff4a] hover:text-emerald-600 dark:hover:text-[#c7ff4a] font-bold text-sm tracking-wide shadow-sm transition-all inline-flex items-center gap-2"
             >
-              <Download className="w-4 h-4" />
-              <span>Start a Project / Hire</span>
+              <MessageSquare className="w-4 h-4" />
+              <span>Let's Connect</span>
             </motion.a>
           </motion.div>
 
