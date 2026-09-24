@@ -19,10 +19,7 @@ export const metadata: Metadata = {
     "React Native App Developer Kerala"
   ],
   icons: {
-    icon: [
-      { url: "/favicon.png" },
-      { url: "/icon.png", type: "image/png" },
-    ],
+    icon: "/favicon.png",
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },

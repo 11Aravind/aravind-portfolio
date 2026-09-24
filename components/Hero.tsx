@@ -95,27 +95,34 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          {/* Main Name & Title with cinematic reveal */}
+          {/* Main Name */}
           <motion.h1
             variants={itemVariants}
-            className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-extrabold tracking-[-0.04em] leading-[1.05] text-slate-900 dark:text-[#f4f5f2] mb-3"
+            className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-extrabold tracking-[-0.04em] leading-[1.05] text-slate-900 dark:text-[#f4f5f2] mb-2"
           >
             Aravind A S
           </motion.h1>
 
+          {/* Subtitle */}
           <motion.div variants={itemVariants} className="mb-5 sm:mb-6">
-            <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-[-0.03em] leading-tight">
-              <span className="text-emerald-600 dark:text-[#c7ff4a]">React & Full-Stack</span>{" "}
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-[40px] font-extrabold tracking-[-0.03em] leading-tight">
+              <span className="text-emerald-600 dark:text-[#c7ff4a]">Freelance</span>{" "}
               <span className="text-slate-800 dark:text-slate-200">Developer</span>
             </h2>
           </motion.div>
 
-          {/* Paragraph Description */}
+          {/* Natural Paragraph with Color Highlighting */}
           <motion.p
             variants={itemVariants}
             className="max-w-[620px] text-slate-600 dark:text-[#a0a8a0] text-base sm:text-lg leading-relaxed mb-8 font-normal"
           >
-            I build digital products from idea to launch — <strong className="text-slate-900 dark:text-white font-semibold">websites, e-commerce, mobile apps, CRM, business systems, and custom software</strong> — with full-stack development and ongoing support.
+            I build digital products from idea to launch —{" "}
+            <span className="font-bold text-emerald-600 dark:text-[#c7ff4a]">websites</span>,{" "}
+            <span className="font-bold text-emerald-600 dark:text-[#c7ff4a]">e-commerce</span>,{" "}
+            <span className="font-bold text-emerald-600 dark:text-[#c7ff4a]">mobile apps</span>,{" "}
+            <span className="font-bold text-emerald-600 dark:text-[#c7ff4a]">CRM</span>,{" "}
+            <span className="font-bold text-emerald-600 dark:text-[#c7ff4a]">business systems</span>, and{" "}
+            <span className="font-bold text-emerald-600 dark:text-[#c7ff4a]">custom software</span> — with full-stack development and ongoing support.
           </motion.p>
 
           {/* Action Buttons */}
