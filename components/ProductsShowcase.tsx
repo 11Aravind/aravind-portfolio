@@ -59,7 +59,6 @@ export default function ProductsShowcase() {
   const [activeModalTab, setActiveModalTab] = useState<"overview" | "modules" | "specs" | "inquire">("overview");
   const [inquirySuccess, setInquirySuccess] = useState<boolean>(false);
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
-  const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   const renderProductIcon = (iconName: string) => {
     switch (iconName) {
@@ -102,14 +101,6 @@ export default function ProductsShowcase() {
     }, 2800);
   };
 
-  const filteredProducts = PRODUCTS_LIST.filter(p => {
-    if (selectedCategory === "all") return true;
-    if (selectedCategory === "saas") return p.mockupType === "browser" || p.mockupType === "mobile";
-    if (selectedCategory === "pos") return p.mockupType === "pos";
-    if (selectedCategory === "humor") return p.isComedy;
-    return true;
-  });
-
   return (
     <section ref={sectionRef} id="products" className="py-20 sm:py-28 border-t border-slate-200 dark:border-[#252925] bg-slate-50/50 dark:bg-[#0b0d0c] relative overflow-hidden">
       
@@ -120,7 +111,7 @@ export default function ProductsShowcase() {
       <div className="wrap relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="mb-12">
           <motion.div
             initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -142,40 +133,6 @@ export default function ProductsShowcase() {
               Production-ready web apps, mobile systems, and POS software. Click any product to explore interactive live demos & details.
             </p>
           </motion.div>
-
-          {/* Category Filter Tabs */}
-          <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-white dark:bg-[#121513] border border-slate-200 dark:border-[#252925] shadow-sm self-start md:self-auto">
-            <button
-              onClick={() => setSelectedCategory("all")}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
-                selectedCategory === "all"
-                  ? "bg-slate-900 text-white dark:bg-[#c7ff4a] dark:text-black shadow-sm"
-                  : "text-slate-600 dark:text-[#9da39d] hover:text-slate-900 dark:hover:text-white"
-              }`}
-            >
-              All Systems
-            </button>
-            <button
-              onClick={() => setSelectedCategory("saas")}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
-                selectedCategory === "saas"
-                  ? "bg-slate-900 text-white dark:bg-[#c7ff4a] dark:text-black shadow-sm"
-                  : "text-slate-600 dark:text-[#9da39d] hover:text-slate-900 dark:hover:text-white"
-              }`}
-            >
-              SaaS & Apps
-            </button>
-            <button
-              onClick={() => setSelectedCategory("pos")}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
-                selectedCategory === "pos"
-                  ? "bg-slate-900 text-white dark:bg-[#c7ff4a] dark:text-black shadow-sm"
-                  : "text-slate-600 dark:text-[#9da39d] hover:text-slate-900 dark:hover:text-white"
-              }`}
-            >
-              POS Billing
-            </button>
-          </div>
         </div>
 
         <CinematicLineSweep className="mb-10" />
@@ -188,7 +145,7 @@ export default function ProductsShowcase() {
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
         >
-          {filteredProducts.map((product) => {
+          {PRODUCTS_LIST.map((product) => {
             const isComedy = product.isComedy;
 
             return (
