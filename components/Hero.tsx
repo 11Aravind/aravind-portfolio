@@ -45,14 +45,13 @@ export default function Hero() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30, filter: "blur(8px)" },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      filter: "blur(0px)",
       transition: {
-        duration: 0.8,
-        ease: [0.16, 1, 0.3, 1],
+        duration: 0.5,
+        ease: "easeOut",
       },
     },
   };
@@ -190,9 +189,9 @@ export default function Hero() {
 
         {/* Right Column: Person Image with Organic Animated Backdrop Blob & Levitating Tech Language Badges */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.85, filter: "blur(10px)" }}
-          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-          transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           className="lg:col-span-5 relative flex items-center justify-center min-h-[480px] sm:min-h-[580px] select-none"
         >
           {/* Organic Pulsing Background Mint/Emerald Blob */}

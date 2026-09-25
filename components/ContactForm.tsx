@@ -26,17 +26,17 @@ export default function ContactForm() {
 
         {/* Large Final CTA Banner */}
         <motion.div
-          initial={{ opacity: 0, y: 60, scale: 0.95, filter: "blur(12px)" }}
-          whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="border border-slate-200 dark:border-[#252925] rounded-3xl p-6 sm:p-12 md:p-16 bg-white dark:bg-[#101211] relative overflow-hidden bg-[radial-gradient(circle_at_85%_20%,rgba(16,185,129,0.12),transparent_40%)] dark:bg-[radial-gradient(circle_at_85%_20%,rgba(199,255,74,0.14),transparent_40%)] shadow-xl shadow-slate-200/50 dark:shadow-2xl"
         >
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ delay: 0.15, duration: 0.5, ease: "easeOut" }}
             className="eyebrow-accent mb-3 flex items-center gap-2"
           >
             <span className="w-2 h-2 rounded-full bg-emerald-500 dark:bg-[#c7ff4a] animate-pulse shrink-0" />
@@ -44,10 +44,10 @@ export default function ContactForm() {
           </motion.div>
 
           <motion.h2
-            initial={{ opacity: 0, y: 30, filter: "blur(6px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
             className="text-3xl sm:text-5xl md:text-6xl tracking-[-0.05em] leading-tight font-extrabold text-slate-900 dark:text-[#f4f5f2] uppercase mb-4"
           >
             HAVE SOMETHING TO BUILD?
@@ -57,7 +57,7 @@ export default function ContactForm() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ delay: 0.25, duration: 0.5, ease: "easeOut" }}
             className="text-slate-600 dark:text-[#9da39d] max-w-2xl text-base sm:text-xl leading-relaxed mb-8 font-medium"
           >
             Let's turn your idea into a working digital product. Reach out directly via WhatsApp, Call, or Email.
@@ -65,16 +65,16 @@ export default function ContactForm() {
 
           {/* Quick Direct Contact Info Cards */}
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.5, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
             className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 max-w-4xl"
           >
             <motion.a
-              whileHover={{ y: -3, scale: 1.02 }}
+              whileHover={{ y: -3 }}
               href="mailto:aravindas247@gmail.com"
-              className="p-4 rounded-2xl bg-slate-50 dark:bg-[#090a0a] border border-slate-200 dark:border-[#252925] hover:border-slate-300 dark:hover:border-[#3c4339] transition-all flex items-center gap-3.5 group shadow-sm hover:shadow-lg"
+              className="p-4 rounded-2xl bg-slate-50 dark:bg-[#090a0a] border border-slate-200 dark:border-[#252925] hover:border-slate-300 dark:hover:border-[#3c4339] transition-colors duration-300 flex items-center gap-3.5 group shadow-sm hover:shadow-lg"
             >
               <div className="w-10 h-10 rounded-xl bg-white dark:bg-[#101211] border border-slate-200 dark:border-[#252925] flex items-center justify-center text-emerald-600 dark:text-[#c7ff4a] shrink-0 group-hover:scale-110 transition-transform duration-300">
                 <Mail className="w-5 h-5" />
@@ -88,9 +88,9 @@ export default function ContactForm() {
             </motion.a>
 
             <motion.a
-              whileHover={{ y: -3, scale: 1.02 }}
+              whileHover={{ y: -3 }}
               href="tel:918848310248"
-              className="p-4 rounded-2xl bg-slate-50 dark:bg-[#090a0a] border border-slate-200 dark:border-[#252925] hover:border-slate-300 dark:hover:border-[#3c4339] transition-all flex items-center gap-3.5 group shadow-sm hover:shadow-lg"
+              className="p-4 rounded-2xl bg-slate-50 dark:bg-[#090a0a] border border-slate-200 dark:border-[#252925] hover:border-slate-300 dark:hover:border-[#3c4339] transition-colors duration-300 flex items-center gap-3.5 group shadow-sm hover:shadow-lg"
             >
               <div className="w-10 h-10 rounded-xl bg-white dark:bg-[#101211] border border-slate-200 dark:border-[#252925] flex items-center justify-center text-emerald-600 dark:text-[#c7ff4a] shrink-0 group-hover:scale-110 transition-transform duration-300">
                 <Phone className="w-5 h-5" />

@@ -46,13 +46,11 @@ export default function ProductsShowcase() {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 35, scale: 0.97, filter: "blur(6px)" },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
-      filter: "blur(0px)",
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.45, ease: "easeOut" },
     },
   };
 
@@ -114,10 +112,10 @@ export default function ProductsShowcase() {
         {/* Section Header */}
         <div className="mb-12">
           <motion.div
-            initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <div className="inline-flex items-center gap-2 eyebrow-accent mb-3 px-3.5 py-1 rounded-full bg-emerald-50 dark:bg-[#161a16] border border-emerald-200/70 dark:border-[#283226]">
               <Package className="w-3.5 h-3.5 text-emerald-600 dark:text-[#c7ff4a]" />
@@ -154,7 +152,7 @@ export default function ProductsShowcase() {
                 key={product.id}
                 variants={cardVariants}
                 whileHover={{ y: -6, scale: 1.01 }}
-                className={`group rounded-[28px] p-6 sm:p-7 border transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-sm hover:shadow-xl ${
+                className={`group rounded-[28px] p-6 sm:p-7 border transition-colors duration-300 flex flex-col justify-between relative overflow-hidden shadow-sm hover:shadow-xl ${
                   isComedy
                     ? "bg-gradient-to-b from-amber-50/60 via-white to-amber-50/30 dark:from-[#1d1912] dark:via-[#14120e] dark:to-[#1d1912] border-amber-300/80 dark:border-amber-500/40 hover:border-amber-400"
                     : "bg-white dark:bg-[#121513] border-slate-200/90 dark:border-[#232823] hover:border-emerald-500/60 dark:hover:border-[#c7ff4a]/60"

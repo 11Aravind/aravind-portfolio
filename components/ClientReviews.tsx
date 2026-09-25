@@ -43,13 +43,11 @@ export default function ClientReviews() {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 35, scale: 0.96, filter: "blur(6px)" },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
-      filter: "blur(0px)",
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.45, ease: "easeOut" },
     },
   };
 
@@ -71,10 +69,10 @@ export default function ClientReviews() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <motion.div
-            initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <div className="inline-flex items-center gap-2 eyebrow-accent mb-3 px-3.5 py-1 rounded-full bg-emerald-50 dark:bg-[#161a16] border border-emerald-200/70 dark:border-[#283226]">
               <BadgeCheck className="w-3.5 h-3.5 text-emerald-600 dark:text-[#c7ff4a]" />
@@ -94,10 +92,10 @@ export default function ClientReviews() {
 
           {/* Rating Summary Badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, filter: "blur(6px)" }}
-            whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.6 }}
+            transition={{ delay: 0.15, duration: 0.45, ease: "easeOut" }}
             className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white dark:bg-[#121513] border border-slate-200 dark:border-[#252925] shadow-sm self-start md:self-auto"
           >
             <div className="flex gap-1">
@@ -128,7 +126,7 @@ export default function ClientReviews() {
               <motion.div
                 key={review.id}
                 variants={cardVariants}
-                whileHover={{ y: -7, scale: 1.015 }}
+                whileHover={{ y: -5 }}
                 className="relative pt-5 flex flex-col group"
               >
                 {/* 3D Floating Client Avatar Badge */}
@@ -137,7 +135,7 @@ export default function ClientReviews() {
                 </div>
 
                 {/* Card Main Body */}
-                <div className={`flex-1 rounded-[28px] p-6 sm:p-7 pt-10 border transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-sm group-hover:shadow-2xl ${
+                <div className={`flex-1 rounded-[28px] p-6 sm:p-7 pt-10 border transition-colors duration-300 flex flex-col justify-between relative overflow-hidden shadow-sm group-hover:shadow-2xl ${
                   isFeatured
                     ? "bg-white dark:bg-[#121513] border-emerald-500/80 dark:border-[#c7ff4a]/70 shadow-emerald-500/10 dark:shadow-[#c7ff4a]/10"
                     : "bg-white dark:bg-[#121513] border-slate-200/90 dark:border-[#232823] hover:border-emerald-500/60 dark:hover:border-[#c7ff4a]/60"

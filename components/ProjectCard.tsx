@@ -12,11 +12,11 @@ interface HeroProjectCardProps {
 export function HeroProjectCard({ project }: HeroProjectCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="grid grid-cols-1 lg:grid-cols-12 bg-white dark:bg-[#101211] border border-slate-200 dark:border-[#252925] rounded-3xl overflow-hidden hover:border-slate-300 dark:hover:border-[#3c4339] transition-all duration-500 shadow-xl shadow-slate-200/50 dark:shadow-2xl group"
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="grid grid-cols-1 lg:grid-cols-12 bg-white dark:bg-[#101211] border border-slate-200 dark:border-[#252925] rounded-3xl overflow-hidden hover:border-slate-300 dark:hover:border-[#3c4339] transition-colors duration-300 shadow-xl shadow-slate-200/50 dark:shadow-2xl group"
     >
       {/* Visual Shot Column */}
       <div className="lg:col-span-7 min-h-[360px] sm:min-h-[420px] bg-gradient-to-br from-slate-100 via-slate-50 to-slate-200 dark:from-[#171a17] dark:via-[#121412] dark:to-[#0d0e0d] p-4 sm:p-6 flex items-center relative overflow-hidden">
@@ -107,12 +107,12 @@ export function HeroProjectCard({ project }: HeroProjectCardProps) {
 export function StandardProjectCard({ project, index = 0 }: { project: Project; index?: number }) {
   return (
     <motion.article
-      initial={{ opacity: 0, y: 35 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.45, delay: index * 0.06, ease: "easeOut" }}
       whileHover={{ y: -6 }}
-      className="bg-white dark:bg-[#101211] border border-slate-200 dark:border-[#252925] rounded-2xl overflow-hidden transition-all duration-300 hover:border-slate-300 dark:hover:border-[#3c4339] shadow-sm hover:shadow-xl group flex flex-col justify-between"
+      className="bg-white dark:bg-[#101211] border border-slate-200 dark:border-[#252925] rounded-2xl overflow-hidden transition-colors duration-300 hover:border-slate-300 dark:hover:border-[#3c4339] shadow-sm hover:shadow-xl group flex flex-col justify-between"
     >
       <div>
         {/* Card Visual Header with Real Screenshot */}
@@ -191,7 +191,7 @@ export function ReferenceCard({ reference, index = 0 }: { reference: SelectedRef
       href={reference.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="border border-slate-200 dark:border-[#252925] p-5 rounded-2xl bg-white dark:bg-[#0d0f0e] hover:bg-slate-50 dark:hover:bg-[#121513] hover:border-slate-300 dark:hover:border-[#3c4339] shadow-sm hover:shadow-md transition-all block group"
+      className="border border-slate-200 dark:border-[#252925] p-5 rounded-2xl bg-white dark:bg-[#0d0f0e] hover:bg-slate-50 dark:hover:bg-[#121513] hover:border-slate-300 dark:hover:border-[#3c4339] shadow-sm hover:shadow-md transition-colors duration-300 block group"
     >
       <div className="flex items-center justify-between mb-1">
         <strong className="text-slate-900 dark:text-[#f4f5f2] group-hover:text-emerald-600 dark:group-hover:text-[#c7ff4a] transition-colors text-base font-bold">

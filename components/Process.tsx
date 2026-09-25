@@ -95,13 +95,11 @@ export default function Process() {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.96, filter: "blur(6px)" },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
-      filter: "blur(0px)",
-      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.45, ease: "easeOut" },
     },
   };
 
@@ -119,10 +117,10 @@ export default function Process() {
         {/* Compact Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-5">
           <motion.div
-            initial={{ opacity: 0, y: 25, filter: "blur(6px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <div className="inline-flex items-center gap-2 eyebrow-accent mb-2 px-3 py-0.5 rounded-full bg-emerald-50 dark:bg-[#161a16] border border-emerald-200/70 dark:border-[#283226]">
               <Zap className="w-3.5 h-3.5 text-emerald-600 dark:text-[#c7ff4a]" />
@@ -159,8 +157,8 @@ export default function Process() {
               <motion.div
                 key={item.step}
                 variants={cardVariants}
-                whileHover={{ y: -5, scale: 1.015 }}
-                className="group p-6 rounded-[24px] bg-white dark:bg-[#121513] border border-slate-200/90 dark:border-[#232823] hover:border-emerald-500/60 dark:hover:border-[#c7ff4a]/60 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden"
+                whileHover={{ y: -5 }}
+                className="group p-6 rounded-[24px] bg-white dark:bg-[#121513] border border-slate-200/90 dark:border-[#232823] hover:border-emerald-500/60 dark:hover:border-[#c7ff4a]/60 shadow-sm hover:shadow-xl transition-colors duration-300 flex flex-col justify-between relative overflow-hidden"
               >
                 
                 <div>
@@ -202,7 +200,7 @@ export default function Process() {
                 <div className="pt-3 mt-4 border-t border-slate-100 dark:border-[#1e231f] flex items-center justify-between text-[11px] font-mono text-slate-400">
                   <span>{idx < PROCESS_STEPS.length - 1 ? `Phase 0${idx + 1} of 06` : "Production Live"}</span>
                   {!isRowEnd && idx < PROCESS_STEPS.length - 1 && (
-                    <ArrowRight className="w-3.5 h-3.5 text-emerald-500 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="w-3.5 h-3.5 text-emerald-500 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-transform" />
                   )}
                 </div>
 

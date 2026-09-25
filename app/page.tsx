@@ -56,9 +56,6 @@ export default function Home() {
         <ClientReviews />
         <TrustProof />
 
-        {/* 4. ONE PARTNER. FROM IDEA TO LAUNCH. */}
-        <OnePartner />
-
         {/* 7. ABOUT ARAVIND */}
         <About />
 

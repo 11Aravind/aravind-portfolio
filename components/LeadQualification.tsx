@@ -47,13 +47,11 @@ export default function LeadQualification({ onSelectProjectType }: LeadQualifica
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 35, scale: 0.95, filter: "blur(6px)" },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
-      filter: "blur(0px)",
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.45, ease: "easeOut" },
     },
   };
 
@@ -63,10 +61,10 @@ export default function LeadQualification({ onSelectProjectType }: LeadQualifica
         
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="mb-12 text-center"
         >
           <div className="eyebrow-accent mb-2">Interactive Project Selector</div>
@@ -92,10 +90,10 @@ export default function LeadQualification({ onSelectProjectType }: LeadQualifica
             <motion.button
               key={option.label}
               variants={cardVariants}
-              whileHover={{ y: -6, scale: 1.02 }}
+              whileHover={{ y: -5 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => handleSelect(option.label)}
-              className="p-5 border border-slate-200 dark:border-[#252925] hover:border-emerald-500 dark:hover:border-[#c7ff4a] rounded-2xl bg-white dark:bg-[#101211] text-left transition-all group flex flex-col justify-between shadow-sm hover:shadow-xl"
+              className="p-5 border border-slate-200 dark:border-[#252925] hover:border-emerald-500 dark:hover:border-[#c7ff4a] rounded-2xl bg-white dark:bg-[#101211] text-left transition-colors duration-300 group flex flex-col justify-between shadow-sm hover:shadow-xl"
             >
               <div>
                 <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-[#171a17] border border-emerald-100 dark:border-[#252925] flex items-center justify-center mb-4 group-hover:border-emerald-300 dark:group-hover:border-[#c7ff4a]/40 transition-colors group-hover:scale-110 duration-300">
@@ -103,7 +101,7 @@ export default function LeadQualification({ onSelectProjectType }: LeadQualifica
                 </div>
                 <h3 className="text-base font-bold text-slate-900 dark:text-[#f4f5f2] mb-1 group-hover:text-emerald-600 dark:group-hover:text-[#c7ff4a] transition-colors flex items-center justify-between">
                   <span>{option.label}</span>
-                  <ArrowRight className="w-4 h-4 text-slate-400 dark:text-[#737970] group-hover:text-emerald-600 dark:group-hover:text-[#c7ff4a] group-hover:translate-x-1 transition-all" />
+                  <ArrowRight className="w-4 h-4 text-slate-400 dark:text-[#737970] group-hover:text-emerald-600 dark:group-hover:text-[#c7ff4a] group-hover:translate-x-1 transition-transform" />
                 </h3>
                 <p className="text-slate-500 dark:text-[#9da39d] text-xs leading-relaxed">
                   {option.description}

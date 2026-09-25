@@ -15,12 +15,11 @@ export default function TechStack() {
   };
 
   const pillVariants = {
-    hidden: { opacity: 0, scale: 0.85, filter: "blur(4px)" },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
-      scale: 1,
-      filter: "blur(0px)",
-      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+      y: 0,
+      transition: { duration: 0.4, ease: "easeOut" },
     },
   };
 
@@ -29,10 +28,10 @@ export default function TechStack() {
       <div className="wrap text-center max-w-4xl mx-auto">
         
         <motion.div
-          initial={{ opacity: 0, y: 25, filter: "blur(8px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="mb-8"
         >
           <div className="eyebrow-accent mb-2 flex items-center justify-center gap-2">
@@ -60,8 +59,8 @@ export default function TechStack() {
             <motion.span
               key={pill}
               variants={pillVariants}
-              whileHover={{ scale: 1.1, y: -2 }}
-              className="border border-slate-200 dark:border-[#252925] bg-white dark:bg-[#101211] hover:border-emerald-500 dark:hover:border-[#3c4339] text-slate-700 dark:text-[#c7ccc5] hover:text-emerald-600 dark:hover:text-[#c7ff4a] px-4 py-2 rounded-full text-xs sm:text-sm font-mono font-medium shadow-sm hover:shadow-md transition-all cursor-default"
+              whileHover={{ y: -2 }}
+              className="border border-slate-200 dark:border-[#252925] bg-white dark:bg-[#101211] hover:border-emerald-500 dark:hover:border-[#3c4339] text-slate-700 dark:text-[#c7ccc5] hover:text-emerald-600 dark:hover:text-[#c7ff4a] px-4 py-2 rounded-full text-xs sm:text-sm font-mono font-medium shadow-sm hover:shadow-md transition-colors duration-300 cursor-default"
             >
               {pill}
             </motion.span>
