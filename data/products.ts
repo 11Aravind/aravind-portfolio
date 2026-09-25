@@ -43,7 +43,7 @@ export const PRODUCTS_LIST: ProductItem[] = [
     mockupType: "browser",
     accentGradient: "from-emerald-500/15 via-teal-500/10 to-emerald-600/5",
     image: "/projects/orderle.png",
-    appUrl: "quickdine.app",
+    appUrl: "https://inn-bites.vercel.app/",
     demoDetails: {
       overview: "QuickDine is a turnkey solution designed for restaurants, cafes, and multi-branch hotel chains. It digitizes food ordering from table QR scans to kitchen preparation and home delivery dispatch.",
       modules: [

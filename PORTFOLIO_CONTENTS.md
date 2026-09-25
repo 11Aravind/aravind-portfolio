@@ -100,8 +100,10 @@ The main portfolio page ([`app/page.tsx`](file:///d:/Aravind-Works/Portfolio/app
 * **3-Column Grid Projects:**
   1. **Wishlist by Praveena** ([`wishlistbypraveena.vercel.app`](https://wishlistbypraveena.vercel.app/)) — Fashion / Boutique E-commerce
   2. **NC Brand Fashion** ([`ncbrandfashion.com`](https://www.ncbrandfashion.com)) — Modern fashion storefront
-  3. **Aoba** ([`11aravind.github.io/Aoba`](https://11aravind.github.io/Aoba/)) — Modern digital experience
-* **Selected References:** Qimati (`qimati.in`), Pawan Ratna (`pawanratna.com`), Ugaoo (`ugaoo.com`), Nambisans (`nambisans.in`)
+  3. **Impressaa** ([`impressaa.com`](https://www.impressaa.com/)) — Brand storefront
+  4. **Yana IVF** ([`yanaivf.com`](https://yanaivf.com/)) — Healthcare platform
+  5. **Nambisans** ([`nambisans.in`](https://www.nambisans.in)) — Online store
+  6. **Aoba** ([`11aravind.github.io/Aoba`](https://11aravind.github.io/Aoba/)) — Modern digital experience
 
 ---
 

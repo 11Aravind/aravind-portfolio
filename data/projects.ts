@@ -125,40 +125,46 @@ export const GRID_PROJECTS: Project[] = [
     image: "/projects/ncbrand-imgs.png"
   },
   {
+    id: "impressaa",
+    name: "Impressaa",
+    category: "Brand Storefront",
+    url: "https://www.impressaa.com/",
+    description: "Modern brand storefront and digital web application built with clean interaction flow and fast performance.",
+    locationContext: "IMPRESSAA",
+    visualTitle: "Brand\nstorefront",
+    image: "/projects/impressaa.png"
+  },
+
+  {
     id: "aoba",
     name: "Aoba",
     category: "Modern Web Experience",
-    url: "https://11aravind.github.io/Aoba/",
+    url: "https://aoba-f5lt.vercel.app/",
     description: "A modern web application experience built with a clean, highly responsive interface and custom interaction flow.",
     locationContext: "AOBA",
     visualTitle: "Modern\ndigital experience",
     image: "/projects/aoba-project-img.png"
-  }
-];
-
-export const SELECTED_REFERENCES: SelectedReference[] = [
-  {
-    id: "qimati",
-    name: "Qimati",
-    category: "E-commerce",
-    url: "https://www.qimati.in"
   },
   {
-    id: "pawan-ratna",
-    name: "Pawan Ratna",
-    category: "Online store",
-    url: "https://pawanratna.com"
-  },
-  {
-    id: "ugaoo",
-    name: "Ugaoo",
-    category: "E-commerce",
-    url: "https://www.ugaoo.com"
+    id: "yana-ivf",
+    name: "Yana IVF",
+    category: "Healthcare Platform",
+    url: "https://yanaivf.com/",
+    description: "Advanced IVF & fertility healthcare platform providing streamlined patient inquiry pathways and treatment info.",
+    locationContext: "YANA IVF",
+    visualTitle: "Healthcare\nplatform",
+    image: "/projects/yanaivf.png"
   },
   {
     id: "nambisans",
     name: "Nambisans",
-    category: "Online store",
-    url: "https://www.nambisans.in"
-  }
+    category: "Online Store",
+    url: "https://www.nambisans.in",
+    description: "Traditional food products and dairy online store engineered for seamless direct-to-consumer ordering.",
+    locationContext: "NAMBISANS",
+    visualTitle: "Online\nstore",
+    image: "/projects/nambisans.png"
+  },
 ];
+
+export const SELECTED_REFERENCES: SelectedReference[] = [];

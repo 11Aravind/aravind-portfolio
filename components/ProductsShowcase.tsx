@@ -18,6 +18,7 @@ import {
   Barcode,
   Coffee,
   ArrowRight,
+  ExternalLink,
   Laptop,
   Layers,
   Cpu,
@@ -204,9 +205,23 @@ export default function ProductsShowcase() {
                           <i className="w-[5px] h-[5px] rounded-full bg-[#ffbd2e] inline-block" />
                           <i className="w-[5px] h-[5px] rounded-full bg-[#27c93f] inline-block" />
                         </div>
-                        <small className="text-slate-400 dark:text-[#aab0a7] font-mono text-[9px] tracking-wider uppercase truncate max-w-[140px]">
-                          {product.appUrl || "live.app"}
-                        </small>
+                        <div className="flex items-center gap-1.5 truncate max-w-[170px]">
+                          <small className="text-slate-400 dark:text-[#aab0a7] font-mono text-[9px] tracking-wider uppercase truncate">
+                            {product.appUrl ? product.appUrl.replace(/^https?:\/\//, '').replace(/\/$/, '') : "live.app"}
+                          </small>
+                          {product.appUrl && (
+                            <a
+                              href={product.appUrl.startsWith("http") ? product.appUrl : `https://${product.appUrl}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="text-slate-400 hover:text-emerald-500 transition-colors"
+                              title="Open Live App"
+                            >
+                              <ExternalLink className="w-2.5 h-2.5" />
+                            </a>
+                          )}
+                        </div>
                       </div>
 
                       {/* Product Screenshot Image */}
@@ -417,15 +432,28 @@ export default function ProductsShowcase() {
                         </div>
                       </div>
 
-                      <div className="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between">
-                        <span className="text-xs text-slate-400">Want a live 1-on-1 walkthrough?</span>
-                        <button
-                          onClick={() => handleWhatsAppInquiry(selectedProduct.title)}
-                          className="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs flex items-center gap-1.5 transition-all"
-                        >
-                          <Smartphone className="w-3.5 h-3.5" />
-                          <span>Request Walkthrough</span>
-                        </button>
+                      <div className="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between flex-wrap gap-2">
+                        <span className="text-xs text-slate-400">Want a live walkthrough or preview?</span>
+                        <div className="flex items-center gap-2">
+                          {selectedProduct.appUrl && (
+                            <a
+                              href={selectedProduct.appUrl.startsWith("http") ? selectedProduct.appUrl : `https://${selectedProduct.appUrl}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs flex items-center gap-1.5 transition-all shadow-sm"
+                            >
+                              <span>View Live App</span>
+                              <ExternalLink className="w-3.5 h-3.5" />
+                            </a>
+                          )}
+                          <button
+                            onClick={() => handleWhatsAppInquiry(selectedProduct.title)}
+                            className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs flex items-center gap-1.5 transition-all"
+                          >
+                            <Smartphone className="w-3.5 h-3.5 text-emerald-400" />
+                            <span>Inquire</span>
+                          </button>
+                        </div>
                       </div>
                     </div>
 

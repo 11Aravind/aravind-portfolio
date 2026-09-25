@@ -2,8 +2,8 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { FEATURED_PROJECT, GRID_PROJECTS, SELECTED_REFERENCES } from "@/data/projects";
-import { HeroProjectCard, StandardProjectCard, ReferenceCard } from "./ProjectCard";
+import { FEATURED_PROJECT, GRID_PROJECTS } from "@/data/projects";
+import { HeroProjectCard, StandardProjectCard } from "./ProjectCard";
 import { CinematicLineSweep } from "./CinematicEffects";
 
 export default function Projects() {
@@ -63,30 +63,6 @@ export default function Projects() {
           {GRID_PROJECTS.map((project, idx) => (
             <StandardProjectCard key={project.id} project={project} index={idx} />
           ))}
-        </div>
-
-        {/* Selected References Sub-section */}
-        <div className="mt-16 sm:mt-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30, filter: "blur(6px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-5"
-          >
-            <div>
-              <div className="eyebrow-accent mb-2">More Work</div>
-              <h3 className="text-2xl sm:text-3xl tracking-[-0.05em] font-extrabold text-slate-900 dark:text-[#f4f5f2]">
-                Explore Additional Stores & Sites
-              </h3>
-            </div>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {SELECTED_REFERENCES.map((ref, idx) => (
-              <ReferenceCard key={ref.id} reference={ref} index={idx} />
-            ))}
-          </div>
         </div>
 
       </div>
