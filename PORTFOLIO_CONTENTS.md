@@ -144,7 +144,7 @@ The main portfolio page ([`app/page.tsx`](file:///d:/Aravind-Works/Portfolio/app
 
 ### 13. Technology Stack ([`components/TechStack.tsx`](file:///d:/Aravind-Works/Portfolio/components/TechStack.tsx))
 * **Header:** `TECHNOLOGY STACK`
-* **Pills:** `React`, `Next.js`, `TypeScript`, `Node.js`, `Express`, `MongoDB`, `MySQL`, `React Native`
+* **Pills:** `React`, `Next.js`, `TypeScript`, `Node.js`, `Express`, `Python`, `Django`, `PHP`, `AWS`, `AI`, `SEO`, `MongoDB`, `MySQL`, `React Native`
 
 ---
 

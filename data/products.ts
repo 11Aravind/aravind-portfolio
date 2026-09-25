@@ -79,7 +79,7 @@ export const PRODUCTS_LIST: ProductItem[] = [
     iconName: "MapPin",
     mockupType: "mobile",
     accentGradient: "from-sky-500/15 via-blue-500/10 to-indigo-600/5",
-    image: "/projects/ncbrand.jpg",
+    image: "/projects/field.jpg",
     appUrl: "fieldtrack.io",
     demoDetails: {
       overview: "FieldTrack empowers distributors, FMCG brands, and field sales teams with real-time location visibility, automated beat planning, and instant mobile sales order processing.",
@@ -116,7 +116,7 @@ export const PRODUCTS_LIST: ProductItem[] = [
     iconName: "Barcode",
     mockupType: "pos",
     accentGradient: "from-indigo-500/15 via-purple-500/10 to-indigo-600/5",
-    image: "/projects/wishlist.jpg",
+    image: "/projects/barcode.jpg",
     appUrl: "stockpos.dev",
     demoDetails: {
       overview: "StockPos is built for retail outlets, supermarkets, and wholesale hubs. It handles high-volume barcode scanning, instant thermal receipt printing, and live multi-store inventory sync.",

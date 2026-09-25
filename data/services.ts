@@ -150,6 +150,12 @@ export const TECH_PILLS: string[] = [
   "TypeScript",
   "Node.js",
   "Express",
+  "Python",
+  "Django",
+  "PHP",
+  "AWS",
+  "AI",
+  "SEO",
   "MongoDB",
   "MySQL",
   "React Native"
