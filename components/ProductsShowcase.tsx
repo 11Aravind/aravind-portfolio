@@ -152,8 +152,8 @@ export default function ProductsShowcase() {
               <motion.div
                 key={product.id}
                 variants={cardVariants}
-                whileHover={{ y: -6, scale: 1.01 }}
-                className={`group rounded-[28px] p-6 sm:p-7 border transition-colors duration-300 flex flex-col justify-between relative overflow-hidden shadow-sm hover:shadow-xl ${
+                whileHover={{ y: -5, scale: 1.005 }}
+                className={`group rounded-2xl p-4 sm:p-5 border transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-sm hover:shadow-lg ${
                   isComedy
                     ? "bg-gradient-to-b from-amber-50/60 via-white to-amber-50/30 dark:from-[#1d1912] dark:via-[#14120e] dark:to-[#1d1912] border-amber-300/80 dark:border-amber-500/40 hover:border-amber-400"
                     : "bg-white dark:bg-[#121513] border-slate-200/90 dark:border-[#232823] hover:border-emerald-500/60 dark:hover:border-[#c7ff4a]/60"
@@ -162,29 +162,29 @@ export default function ProductsShowcase() {
                 
                 <div>
                   {/* Header Row: Icon + Category + Badge */}
-                  <div className="flex items-center justify-between gap-3 mb-5">
-                    <div className="flex items-center gap-3">
-                      <div className={`w-11 h-11 rounded-2xl flex items-center justify-center border shadow-sm ${
+                  <div className="flex items-center justify-between gap-2.5 mb-3.5">
+                    <div className="flex items-center gap-2.5">
+                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center border shadow-sm shrink-0 ${
                         isComedy
                           ? "bg-amber-100 border-amber-200 dark:bg-[#282218] dark:border-amber-800/60"
                           : "bg-emerald-50 border-emerald-100 dark:bg-[#162218] dark:border-[#253626]"
                       }`}>
                         {renderProductIcon(product.iconName)}
                       </div>
-                      <div>
-                        <span className={`text-[10px] font-mono font-bold uppercase tracking-wider block ${
+                      <div className="min-w-0">
+                        <span className={`text-[9.5px] font-mono font-bold uppercase tracking-wider block truncate ${
                           isComedy ? "text-amber-700 dark:text-amber-400" : "text-emerald-700 dark:text-[#c7ff4a]"
                         }`}>
                           {product.category}
                         </span>
-                        <span className="text-[11px] font-mono text-slate-500 dark:text-[#8d958d] block mt-0.5">
+                        <span className="text-[10.5px] font-mono text-slate-500 dark:text-[#8d958d] block mt-0.5 truncate">
                           {product.tag}
                         </span>
                       </div>
                     </div>
 
                     {product.badge && (
-                      <span className={`text-[10px] font-mono font-bold px-3 py-1 rounded-full border shrink-0 ${
+                      <span className={`text-[9px] font-mono font-bold px-2.5 py-0.5 rounded-full border shrink-0 ${
                         isComedy
                           ? "bg-amber-100 text-amber-900 border-amber-300 dark:bg-amber-950 dark:text-amber-300 dark:border-amber-800"
                           : "bg-slate-100 dark:bg-[#1c221c] text-slate-800 dark:text-[#c7ff4a] border-slate-200 dark:border-[#2b352b]"
@@ -195,18 +195,18 @@ export default function ProductsShowcase() {
                   </div>
 
                   {/* Product Visual Screenshot Window */}
-                  <div className="h-[200px] p-2.5 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-[#161916] dark:to-[#0d0e0d] flex items-center relative overflow-hidden rounded-2xl mb-5">
-                    <div className="w-full h-full border border-slate-200 dark:border-[#303530] rounded-xl bg-white dark:bg-[#131513] overflow-hidden group-hover:border-slate-300 dark:group-hover:border-[#4a5145] transition-colors shadow-sm relative">
+                  <div className="h-[155px] p-2 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-[#161916] dark:to-[#0d0e0d] flex items-center relative overflow-hidden rounded-xl mb-3.5">
+                    <div className="w-full h-full border border-slate-200 dark:border-[#303530] rounded-lg bg-white dark:bg-[#131513] overflow-hidden group-hover:border-slate-300 dark:group-hover:border-[#4a5145] transition-colors shadow-sm relative">
                       
                       {/* Browser Window Bar */}
-                      <div className="h-[24px] border-b border-slate-200 dark:border-[#2a2e2a] flex items-center justify-between px-2.5 bg-slate-50 dark:bg-[#131513] z-10 relative">
+                      <div className="h-[22px] border-b border-slate-200 dark:border-[#2a2e2a] flex items-center justify-between px-2 bg-slate-50 dark:bg-[#131513] z-10 relative">
                         <div className="flex items-center gap-[4px]">
-                          <i className="w-[5px] h-[5px] rounded-full bg-[#ff5f56] inline-block" />
-                          <i className="w-[5px] h-[5px] rounded-full bg-[#ffbd2e] inline-block" />
-                          <i className="w-[5px] h-[5px] rounded-full bg-[#27c93f] inline-block" />
+                          <i className="w-[4.5px] h-[4.5px] rounded-full bg-[#ff5f56] inline-block" />
+                          <i className="w-[4.5px] h-[4.5px] rounded-full bg-[#ffbd2e] inline-block" />
+                          <i className="w-[4.5px] h-[4.5px] rounded-full bg-[#27c93f] inline-block" />
                         </div>
                         <div className="flex items-center gap-1.5 truncate max-w-[170px]">
-                          <small className="text-slate-400 dark:text-[#aab0a7] font-mono text-[9px] tracking-wider uppercase truncate">
+                          <small className="text-slate-400 dark:text-[#aab0a7] font-mono text-[8.5px] tracking-wider uppercase truncate">
                             {product.appUrl ? product.appUrl.replace(/^https?:\/\//, '').replace(/\/$/, '') : "live.app"}
                           </small>
                           {product.appUrl && (
@@ -225,7 +225,7 @@ export default function ProductsShowcase() {
                       </div>
 
                       {/* Product Screenshot Image */}
-                      <div className="h-[calc(100%-24px)] w-full relative overflow-hidden bg-slate-100 dark:bg-[#0e100e]">
+                      <div className="h-[calc(100%-22px)] w-full relative overflow-hidden bg-slate-100 dark:bg-[#0e100e]">
                         {product.image ? (
                           <Image
                             src={product.image}
@@ -244,7 +244,7 @@ export default function ProductsShowcase() {
                   </div>
 
                   {/* Clean Title */}
-                  <h3 className={`text-xl font-bold mb-2.5 leading-snug transition-colors ${
+                  <h3 className={`text-base sm:text-lg font-bold mb-1.5 leading-snug transition-colors ${
                     isComedy
                       ? "text-amber-950 dark:text-amber-100 group-hover:text-amber-600 dark:group-hover:text-amber-300"
                       : "text-slate-900 dark:text-[#f4f5f2] group-hover:text-emerald-600 dark:group-hover:text-[#c7ff4a]"
@@ -253,16 +253,16 @@ export default function ProductsShowcase() {
                   </h3>
 
                   {/* Concise 2-line Description */}
-                  <p className="text-slate-600 dark:text-[#9da39d] text-sm leading-relaxed mb-5 line-clamp-2">
+                  <p className="text-slate-600 dark:text-[#9da39d] text-xs leading-relaxed mb-3.5 line-clamp-2">
                     {product.description}
                   </p>
 
                   {/* Key Tech / Feature Pills */}
-                  <div className="flex flex-wrap gap-1.5 mb-6">
+                  <div className="flex flex-wrap gap-1 mb-4">
                     {product.techStack.map((tech, tIdx) => (
                       <span
                         key={tIdx}
-                        className="text-[10.5px] font-mono font-semibold px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-[#181d19] border border-slate-200/70 dark:border-[#252d25] text-slate-700 dark:text-[#a0a8a0]"
+                        className="text-[9.5px] font-mono font-medium px-2 py-0.5 rounded-md bg-slate-100 dark:bg-[#181d19] border border-slate-200/70 dark:border-[#252d25] text-slate-700 dark:text-[#a0a8a0]"
                       >
                         {tech}
                       </span>
@@ -270,26 +270,18 @@ export default function ProductsShowcase() {
                   </div>
                 </div>
 
-                {/* Clean Bottom Action Row: View Details & Demo (Primary) + WhatsApp (Secondary) */}
-                <div className="pt-4 border-t border-slate-100 dark:border-[#1e231f] flex items-center justify-between gap-3">
+                {/* Single Sleek Action Button: View Details & Connect */}
+                <div className="pt-3 border-t border-slate-100 dark:border-[#1e231f]">
                   <button
                     onClick={() => handleOpenDemoModal(product, "overview")}
-                    className={`flex-1 py-3 px-5 rounded-2xl font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-sm group/btn ${
+                    className={`w-full py-2.5 px-4 rounded-xl font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-sm group/btn ${
                       isComedy
                         ? "bg-amber-500 hover:bg-amber-600 text-amber-950 dark:bg-amber-400 dark:hover:bg-amber-300 shadow-amber-500/20"
                         : "bg-slate-900 hover:bg-slate-800 text-white dark:bg-[#c7ff4a] dark:text-[#0a0b0a] dark:hover:bg-[#b5f532]"
                     }`}
                   >
-                    <span>View Details & Demo</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-                  </button>
-
-                  <button
-                    onClick={() => handleWhatsAppInquiry(product.title)}
-                    className="p-3 rounded-2xl bg-emerald-50 dark:bg-[#161c16] text-emerald-700 dark:text-[#c7ff4a] border border-emerald-200/80 dark:border-[#233222] hover:bg-emerald-100 dark:hover:bg-[#1b251b] transition-all flex items-center justify-center shrink-0"
-                    title="Inquire on WhatsApp"
-                  >
-                    <Smartphone className="w-4 h-4 text-emerald-600 dark:text-[#c7ff4a]" />
+                    <span>View Details & Connect</span>
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
                   </button>
                 </div>
 
