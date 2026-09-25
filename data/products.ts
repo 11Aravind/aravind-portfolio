@@ -12,6 +12,8 @@ export interface ProductItem {
   iconName: "UtensilsCrossed" | "MapPin" | "Barcode" | "Coffee";
   mockupType: "browser" | "mobile" | "pos" | "terminal";
   accentGradient: string;
+  image?: string;
+  appUrl?: string;
   isComedy?: boolean;
   demoDetails: {
     overview: string;
@@ -40,6 +42,8 @@ export const PRODUCTS_LIST: ProductItem[] = [
     iconName: "UtensilsCrossed",
     mockupType: "browser",
     accentGradient: "from-emerald-500/15 via-teal-500/10 to-emerald-600/5",
+    image: "/projects/aoba.jpg",
+    appUrl: "quickdine.app",
     demoDetails: {
       overview: "QuickDine is a turnkey solution designed for restaurants, cafes, and multi-branch hotel chains. It digitizes food ordering from table QR scans to kitchen preparation and home delivery dispatch.",
       modules: [
@@ -75,6 +79,8 @@ export const PRODUCTS_LIST: ProductItem[] = [
     iconName: "MapPin",
     mockupType: "mobile",
     accentGradient: "from-sky-500/15 via-blue-500/10 to-indigo-600/5",
+    image: "/projects/ncbrand.jpg",
+    appUrl: "fieldtrack.io",
     demoDetails: {
       overview: "FieldTrack empowers distributors, FMCG brands, and field sales teams with real-time location visibility, automated beat planning, and instant mobile sales order processing.",
       modules: [
@@ -110,6 +116,8 @@ export const PRODUCTS_LIST: ProductItem[] = [
     iconName: "Barcode",
     mockupType: "pos",
     accentGradient: "from-indigo-500/15 via-purple-500/10 to-indigo-600/5",
+    image: "/projects/wishlist.jpg",
+    appUrl: "stockpos.dev",
     demoDetails: {
       overview: "StockPos is built for retail outlets, supermarkets, and wholesale hubs. It handles high-volume barcode scanning, instant thermal receipt printing, and live multi-store inventory sync.",
       modules: [

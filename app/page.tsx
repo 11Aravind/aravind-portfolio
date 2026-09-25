@@ -28,14 +28,14 @@ export default function Home() {
     <>
       {/* Cinematic film-style page loader */}
       <CinematicLoader />
-      
+
       {/* Ambient cursor glow (desktop only) */}
       <CursorGlow />
 
       <main className="cinematic-grain min-h-screen bg-slate-50 text-slate-900 dark:bg-[#090a0a] dark:text-[#f4f5f2] relative selection:bg-emerald-500 selection:text-white dark:selection:bg-[#c7ff4a] dark:selection:text-black transition-colors duration-300">
         <Navbar />
         <Hero />
-        
+
         {/* 1. WHAT I CAN BUILD FOR YOU + WHAT ARE YOU LOOKING TO BUILD? */}
         <Services />
         {/* <WhoIHelp /> */}
@@ -55,6 +55,9 @@ export default function Home() {
         {/* 6. WHAT CLIENTS SAY ABOUT MY WORK */}
         <ClientReviews />
         <TrustProof />
+
+        {/* 4. ONE PARTNER. FROM IDEA TO LAUNCH. */}
+        <OnePartner />
 
         {/* 7. ABOUT ARAVIND */}
         <About />

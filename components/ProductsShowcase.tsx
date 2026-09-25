@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import { PRODUCTS_LIST, ProductItem } from "@/data/products";
 import { 
   Package, 
@@ -192,6 +193,41 @@ export default function ProductsShowcase() {
                         {product.badge}
                       </span>
                     )}
+                  </div>
+
+                  {/* Product Visual Screenshot Window */}
+                  <div className="h-[200px] p-2.5 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-[#161916] dark:to-[#0d0e0d] flex items-center relative overflow-hidden rounded-2xl mb-5">
+                    <div className="w-full h-full border border-slate-200 dark:border-[#303530] rounded-xl bg-white dark:bg-[#131513] overflow-hidden group-hover:border-slate-300 dark:group-hover:border-[#4a5145] transition-colors shadow-sm relative">
+                      
+                      {/* Browser Window Bar */}
+                      <div className="h-[24px] border-b border-slate-200 dark:border-[#2a2e2a] flex items-center justify-between px-2.5 bg-slate-50 dark:bg-[#131513] z-10 relative">
+                        <div className="flex items-center gap-[4px]">
+                          <i className="w-[5px] h-[5px] rounded-full bg-[#ff5f56] inline-block" />
+                          <i className="w-[5px] h-[5px] rounded-full bg-[#ffbd2e] inline-block" />
+                          <i className="w-[5px] h-[5px] rounded-full bg-[#27c93f] inline-block" />
+                        </div>
+                        <small className="text-slate-400 dark:text-[#aab0a7] font-mono text-[9px] tracking-wider uppercase truncate max-w-[140px]">
+                          {product.appUrl || "live.app"}
+                        </small>
+                      </div>
+
+                      {/* Product Screenshot Image */}
+                      <div className="h-[calc(100%-24px)] w-full relative overflow-hidden bg-slate-100 dark:bg-[#0e100e]">
+                        {product.image ? (
+                          <Image
+                            src={product.image}
+                            alt={product.title}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                          />
+                        ) : (
+                          <div className="p-4 flex items-center justify-center h-full text-xs font-mono text-slate-400">
+                            System Preview Ready
+                          </div>
+                        )}
+                      </div>
+                    </div>
                   </div>
 
                   {/* Clean Title */}
