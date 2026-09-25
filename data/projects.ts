@@ -40,7 +40,7 @@ export const FEATURED_PROJECT: Project = {
   description: "A production e-commerce platform for a fashion business based in Sasthamcotta, Kollam, Kerala. Designed around a clean shopping experience and responsive customer journey.",
   visualTitle: "Curated fashion.\nMade to shop.",
   visualSub: "E-COMMERCE PLATFORM",
-  image: "/projects/noorzah.jpg"
+  image: "/projects/noorzah-project-img.jpg"
 };
 
 export interface ClientReview {
@@ -112,7 +112,7 @@ export const GRID_PROJECTS: Project[] = [
     description: "Fashion-focused online shopping experience built for seamless product browsing and modern mobile shopping.",
     locationContext: "WISHLIST BY PRAVEENA",
     visualTitle: "Fashion\ne-commerce",
-    image: "/projects/wishlist.jpg"
+    image: "/projects/praveena.png"
   },
   {
     id: "nc-brand-fashion",
@@ -122,7 +122,7 @@ export const GRID_PROJECTS: Project[] = [
     description: "Modern fashion e-commerce storefront engineered for brand identity and clean customer navigation.",
     locationContext: "NC BRAND FASHION",
     visualTitle: "Brand\nstorefront",
-    image: "/projects/ncbrand.jpg"
+    image: "/projects/ncbrand-img.png"
   },
   {
     id: "aoba",
@@ -132,7 +132,7 @@ export const GRID_PROJECTS: Project[] = [
     description: "A modern web application experience built with a clean, highly responsive interface and custom interaction flow.",
     locationContext: "AOBA",
     visualTitle: "Modern\ndigital experience",
-    image: "/projects/aoba.jpg"
+    image: "/projects/aoba-project-img.png"
   }
 ];
 
