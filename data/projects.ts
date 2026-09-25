@@ -122,7 +122,7 @@ export const GRID_PROJECTS: Project[] = [
     description: "Modern fashion e-commerce storefront engineered for brand identity and clean customer navigation.",
     locationContext: "NC BRAND FASHION",
     visualTitle: "Brand\nstorefront",
-    image: "/projects/ncbrand-img.png"
+    image: "/projects/ncbrand-imgs.png"
   },
   {
     id: "aoba",
