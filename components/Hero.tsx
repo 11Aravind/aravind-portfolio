@@ -59,7 +59,7 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="hero wrap min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center relative overflow-hidden pt-16 sm:pt-24 pb-12 sm:pb-20"
+      className="hero wrap min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center relative overflow-hidden pt-32 sm:pt-24 pb-12 sm:pb-20"
     >
 
       {/* Soft Decorative Background Circles with Parallax */}
@@ -85,7 +85,7 @@ export default function Hero() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="lg:col-span-7 flex flex-col justify-center text-left"
+          className="lg:col-span-7 flex flex-col justify-center text-left mt-4 sm:mt-0"
         >
           {/* Eyebrow */}
           <motion.div variants={itemVariants} className="mb-3">
