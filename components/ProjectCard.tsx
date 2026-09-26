@@ -19,7 +19,7 @@ export function HeroProjectCard({ project }: HeroProjectCardProps) {
       className="grid grid-cols-1 lg:grid-cols-12 bg-white dark:bg-[#101211] border border-slate-200 dark:border-[#252925] rounded-3xl overflow-hidden hover:border-slate-300 dark:hover:border-[#3c4339] transition-colors duration-300 shadow-xl shadow-slate-200/50 dark:shadow-2xl group"
     >
       {/* Visual Shot Column */}
-      <div className="lg:col-span-7 min-h-[360px] sm:min-h-[420px] bg-gradient-to-br from-slate-100 via-slate-50 to-slate-200 dark:from-[#171a17] dark:via-[#121412] dark:to-[#0d0e0d] p-4 sm:p-6 flex items-center relative overflow-hidden">
+      <div className="lg:col-span-7 p-3.5 sm:p-6 flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-100 via-slate-50 to-slate-200 dark:from-[#171a17] dark:via-[#121412] dark:to-[#0d0e0d]">
         
         {/* Inner Glow */}
         <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/10 dark:bg-[#c7ff4a]/5 rounded-full blur-[90px] pointer-events-none group-hover:bg-emerald-500/15 dark:group-hover:bg-[#c7ff4a]/10 transition-colors duration-700" />
@@ -43,14 +43,16 @@ export function HeroProjectCard({ project }: HeroProjectCardProps) {
           </div>
 
           {/* Store Visual Screenshot Content */}
-          <div className="h-[250px] sm:h-[320px] relative overflow-hidden bg-slate-100 dark:bg-[#0d0e0d]">
+          <div className="w-full relative overflow-hidden bg-slate-100 dark:bg-[#0d0e0d] flex items-center justify-center">
             {project.image ? (
               <Image
                 src={project.image}
                 alt={project.name}
-                fill
+                width={1901}
+                height={857}
                 sizes="(max-width: 1024px) 100vw, 58vw"
-                className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700"
+                priority
               />
             ) : (
               <div className="h-full p-6 sm:p-8 bg-gradient-to-r from-emerald-900 to-slate-900 dark:from-[#1a1f19] dark:to-[#111311] text-white flex flex-col justify-between">
