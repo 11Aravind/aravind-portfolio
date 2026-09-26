@@ -88,7 +88,7 @@ export default function ProductsShowcase() {
   };
 
   const handleWhatsAppInquiry = (productTitle: string) => {
-    const text = encodeURIComponent(`Hi Aravind, I would like to inquire about your product "${productTitle}". Please share live demo & pricing options.`);
+    const text = encodeURIComponent(`Hi Aravind, I am interested in seeing a live demo & getting pricing for "${productTitle}". Please share details.`);
     window.open(`https://wa.me/918848310248?text=${text}`, "_blank");
   };
 
@@ -130,7 +130,7 @@ export default function ProductsShowcase() {
             </h2>
 
             <p className="text-slate-600 dark:text-[#9da39d] max-w-xl text-base sm:text-lg mt-3">
-              Production-ready web apps, mobile systems, and POS software. Click any product to explore interactive live demos & details.
+              Production-ready web apps, mobile systems, and POS software. Click any product to request a live demo & pricing via WhatsApp.
             </p>
           </motion.div>
         </div>
@@ -153,7 +153,7 @@ export default function ProductsShowcase() {
                 key={product.id}
                 variants={cardVariants}
                 whileHover={{ y: -5, scale: 1.005 }}
-                // onClick={() => handleOpenDemoModal(product, "overview")}
+                onClick={() => handleWhatsAppInquiry(product.title)}
                 className={`group rounded-2xl p-4 sm:p-5 border transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-sm hover:shadow-lg cursor-pointer ${isComedy
                   ? "bg-gradient-to-b from-amber-50/60 via-white to-amber-50/30 dark:from-[#1d1912] dark:via-[#14120e] dark:to-[#1d1912] border-amber-300/80 dark:border-amber-500/40 hover:border-amber-400"
                   : "bg-white dark:bg-[#121513] border-slate-200/90 dark:border-[#232823] hover:border-emerald-500/60 dark:hover:border-[#c7ff4a]/60"
@@ -217,12 +217,12 @@ export default function ProductsShowcase() {
 
                 </div>
 
-                {/* Single Sleek Action Button: View Details & Connect */}
+                {/* Single Sleek Action Button: Request for Demo */}
                 <div className="pt-3 border-t border-slate-100 dark:border-[#1e231f]">
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      handleOpenDemoModal(product, "overview");
+                      handleWhatsAppInquiry(product.title);
                     }}
                     className={`w-full py-2.5 px-4 rounded-xl font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-sm group/btn ${isComedy
                       ? "bg-amber-500 hover:bg-amber-600 text-amber-950 dark:bg-amber-400 dark:hover:bg-amber-300 shadow-amber-500/20"
@@ -241,366 +241,16 @@ export default function ProductsShowcase() {
 
       </div>
 
-      {/* COMPREHENSIVE INTERACTIVE DEMO & DETAILS MODAL */}
+      {/* COMPREHENSIVE INTERACTIVE DEMO & DETAILS MODAL (DISABLED - DIRECT WHATSAPP REDIRECT ACTIVE) */}
+      {/* 
       <AnimatePresence>
         {selectedProduct && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-lg">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.92, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.92, y: 20 }}
-              className="w-full max-w-2xl rounded-3xl bg-white dark:bg-[#121513] border border-slate-200 dark:border-[#252925] shadow-2xl relative overflow-hidden flex flex-col max-h-[90vh]"
-            >
-
-              {/* Modal Header */}
-              <div className={`p-6 bg-gradient-to-br ${selectedProduct.accentGradient} border-b border-slate-200 dark:border-[#202721] relative`}>
-                <button
-                  onClick={() => setSelectedProduct(null)}
-                  className="absolute top-5 right-5 p-2 rounded-full bg-white/80 dark:bg-[#191d1a]/80 text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 rounded-2xl bg-white dark:bg-[#191d1a] border border-slate-200 dark:border-[#282f29] flex items-center justify-center shadow-md">
-                    {renderProductIcon(selectedProduct.iconName)}
-                  </div>
-                  <div>
-                    <span className="text-xs font-mono font-bold text-emerald-600 dark:text-[#c7ff4a] uppercase tracking-wider block">
-                      {selectedProduct.category} • {selectedProduct.modelType}
-                    </span>
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white leading-tight">
-                      {selectedProduct.title}
-                    </h3>
-                  </div>
-                </div>
-
-                {/* Modal Navigation Tabs */}
-                <div className="flex items-center gap-2 mt-5 pt-3 border-t border-slate-200/50 dark:border-white/10 overflow-x-auto no-scrollbar">
-                  <button
-                    onClick={() => setActiveModalTab("overview")}
-                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${activeModalTab === "overview"
-                      ? "bg-slate-900 text-white dark:bg-[#c7ff4a] dark:text-black shadow-sm"
-                      : "bg-white/80 dark:bg-[#181d19] text-slate-700 dark:text-[#a0a8a0] hover:bg-white dark:hover:bg-[#202721]"
-                      }`}
-                  >
-                    <Laptop className="w-3.5 h-3.5" />
-                    <span>Demo Overview</span>
-                  </button>
-
-                  <button
-                    onClick={() => setActiveModalTab("modules")}
-                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${activeModalTab === "modules"
-                      ? "bg-slate-900 text-white dark:bg-[#c7ff4a] dark:text-black shadow-sm"
-                      : "bg-white/80 dark:bg-[#181d19] text-slate-700 dark:text-[#a0a8a0] hover:bg-white dark:hover:bg-[#202721]"
-                      }`}
-                  >
-                    <Layers className="w-3.5 h-3.5" />
-                    <span>Key Modules</span>
-                  </button>
-
-                  <button
-                    onClick={() => setActiveModalTab("specs")}
-                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${activeModalTab === "specs"
-                      ? "bg-slate-900 text-white dark:bg-[#c7ff4a] dark:text-black shadow-sm"
-                      : "bg-white/80 dark:bg-[#181d19] text-slate-700 dark:text-[#a0a8a0] hover:bg-white dark:hover:bg-[#202721]"
-                      }`}
-                  >
-                    <Cpu className="w-3.5 h-3.5" />
-                    <span>Specs & Stack</span>
-                  </button>
-
-                  <button
-                    onClick={() => setActiveModalTab("inquire")}
-                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${activeModalTab === "inquire"
-                      ? "bg-emerald-600 text-white dark:bg-[#c7ff4a] dark:text-black shadow-sm"
-                      : "bg-emerald-50 dark:bg-[#1a251b] text-emerald-700 dark:text-[#c7ff4a] border border-emerald-200 dark:border-[#253526]"
-                      }`}
-                  >
-                    <MessageSquare className="w-3.5 h-3.5" />
-                    <span>Inquire / Quote</span>
-                  </button>
-                </div>
-
-              </div>
-
-              {/* Modal Body Content */}
-              <div className="p-6 overflow-y-auto flex-1 text-slate-700 dark:text-[#c0c8c0]">
-
-                {/* TAB 1: OVERVIEW */}
-                {activeModalTab === "overview" && (
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-2 uppercase tracking-wide font-mono">
-                        Product Architecture & Overview
-                      </h4>
-                      <p className="text-sm leading-relaxed text-slate-600 dark:text-[#a0a8a0]">
-                        {selectedProduct.demoDetails.overview}
-                      </p>
-                    </div>
-
-                    {/* Full Product Screenshot Preview Image */}
-                    {selectedProduct.image && (
-                      <div className="rounded-2xl border border-slate-200 dark:border-[#282f29] bg-white dark:bg-[#131513] overflow-hidden shadow-md">
-                        <div className="h-[28px] border-b border-slate-200 dark:border-[#252c25] px-3 flex items-center justify-between bg-slate-100 dark:bg-[#161a17]">
-                          <div className="flex items-center gap-1.5">
-                            <span className="w-2.5 h-2.5 rounded-full bg-red-400 inline-block" />
-                            <span className="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block" />
-                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 inline-block" />
-                          </div>
-                          {selectedProduct.badge ? (
-                            <span className="text-[9px] font-extrabold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-[#1b2b1b] dark:text-[#c7ff4a] border border-emerald-200/80 dark:border-[#2a402a] uppercase tracking-wider">
-                              {selectedProduct.badge}
-                            </span>
-                          ) : (
-                            <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider">
-                              System Visual Preview
-                            </span>
-                          )}
-                        </div>
-                        <div className="relative h-[220px] sm:h-[280px] w-full bg-slate-900 overflow-hidden">
-                          <Image
-                            src={selectedProduct.image}
-                            alt={selectedProduct.title}
-                            fill
-                            sizes="(max-width: 768px) 100vw, 600px"
-                            className="object-cover object-top"
-                          />
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Metrics stat pills */}
-                    <div className="flex flex-wrap gap-2">
-                      {selectedProduct.metrics.map((m, mIdx) => (
-                        <span key={mIdx} className="text-xs font-mono font-bold px-3 py-1.5 rounded-xl bg-emerald-50 dark:bg-[#172418] border border-emerald-200/80 dark:border-[#243825] text-emerald-800 dark:text-[#c7ff4a]">
-                          {m}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Simulated Screen Preview Canvas */}
-                    <div className="rounded-2xl border border-slate-200 dark:border-[#282f29] bg-slate-950 p-5 text-white shadow-xl relative overflow-hidden">
-                      <div className="flex items-center justify-between text-xs text-slate-400 pb-3 mb-4 border-b border-slate-800 font-mono">
-                        <div className="flex items-center gap-2">
-                          <Activity className="w-4 h-4 text-emerald-400 animate-pulse" />
-                          <span>Simulated System Dashboard</span>
-                        </div>
-                        <span className="text-emerald-400 font-bold">● ONLINE DEMO READY</span>
-                      </div>
-
-                      <div className="grid grid-cols-2 gap-3 text-xs">
-                        <div className="p-3 rounded-xl bg-slate-900 border border-slate-800">
-                          <span className="text-slate-400 block text-[10px] uppercase font-mono">System Model</span>
-                          <span className="font-bold text-emerald-400 block mt-0.5">{selectedProduct.modelType}</span>
-                        </div>
-                        <div className="p-3 rounded-xl bg-slate-900 border border-slate-800">
-                          <span className="text-slate-400 block text-[10px] uppercase font-mono">Deployment</span>
-                          <span className="font-bold text-white block mt-0.5">Cloud SaaS / On-Premise</span>
-                        </div>
-                      </div>
-
-                      <div className="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between flex-wrap gap-2">
-                        <span className="text-xs text-slate-400">Want a live walkthrough or preview?</span>
-                        <div className="flex items-center gap-2">
-                          {selectedProduct.appUrl && (
-                            <a
-                              href={selectedProduct.appUrl.startsWith("http") ? selectedProduct.appUrl : `https://${selectedProduct.appUrl}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs flex items-center gap-1.5 transition-all shadow-sm"
-                            >
-                              <span>View Live App</span>
-                              <ExternalLink className="w-3.5 h-3.5" />
-                            </a>
-                          )}
-                          <button
-                            onClick={() => handleWhatsAppInquiry(selectedProduct.title)}
-                            className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs flex items-center gap-1.5 transition-all"
-                          >
-                            <Smartphone className="w-3.5 h-3.5 text-emerald-400" />
-                            <span>Inquire</span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-3 uppercase tracking-wide font-mono">
-                        Included Features
-                      </h4>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                        {selectedProduct.features.map((f, idx) => (
-                          <div key={idx} className="p-3 rounded-xl bg-slate-50 dark:bg-[#161a17] border border-slate-200/80 dark:border-[#232823] flex items-center gap-2.5 text-xs font-semibold text-slate-800 dark:text-slate-200">
-                            <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-[#c7ff4a] shrink-0" />
-                            <span>{f}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* TAB 2: MODULES */}
-                {activeModalTab === "modules" && (
-                  <div className="space-y-4">
-                    <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-2 uppercase tracking-wide font-mono">
-                      Sub-Modules & Workflows
-                    </h4>
-                    {selectedProduct.demoDetails.modules.map((mod, idx) => (
-                      <div key={idx} className="p-4 rounded-2xl bg-slate-50 dark:bg-[#161a17] border border-slate-200 dark:border-[#232823] flex items-start gap-3">
-                        <div className="w-7 h-7 rounded-xl bg-emerald-100 dark:bg-[#1c291c] text-emerald-700 dark:text-[#c7ff4a] flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
-                          {idx + 1}
-                        </div>
-                        <div>
-                          <p className="text-xs font-semibold leading-relaxed text-slate-800 dark:text-slate-200">
-                            {mod}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {/* TAB 3: SPECS */}
-                {activeModalTab === "specs" && (
-                  <div className="space-y-4">
-                    <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-2 uppercase tracking-wide font-mono">
-                      Technical Specs & Integrations
-                    </h4>
-                    {selectedProduct.demoDetails.specs.map((spec, idx) => (
-                      <div key={idx} className="p-3.5 rounded-xl bg-slate-50 dark:bg-[#161a17] border border-slate-200 dark:border-[#232823] text-xs font-mono text-slate-700 dark:text-[#c0c8c0] flex items-center gap-2">
-                        <Zap className="w-4 h-4 text-amber-500 shrink-0" />
-                        <span>{spec}</span>
-                      </div>
-                    ))}
-
-                    <div className="pt-3">
-                      <span className="text-xs font-mono font-bold text-slate-500 uppercase block mb-2">Technologies Used</span>
-                      <div className="flex flex-wrap gap-2">
-                        {selectedProduct.techStack.map((tech, idx) => (
-                          <span key={idx} className="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-[#1e241f] border border-slate-200 dark:border-[#2c372d] text-xs font-mono font-bold text-slate-800 dark:text-[#c7ff4a]">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* TAB 4: INQUIRE FORM */}
-                {activeModalTab === "inquire" && (
-                  <div>
-                    {inquirySuccess ? (
-                      <div className="py-10 text-center flex flex-col items-center justify-center">
-                        <div className="w-16 h-16 rounded-full bg-emerald-100 dark:bg-[#182618] text-emerald-600 dark:text-[#c7ff4a] flex items-center justify-center mb-4">
-                          <ShieldCheck className="w-8 h-8" />
-                        </div>
-                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-                          Inquiry Received!
-                        </h3>
-                        <p className="text-slate-600 dark:text-[#9da39d] text-sm max-w-sm">
-                          Thank you for inquiring about <strong>{selectedProduct.title}</strong>. I will get back to you with custom demo options & pricing right away!
-                        </p>
-                      </div>
-                    ) : (
-                      <form onSubmit={handleSubmitInquiry} className="space-y-4">
-                        <div>
-                          <label className="block text-xs font-mono text-slate-600 dark:text-[#9da39d] uppercase mb-1">
-                            Your Name *
-                          </label>
-                          <input
-                            type="text"
-                            required
-                            placeholder="John Doe / Business Name"
-                            value={formData.name}
-                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                            className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#161a17] border border-slate-200 dark:border-[#252b25] text-slate-900 dark:text-white text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-[#c7ff4a]"
-                          />
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                          <div>
-                            <label className="block text-xs font-mono text-slate-600 dark:text-[#9da39d] uppercase mb-1">
-                              Email Address *
-                            </label>
-                            <input
-                              type="email"
-                              required
-                              placeholder="you@company.com"
-                              value={formData.email}
-                              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                              className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#161a17] border border-slate-200 dark:border-[#252b25] text-slate-900 dark:text-white text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-[#c7ff4a]"
-                            />
-                          </div>
-
-                          <div>
-                            <label className="block text-xs font-mono text-slate-600 dark:text-[#9da39d] uppercase mb-1">
-                              WhatsApp / Phone
-                            </label>
-                            <input
-                              type="tel"
-                              placeholder="+91 Mobile number"
-                              value={formData.phone}
-                              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                              className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#161a17] border border-slate-200 dark:border-[#252b25] text-slate-900 dark:text-white text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-[#c7ff4a]"
-                            />
-                          </div>
-                        </div>
-
-                        <div>
-                          <label className="block text-xs font-mono text-slate-600 dark:text-[#9da39d] uppercase mb-1">
-                            Inquiry Message
-                          </label>
-                          <textarea
-                            rows={3}
-                            required
-                            value={formData.message}
-                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                            className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#161a17] border border-slate-200 dark:border-[#252b25] text-slate-900 dark:text-white text-sm focus:outline-none focus:border-emerald-500 dark:focus:border-[#c7ff4a]"
-                          />
-                        </div>
-
-                        <div className="pt-2 flex items-center justify-between gap-3">
-                          <button
-                            type="button"
-                            onClick={() => handleWhatsAppInquiry(selectedProduct.title)}
-                            className="px-4 py-3 rounded-xl bg-emerald-50 dark:bg-[#161c16] text-emerald-700 dark:text-[#c7ff4a] border border-emerald-200 dark:border-[#253323] text-xs font-bold uppercase tracking-wider flex items-center gap-2 hover:bg-emerald-100 transition-all"
-                          >
-                            <Smartphone className="w-4 h-4" />
-                            <span>WhatsApp</span>
-                          </button>
-
-                          <button
-                            type="submit"
-                            className="flex-1 py-3 px-5 rounded-xl bg-emerald-600 text-white dark:bg-[#c7ff4a] dark:text-[#0a0b0a] font-bold text-xs uppercase tracking-wider hover:bg-emerald-700 dark:hover:bg-[#b5f532] transition-all flex items-center justify-center gap-2 shadow-md"
-                          >
-                            <Send className="w-4 h-4" />
-                            <span>Submit Product Inquiry</span>
-                          </button>
-                        </div>
-                      </form>
-                    )}
-                  </div>
-                )}
-
-              </div>
-
-              {/* Modal Footer Bar */}
-              <div className="p-4 bg-slate-50 dark:bg-[#101311] border-t border-slate-200 dark:border-[#202721] flex items-center justify-between text-xs text-slate-500 dark:text-[#889088]">
-                <span>Customization & White-label options</span>
-                <button
-                  onClick={() => handleWhatsAppInquiry(selectedProduct.title)}
-                  className="font-bold text-emerald-600 dark:text-[#c7ff4a] hover:underline flex items-center gap-1"
-                >
-                  <span>Fast WhatsApp Response (&lt; 15 mins)</span>
-                </button>
-              </div>
-
-            </motion.div>
+            ...
           </div>
         )}
       </AnimatePresence>
+      */}
 
     </section>
   );
