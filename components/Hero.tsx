@@ -159,7 +159,7 @@ export default function Hero() {
               <Github className="w-4 h-4" />
             </a>
             <a
-              href="linkedin.com/in/aravind-as"
+              href="https://linkedin.com/in/aravind-as"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"
