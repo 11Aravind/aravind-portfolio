@@ -8,7 +8,6 @@ import Process from "@/components/Process";
 import OnePartner from "@/components/OnePartner";
 import Projects from "@/components/Projects";
 import ProductsShowcase from "@/components/ProductsShowcase";
-import CaseStudy from "@/components/CaseStudy";
 import ClientReviews from "@/components/ClientReviews";
 import TrustProof from "@/components/TrustProof";
 import LeadQualification from "@/components/LeadQualification";
