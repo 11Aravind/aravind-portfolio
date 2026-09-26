@@ -24,6 +24,51 @@
   --badge-bg: #141714;
 }
 
+.demo-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 15px 22px;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.demo-btn:hover {
+  transform: translateY(-2px);
+}
+
+.quickdine {
+  background: #087f5b;
+  box-shadow: 0 8px 24px rgba(8, 127, 91, 0.18);
+}
+
+.fieldtrack {
+  background: #1261b5;
+  box-shadow: 0 8px 24px rgba(18, 97, 181, 0.18);
+}
+
+.stockpos {
+  background: #4720a8;
+  box-shadow: 0 8px 24px rgba(71, 32, 168, 0.18);
+}
+
+.demo-btn span:last-child {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.demo-btn:hover span:last-child {
+  transform: translateX(5px);
+}
+
 html {
   scroll-behavior: smooth;
   color-scheme: light dark;
@@ -43,16 +88,20 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--line);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
 .dark ::-webkit-scrollbar-thumb:hover {
   background: #3c4339;
 }
@@ -105,6 +154,7 @@ body {
   border-color: #94a3b8;
   background-color: rgba(0, 0, 0, 0.03);
 }
+
 .dark .btn-secondary:hover {
   border-color: #555c54;
   background-color: rgba(255, 255, 255, 0.03);
@@ -140,25 +190,37 @@ body {
 
 /* Shimmer sweep animation for accent elements */
 @keyframes shimmer-sweep {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 .cinematic-shimmer {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(199, 255, 74, 0.08) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(199, 255, 74, 0.08) 50%,
+      transparent 100%);
   background-size: 200% 100%;
   animation: shimmer-sweep 4s ease-in-out infinite;
 }
 
 /* Ambient glow pulse */
 @keyframes glow-pulse {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(1.05); }
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
 }
 
 .cinematic-glow-pulse {
@@ -167,9 +229,17 @@ body {
 
 /* Gradient rotation for backgrounds */
 @keyframes gradient-rotate {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .cinematic-gradient-shift {
@@ -179,8 +249,13 @@ body {
 
 /* Smooth section divider line animation */
 @keyframes line-grow {
-  0% { transform: scaleX(0); }
-  100% { transform: scaleX(1); }
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
 }
 
 .cinematic-line-reveal {
@@ -190,9 +265,19 @@ body {
 
 /* Floating animation for decorative elements */
 @keyframes cinematic-float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  33% { transform: translateY(-12px) rotate(1deg); }
-  66% { transform: translateY(6px) rotate(-0.5deg); }
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  33% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+
+  66% {
+    transform: translateY(6px) rotate(-0.5deg);
+  }
 }
 
 .cinematic-float {
@@ -201,9 +286,20 @@ body {
 
 /* Parallax scroll indicator pulse */
 @keyframes scroll-indicator {
-  0% { opacity: 0.3; transform: translateY(0); }
-  50% { opacity: 1; transform: translateY(8px); }
-  100% { opacity: 0.3; transform: translateY(0); }
+  0% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(8px);
+  }
+
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
 }
 
 .cinematic-scroll-indicator {
@@ -212,8 +308,13 @@ body {
 
 /* Text highlight sweep */
 @keyframes text-highlight {
-  0% { background-size: 0% 100%; }
-  100% { background-size: 100% 100%; }
+  0% {
+    background-size: 0% 100%;
+  }
+
+  100% {
+    background-size: 100% 100%;
+  }
 }
 
 .cinematic-text-highlight {
@@ -242,6 +343,7 @@ body {
 
 /* Disable all cinematic animations for reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
+
   .cinematic-grain::after,
   .cinematic-shimmer,
   .cinematic-glow-pulse,

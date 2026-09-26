@@ -42,7 +42,7 @@ export const PRODUCTS_LIST: ProductItem[] = [
     iconName: "UtensilsCrossed",
     mockupType: "browser",
     accentGradient: "from-emerald-500/15 via-teal-500/10 to-emerald-600/5",
-    image: "/projects/orderle.png",
+    image: "/projects/quick-dinner.png",
     appUrl: "https://inn-bites.vercel.app/",
     demoDetails: {
       overview: "QuickDine is a turnkey solution designed for restaurants, cafes, and multi-branch hotel chains. It digitizes food ordering from table QR scans to kitchen preparation and home delivery dispatch.",
@@ -79,7 +79,7 @@ export const PRODUCTS_LIST: ProductItem[] = [
     iconName: "MapPin",
     mockupType: "mobile",
     accentGradient: "from-sky-500/15 via-blue-500/10 to-indigo-600/5",
-    image: "/projects/field.jpg",
+    image: "/projects/track.png",
     appUrl: "fieldtrack.io",
     demoDetails: {
       overview: "FieldTrack empowers distributors, FMCG brands, and field sales teams with real-time location visibility, automated beat planning, and instant mobile sales order processing.",

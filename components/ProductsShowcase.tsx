@@ -4,11 +4,11 @@ import { useState, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { PRODUCTS_LIST, ProductItem } from "@/data/products";
-import { 
-  Package, 
-  Sparkles, 
-  CheckCircle2, 
-  MessageSquare, 
+import {
+  Package,
+  Sparkles,
+  CheckCircle2,
+  MessageSquare,
   Send,
   X,
   Smartphone,
@@ -103,13 +103,13 @@ export default function ProductsShowcase() {
 
   return (
     <section ref={sectionRef} id="products" className="py-20 sm:py-28 border-t border-slate-200 dark:border-[#252925] bg-slate-50/50 dark:bg-[#0b0d0c] relative overflow-hidden">
-      
+
       {/* Ambient Background Glows */}
       <motion.div style={{ y: bgY }} className="absolute top-1/4 right-0 w-96 h-96 bg-emerald-500/5 dark:bg-[#c7ff4a]/5 rounded-full blur-[140px] pointer-events-none" />
       <motion.div style={{ y: bgY }} className="absolute bottom-10 left-10 w-80 h-80 bg-emerald-500/5 dark:bg-[#c7ff4a]/5 rounded-full blur-[110px] pointer-events-none" />
 
       <div className="wrap relative z-10">
-        
+
         {/* Section Header */}
         <div className="mb-12">
           <motion.div
@@ -124,11 +124,11 @@ export default function ProductsShowcase() {
                 Ready-to-Deploy Software Products
               </span>
             </div>
-            
+
             <h2 className="text-3xl sm:text-4xl md:text-[44px] tracking-[-0.04em] font-extrabold text-slate-900 dark:text-[#f4f5f2] uppercase leading-tight">
               PRODUCTS & <span className="text-emerald-600 dark:text-[#c7ff4a]">SOLUTIONS</span>
             </h2>
-            
+
             <p className="text-slate-600 dark:text-[#9da39d] max-w-xl text-base sm:text-lg mt-3">
               Production-ready web apps, mobile systems, and POS software. Click any product to explore interactive live demos & details.
             </p>
@@ -153,51 +153,19 @@ export default function ProductsShowcase() {
                 key={product.id}
                 variants={cardVariants}
                 whileHover={{ y: -5, scale: 1.005 }}
-                className={`group rounded-2xl p-4 sm:p-5 border transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-sm hover:shadow-lg ${
-                  isComedy
-                    ? "bg-gradient-to-b from-amber-50/60 via-white to-amber-50/30 dark:from-[#1d1912] dark:via-[#14120e] dark:to-[#1d1912] border-amber-300/80 dark:border-amber-500/40 hover:border-amber-400"
-                    : "bg-white dark:bg-[#121513] border-slate-200/90 dark:border-[#232823] hover:border-emerald-500/60 dark:hover:border-[#c7ff4a]/60"
-                }`}
+                // onClick={() => handleOpenDemoModal(product, "overview")}
+                className={`group rounded-2xl p-4 sm:p-5 border transition-all duration-300 flex flex-col justify-between relative overflow-hidden shadow-sm hover:shadow-lg cursor-pointer ${isComedy
+                  ? "bg-gradient-to-b from-amber-50/60 via-white to-amber-50/30 dark:from-[#1d1912] dark:via-[#14120e] dark:to-[#1d1912] border-amber-300/80 dark:border-amber-500/40 hover:border-amber-400"
+                  : "bg-white dark:bg-[#121513] border-slate-200/90 dark:border-[#232823] hover:border-emerald-500/60 dark:hover:border-[#c7ff4a]/60"
+                  }`}
               >
-                
-                <div>
-                  {/* Header Row: Icon + Category + Badge */}
-                  <div className="flex items-center justify-between gap-2.5 mb-3.5">
-                    <div className="flex items-center gap-2.5">
-                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center border shadow-sm shrink-0 ${
-                        isComedy
-                          ? "bg-amber-100 border-amber-200 dark:bg-[#282218] dark:border-amber-800/60"
-                          : "bg-emerald-50 border-emerald-100 dark:bg-[#162218] dark:border-[#253626]"
-                      }`}>
-                        {renderProductIcon(product.iconName)}
-                      </div>
-                      <div className="min-w-0">
-                        <span className={`text-[9.5px] font-mono font-bold uppercase tracking-wider block truncate ${
-                          isComedy ? "text-amber-700 dark:text-amber-400" : "text-emerald-700 dark:text-[#c7ff4a]"
-                        }`}>
-                          {product.category}
-                        </span>
-                        <span className="text-[10.5px] font-mono text-slate-500 dark:text-[#8d958d] block mt-0.5 truncate">
-                          {product.tag}
-                        </span>
-                      </div>
-                    </div>
 
-                    {product.badge && (
-                      <span className={`text-[9px] font-mono font-bold px-2.5 py-0.5 rounded-full border shrink-0 ${
-                        isComedy
-                          ? "bg-amber-100 text-amber-900 border-amber-300 dark:bg-amber-950 dark:text-amber-300 dark:border-amber-800"
-                          : "bg-slate-100 dark:bg-[#1c221c] text-slate-800 dark:text-[#c7ff4a] border-slate-200 dark:border-[#2b352b]"
-                      }`}>
-                        {product.badge}
-                      </span>
-                    )}
-                  </div>
+                <div>
 
                   {/* Product Visual Screenshot Window */}
-                  <div className="h-[155px] p-2 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-[#161916] dark:to-[#0d0e0d] flex items-center relative overflow-hidden rounded-xl mb-3.5">
+                  <div className="h-[200px] p-2 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-[#161916] dark:to-[#0d0e0d] flex items-center relative overflow-hidden rounded-xl mb-3.5">
                     <div className="w-full h-full border border-slate-200 dark:border-[#303530] rounded-lg bg-white dark:bg-[#131513] overflow-hidden group-hover:border-slate-300 dark:group-hover:border-[#4a5145] transition-colors shadow-sm relative">
-                      
+
                       {/* Browser Window Bar */}
                       <div className="h-[22px] border-b border-slate-200 dark:border-[#2a2e2a] flex items-center justify-between px-2 bg-slate-50 dark:bg-[#131513] z-10 relative">
                         <div className="flex items-center gap-[4px]">
@@ -205,21 +173,11 @@ export default function ProductsShowcase() {
                           <i className="w-[4.5px] h-[4.5px] rounded-full bg-[#ffbd2e] inline-block" />
                           <i className="w-[4.5px] h-[4.5px] rounded-full bg-[#27c93f] inline-block" />
                         </div>
-                        <div className="flex items-center gap-1.5 truncate max-w-[170px]">
-                          <small className="text-slate-400 dark:text-[#aab0a7] font-mono text-[8.5px] tracking-wider uppercase truncate">
-                            {product.appUrl ? product.appUrl.replace(/^https?:\/\//, '').replace(/\/$/, '') : "live.app"}
-                          </small>
-                          {product.appUrl && (
-                            <a
-                              href={product.appUrl.startsWith("http") ? product.appUrl : `https://${product.appUrl}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onClick={(e) => e.stopPropagation()}
-                              className="text-slate-400 hover:text-emerald-500 transition-colors"
-                              title="Open Live App"
-                            >
-                              <ExternalLink className="w-2.5 h-2.5" />
-                            </a>
+                        <div className="flex items-center gap-1.5">
+                          {product.badge && (
+                            <span className="text-[9px] font-extrabold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-[#1b2b1b] dark:text-[#c7ff4a] border border-emerald-200/80 dark:border-[#2a402a] uppercase tracking-wider shadow-xs">
+                              {product.badge}
+                            </span>
                           )}
                         </div>
                       </div>
@@ -244,11 +202,10 @@ export default function ProductsShowcase() {
                   </div>
 
                   {/* Clean Title */}
-                  <h3 className={`text-base sm:text-lg font-bold mb-1.5 leading-snug transition-colors ${
-                    isComedy
-                      ? "text-amber-950 dark:text-amber-100 group-hover:text-amber-600 dark:group-hover:text-amber-300"
-                      : "text-slate-900 dark:text-[#f4f5f2] group-hover:text-emerald-600 dark:group-hover:text-[#c7ff4a]"
-                  }`}>
+                  <h3 className={`text-base sm:text-lg font-bold mb-1.5 leading-snug transition-colors ${isComedy
+                    ? "text-amber-950 dark:text-amber-100 group-hover:text-amber-600 dark:group-hover:text-amber-300"
+                    : "text-slate-900 dark:text-[#f4f5f2] group-hover:text-emerald-600 dark:group-hover:text-[#c7ff4a]"
+                    }`}>
                     {product.title}
                   </h3>
 
@@ -257,30 +214,22 @@ export default function ProductsShowcase() {
                     {product.description}
                   </p>
 
-                  {/* Key Tech / Feature Pills */}
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    {product.techStack.map((tech, tIdx) => (
-                      <span
-                        key={tIdx}
-                        className="text-[9.5px] font-mono font-medium px-2 py-0.5 rounded-md bg-slate-100 dark:bg-[#181d19] border border-slate-200/70 dark:border-[#252d25] text-slate-700 dark:text-[#a0a8a0]"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+
                 </div>
 
                 {/* Single Sleek Action Button: View Details & Connect */}
                 <div className="pt-3 border-t border-slate-100 dark:border-[#1e231f]">
                   <button
-                    onClick={() => handleOpenDemoModal(product, "overview")}
-                    className={`w-full py-2.5 px-4 rounded-xl font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-sm group/btn ${
-                      isComedy
-                        ? "bg-amber-500 hover:bg-amber-600 text-amber-950 dark:bg-amber-400 dark:hover:bg-amber-300 shadow-amber-500/20"
-                        : "bg-slate-900 hover:bg-slate-800 text-white dark:bg-[#c7ff4a] dark:text-[#0a0b0a] dark:hover:bg-[#b5f532]"
-                    }`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleOpenDemoModal(product, "overview");
+                    }}
+                    className={`w-full py-2.5 px-4 rounded-xl font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-sm group/btn ${isComedy
+                      ? "bg-amber-500 hover:bg-amber-600 text-amber-950 dark:bg-amber-400 dark:hover:bg-amber-300 shadow-amber-500/20"
+                      : "bg-slate-900 hover:bg-slate-800 text-white dark:bg-[#c7ff4a] dark:text-[#0a0b0a] dark:hover:bg-[#b5f532]"
+                      }`}
                   >
-                    <span>View Details & Connect</span>
+                    <span>Request for Demo</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
                   </button>
                 </div>
@@ -302,7 +251,7 @@ export default function ProductsShowcase() {
               exit={{ opacity: 0, scale: 0.92, y: 20 }}
               className="w-full max-w-2xl rounded-3xl bg-white dark:bg-[#121513] border border-slate-200 dark:border-[#252925] shadow-2xl relative overflow-hidden flex flex-col max-h-[90vh]"
             >
-              
+
               {/* Modal Header */}
               <div className={`p-6 bg-gradient-to-br ${selectedProduct.accentGradient} border-b border-slate-200 dark:border-[#202721] relative`}>
                 <button
@@ -330,11 +279,10 @@ export default function ProductsShowcase() {
                 <div className="flex items-center gap-2 mt-5 pt-3 border-t border-slate-200/50 dark:border-white/10 overflow-x-auto no-scrollbar">
                   <button
                     onClick={() => setActiveModalTab("overview")}
-                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
-                      activeModalTab === "overview"
-                        ? "bg-slate-900 text-white dark:bg-[#c7ff4a] dark:text-black shadow-sm"
-                        : "bg-white/80 dark:bg-[#181d19] text-slate-700 dark:text-[#a0a8a0] hover:bg-white dark:hover:bg-[#202721]"
-                    }`}
+                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${activeModalTab === "overview"
+                      ? "bg-slate-900 text-white dark:bg-[#c7ff4a] dark:text-black shadow-sm"
+                      : "bg-white/80 dark:bg-[#181d19] text-slate-700 dark:text-[#a0a8a0] hover:bg-white dark:hover:bg-[#202721]"
+                      }`}
                   >
                     <Laptop className="w-3.5 h-3.5" />
                     <span>Demo Overview</span>
@@ -342,11 +290,10 @@ export default function ProductsShowcase() {
 
                   <button
                     onClick={() => setActiveModalTab("modules")}
-                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
-                      activeModalTab === "modules"
-                        ? "bg-slate-900 text-white dark:bg-[#c7ff4a] dark:text-black shadow-sm"
-                        : "bg-white/80 dark:bg-[#181d19] text-slate-700 dark:text-[#a0a8a0] hover:bg-white dark:hover:bg-[#202721]"
-                    }`}
+                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${activeModalTab === "modules"
+                      ? "bg-slate-900 text-white dark:bg-[#c7ff4a] dark:text-black shadow-sm"
+                      : "bg-white/80 dark:bg-[#181d19] text-slate-700 dark:text-[#a0a8a0] hover:bg-white dark:hover:bg-[#202721]"
+                      }`}
                   >
                     <Layers className="w-3.5 h-3.5" />
                     <span>Key Modules</span>
@@ -354,11 +301,10 @@ export default function ProductsShowcase() {
 
                   <button
                     onClick={() => setActiveModalTab("specs")}
-                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
-                      activeModalTab === "specs"
-                        ? "bg-slate-900 text-white dark:bg-[#c7ff4a] dark:text-black shadow-sm"
-                        : "bg-white/80 dark:bg-[#181d19] text-slate-700 dark:text-[#a0a8a0] hover:bg-white dark:hover:bg-[#202721]"
-                    }`}
+                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${activeModalTab === "specs"
+                      ? "bg-slate-900 text-white dark:bg-[#c7ff4a] dark:text-black shadow-sm"
+                      : "bg-white/80 dark:bg-[#181d19] text-slate-700 dark:text-[#a0a8a0] hover:bg-white dark:hover:bg-[#202721]"
+                      }`}
                   >
                     <Cpu className="w-3.5 h-3.5" />
                     <span>Specs & Stack</span>
@@ -366,11 +312,10 @@ export default function ProductsShowcase() {
 
                   <button
                     onClick={() => setActiveModalTab("inquire")}
-                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
-                      activeModalTab === "inquire"
-                        ? "bg-emerald-600 text-white dark:bg-[#c7ff4a] dark:text-black shadow-sm"
-                        : "bg-emerald-50 dark:bg-[#1a251b] text-emerald-700 dark:text-[#c7ff4a] border border-emerald-200 dark:border-[#253526]"
-                    }`}
+                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${activeModalTab === "inquire"
+                      ? "bg-emerald-600 text-white dark:bg-[#c7ff4a] dark:text-black shadow-sm"
+                      : "bg-emerald-50 dark:bg-[#1a251b] text-emerald-700 dark:text-[#c7ff4a] border border-emerald-200 dark:border-[#253526]"
+                      }`}
                   >
                     <MessageSquare className="w-3.5 h-3.5" />
                     <span>Inquire / Quote</span>
@@ -381,7 +326,7 @@ export default function ProductsShowcase() {
 
               {/* Modal Body Content */}
               <div className="p-6 overflow-y-auto flex-1 text-slate-700 dark:text-[#c0c8c0]">
-                
+
                 {/* TAB 1: OVERVIEW */}
                 {activeModalTab === "overview" && (
                   <div className="space-y-6">
@@ -393,6 +338,37 @@ export default function ProductsShowcase() {
                         {selectedProduct.demoDetails.overview}
                       </p>
                     </div>
+
+                    {/* Full Product Screenshot Preview Image */}
+                    {selectedProduct.image && (
+                      <div className="rounded-2xl border border-slate-200 dark:border-[#282f29] bg-white dark:bg-[#131513] overflow-hidden shadow-md">
+                        <div className="h-[28px] border-b border-slate-200 dark:border-[#252c25] px-3 flex items-center justify-between bg-slate-100 dark:bg-[#161a17]">
+                          <div className="flex items-center gap-1.5">
+                            <span className="w-2.5 h-2.5 rounded-full bg-red-400 inline-block" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 inline-block" />
+                          </div>
+                          {selectedProduct.badge ? (
+                            <span className="text-[9px] font-extrabold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-[#1b2b1b] dark:text-[#c7ff4a] border border-emerald-200/80 dark:border-[#2a402a] uppercase tracking-wider">
+                              {selectedProduct.badge}
+                            </span>
+                          ) : (
+                            <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                              System Visual Preview
+                            </span>
+                          )}
+                        </div>
+                        <div className="relative h-[220px] sm:h-[280px] w-full bg-slate-900 overflow-hidden">
+                          <Image
+                            src={selectedProduct.image}
+                            alt={selectedProduct.title}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 600px"
+                            className="object-cover object-top"
+                          />
+                        </div>
+                      </div>
+                    )}
 
                     {/* Metrics stat pills */}
                     <div className="flex flex-wrap gap-2">
